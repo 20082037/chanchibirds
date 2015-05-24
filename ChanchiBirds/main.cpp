@@ -1,4 +1,5 @@
 #include <SDL2/SDL.h>
+#include <Box2D/Box2D.h>
 #include <GL/gl.h>
 #include <GL/glu.h>
 #include <FreeImage.h>
@@ -19,6 +20,8 @@ GLfloat equisw[]={(-600.f / 1300.f)*1.857f,(-600.f / 1300.f)*1.857f,(-550.f / 13
 GLfloat ye[]={1.f,-1.f,-1.f};
 GLfloat ie = (-334.f / 384.f);
 int main(int argc, char*argv[]){
+    b2Vec2 gravity(0.0f,-3.8f);//Definir la gravedad
+    b2World world(gravity); //Crear el mundo con parametro de la gravedad
     if(iniciar()){
         bool salir=false;
         SDL_Event jordan;
