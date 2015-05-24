@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1432462322 source:/home/jdiazc/Documents/pruebas/prueba.cpp
+	<iostream>
+	<SDL2/SDL.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<FreeImage.h>
+
