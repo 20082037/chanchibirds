@@ -39,6 +39,8 @@
 			<Add option="-lGLU" />
 		</Linker>
 		<Unit filename="main.cpp" />
+		<Unit filename="sprite.h" />
+		<Unit filename="system.h" />
 		<Extensions>
 			<code_completion />
 			<debugger />
