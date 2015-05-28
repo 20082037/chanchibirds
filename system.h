@@ -3,7 +3,7 @@
 
 #include <map>
 
-enum TAG{
+enum TAG{//Each tag has its only spritesheet and states
     PIG,
     BIRD,
     PLATFORM,
@@ -27,7 +27,11 @@ class System{
         Pig pig;
         Background background;
 
-        map<int,map<int,GLfloat*>> textures;
+        map<int,GLuint> textures;
+        //map<TAG,TEXTUREID>
+
+        map<int,map<int,pair<GLfloat,GLfloat>* > > sprites;
+        //map<TAG,map<STATE,COORDENADAS<GLfloat,GLfloat>* > >
 
         System();
         void init();
@@ -36,6 +40,7 @@ class System{
         bool setup();
         bool setupGL();
         bool loadMedia();
+        GLuint loadTexture(string filenameString);
 };
 
 
