@@ -30,13 +30,14 @@
 		</Build>
 		<Compiler>
 			<Add option="-Wall" />
+			<Add directory="/home/jdiazc/Documents/Box2D_v2.3.0/Box2D" />
 		</Compiler>
 		<Linker>
 			<Add option="-lfreeimage" />
 			<Add option="-lSDL2" />
-			<Add option="-lSDL2_image" />
 			<Add option="-lGL" />
 			<Add option="-lGLU" />
+			<Add library="/home/jdiazc/Documents/Box2D_v2.3.0/Box2D/Build/Box2D/libBox2D.a" />
 		</Linker>
 		<Unit filename="main.cpp" />
 		<Extensions>
