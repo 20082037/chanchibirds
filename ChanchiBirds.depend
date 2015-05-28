@@ -1,16 +1,26 @@
 # depslib dependency file v1.0
-<<<<<<< HEAD
+13299840 <<<<<<< HEAD
+
 1432799903 source:/home/jdiazc/Documents/ChanchiBirdsFinal/chanchibrids/main.cpp
-=======
-1432797752 source:/home/juan/Documents/UCSP/GIT/ChanchiBirds/chanchibirds/main.cpp
->>>>>>> da533b499e1cf9bccb0ddc04df4c2052d4955c13
+
+1432824761 source:/home/juan/Documents/UCSP/GIT/ChanchiBirds/chanchibirds/main.cpp
 	<SDL2/SDL.h>
 	<Box2D/Box2D.h>
 	<GL/gl.h>
 	<GL/glu.h>
 	<FreeImage.h>
 	<iostream>
-<<<<<<< HEAD
+	<time.h>
+
+1382546500 33b499e1cf9bccb0ddc04df4c2052d4955c13
+	<SDL2/SDL.h>
+	<Box2D/Box2D.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<FreeImage.h>
+	<iostream>
+
+1432797752 D
 	<time.h>
 
 1332136811 /home/jdiazc/Documents/Box2D_v2.3.0/Box2D//Box2D/Box2D.h
@@ -174,6 +184,168 @@
 
 1382546500 /home/jdiazc/Documents/Box2D_v2.3.0/Box2D//Box2D/Dynamics/Joints/b2WheelJoint.h
 	<Box2D/Dynamics/Joints/b2Joint.h>
-=======
->>>>>>> da533b499e1cf9bccb0ddc04df4c2052d4955c13
+
+1382546500 amics/Joints/b2Joint.h>
+
+1332136811 /home/juan/Documents/Programas en general/Box2D_v2.3.0/Box2D/Box2D/Box2D.h
+	<Box2D/Common/b2Settings.h>
+	<Box2D/Common/b2Draw.h>
+	<Box2D/Common/b2Timer.h>
+	<Box2D/Collision/Shapes/b2CircleShape.h>
+	<Box2D/Collision/Shapes/b2EdgeShape.h>
+	<Box2D/Collision/Shapes/b2ChainShape.h>
+	<Box2D/Collision/Shapes/b2PolygonShape.h>
+	<Box2D/Collision/b2BroadPhase.h>
+	<Box2D/Collision/b2Distance.h>
+	<Box2D/Collision/b2DynamicTree.h>
+	<Box2D/Collision/b2TimeOfImpact.h>
+	<Box2D/Dynamics/b2Body.h>
+	<Box2D/Dynamics/b2Fixture.h>
+	<Box2D/Dynamics/b2WorldCallbacks.h>
+	<Box2D/Dynamics/b2TimeStep.h>
+	<Box2D/Dynamics/b2World.h>
+	<Box2D/Dynamics/Contacts/b2Contact.h>
+	<Box2D/Dynamics/Joints/b2DistanceJoint.h>
+	<Box2D/Dynamics/Joints/b2FrictionJoint.h>
+	<Box2D/Dynamics/Joints/b2GearJoint.h>
+	<Box2D/Dynamics/Joints/b2MotorJoint.h>
+	<Box2D/Dynamics/Joints/b2MouseJoint.h>
+	<Box2D/Dynamics/Joints/b2PrismaticJoint.h>
+	<Box2D/Dynamics/Joints/b2PulleyJoint.h>
+	<Box2D/Dynamics/Joints/b2RevoluteJoint.h>
+	<Box2D/Dynamics/Joints/b2RopeJoint.h>
+	<Box2D/Dynamics/Joints/b2WeldJoint.h>
+	<Box2D/Dynamics/Joints/b2WheelJoint.h>
+
+1382856099 /home/juan/Documents/Programas en general/Box2D_v2.3.0/Box2D/Box2D/Common/b2Settings.h
+	<stddef.h>
+	<assert.h>
+	<float.h>
+
+1322352523 /home/juan/Documents/Programas en general/Box2D_v2.3.0/Box2D/Box2D/Common/b2Draw.h
+	<Box2D/Common/b2Math.h>
+
+1382856060 /home/juan/Documents/Programas en general/Box2D_v2.3.0/Box2D/Box2D/Common/b2Math.h
+	<Box2D/Common/b2Settings.h>
+	<math.h>
+
+1375425743 /home/juan/Documents/Programas en general/Box2D_v2.3.0/Box2D/Box2D/Common/b2Timer.h
+	<Box2D/Common/b2Settings.h>
+
+1300987018 /home/juan/Documents/Programas en general/Box2D_v2.3.0/Box2D/Box2D/Collision/Shapes/b2CircleShape.h
+	<Box2D/Collision/Shapes/b2Shape.h>
+
+1313981392 /home/juan/Documents/Programas en general/Box2D_v2.3.0/Box2D/Box2D/Collision/Shapes/b2Shape.h
+	<Box2D/Common/b2BlockAllocator.h>
+	<Box2D/Common/b2Math.h>
+	<Box2D/Collision/b2Collision.h>
+
+1300987018 /home/juan/Documents/Programas en general/Box2D_v2.3.0/Box2D/Box2D/Common/b2BlockAllocator.h
+	<Box2D/Common/b2Settings.h>
+
+1382854526 /home/juan/Documents/Programas en general/Box2D_v2.3.0/Box2D/Box2D/Collision/b2Collision.h
+	<Box2D/Common/b2Math.h>
+	<limits.h>
+
+1314859986 /home/juan/Documents/Programas en general/Box2D_v2.3.0/Box2D/Box2D/Collision/Shapes/b2EdgeShape.h
+	<Box2D/Collision/Shapes/b2Shape.h>
+
+1382857618 /home/juan/Documents/Programas en general/Box2D_v2.3.0/Box2D/Box2D/Collision/Shapes/b2ChainShape.h
+	<Box2D/Collision/Shapes/b2Shape.h>
+
+1324249490 /home/juan/Documents/Programas en general/Box2D_v2.3.0/Box2D/Box2D/Collision/Shapes/b2PolygonShape.h
+	<Box2D/Collision/Shapes/b2Shape.h>
+
+1332054490 /home/juan/Documents/Programas en general/Box2D_v2.3.0/Box2D/Box2D/Collision/b2BroadPhase.h
+	<Box2D/Common/b2Settings.h>
+	<Box2D/Collision/b2Collision.h>
+	<Box2D/Collision/b2DynamicTree.h>
+	<algorithm>
+
+1332054496 /home/juan/Documents/Programas en general/Box2D_v2.3.0/Box2D/Box2D/Collision/b2DynamicTree.h
+	<Box2D/Collision/b2Collision.h>
+	<Box2D/Common/b2GrowableStack.h>
+
+1383025930 /home/juan/Documents/Programas en general/Box2D_v2.3.0/Box2D/Box2D/Common/b2GrowableStack.h
+	<Box2D/Common/b2Settings.h>
+	<memory.h>
+
+1300987018 /home/juan/Documents/Programas en general/Box2D_v2.3.0/Box2D/Box2D/Collision/b2Distance.h
+	<Box2D/Common/b2Math.h>
+
+1375425734 /home/juan/Documents/Programas en general/Box2D_v2.3.0/Box2D/Box2D/Collision/b2TimeOfImpact.h
+	<Box2D/Common/b2Math.h>
+	<Box2D/Collision/b2Distance.h>
+
+1382854090 /home/juan/Documents/Programas en general/Box2D_v2.3.0/Box2D/Box2D/Dynamics/b2Body.h
+	<Box2D/Common/b2Math.h>
+	<Box2D/Collision/Shapes/b2Shape.h>
+	<memory>
+
+1315072341 /home/juan/Documents/Programas en general/Box2D_v2.3.0/Box2D/Box2D/Dynamics/b2Fixture.h
+	<Box2D/Dynamics/b2Body.h>
+	<Box2D/Collision/b2Collision.h>
+	<Box2D/Collision/Shapes/b2Shape.h>
+
+1314073600 /home/juan/Documents/Programas en general/Box2D_v2.3.0/Box2D/Box2D/Dynamics/b2WorldCallbacks.h
+	<Box2D/Common/b2Settings.h>
+
+1315809130 /home/juan/Documents/Programas en general/Box2D_v2.3.0/Box2D/Box2D/Dynamics/b2TimeStep.h
+	<Box2D/Common/b2Math.h>
+
+1383020095 /home/juan/Documents/Programas en general/Box2D_v2.3.0/Box2D/Box2D/Dynamics/b2World.h
+	<Box2D/Common/b2Math.h>
+	<Box2D/Common/b2BlockAllocator.h>
+	<Box2D/Common/b2StackAllocator.h>
+	<Box2D/Dynamics/b2ContactManager.h>
+	<Box2D/Dynamics/b2WorldCallbacks.h>
+	<Box2D/Dynamics/b2TimeStep.h>
+
+1300987018 /home/juan/Documents/Programas en general/Box2D_v2.3.0/Box2D/Box2D/Common/b2StackAllocator.h
+	<Box2D/Common/b2Settings.h>
+
+1300987018 /home/juan/Documents/Programas en general/Box2D_v2.3.0/Box2D/Box2D/Dynamics/b2ContactManager.h
+	<Box2D/Collision/b2BroadPhase.h>
+
+1383025930 /home/juan/Documents/Programas en general/Box2D_v2.3.0/Box2D/Box2D/Dynamics/Contacts/b2Contact.h
+	<Box2D/Common/b2Math.h>
+	<Box2D/Collision/b2Collision.h>
+	<Box2D/Collision/Shapes/b2Shape.h>
+	<Box2D/Dynamics/b2Fixture.h>
+
+1315162982 /home/juan/Documents/Programas en general/Box2D_v2.3.0/Box2D/Box2D/Dynamics/Joints/b2DistanceJoint.h
+	<Box2D/Dynamics/Joints/b2Joint.h>
+
+1332136763 /home/juan/Documents/Programas en general/Box2D_v2.3.0/Box2D/Box2D/Dynamics/Joints/b2Joint.h
+	<Box2D/Common/b2Math.h>
+
+1315174277 /home/juan/Documents/Programas en general/Box2D_v2.3.0/Box2D/Box2D/Dynamics/Joints/b2FrictionJoint.h
+	<Box2D/Dynamics/Joints/b2Joint.h>
+
+1315174532 /home/juan/Documents/Programas en general/Box2D_v2.3.0/Box2D/Box2D/Dynamics/Joints/b2GearJoint.h
+	<Box2D/Dynamics/Joints/b2Joint.h>
+
+1382487182 /home/juan/Documents/Programas en general/Box2D_v2.3.0/Box2D/Box2D/Dynamics/Joints/b2MotorJoint.h
+	<Box2D/Dynamics/Joints/b2Joint.h>
+
+1332051882 /home/juan/Documents/Programas en general/Box2D_v2.3.0/Box2D/Box2D/Dynamics/Joints/b2MouseJoint.h
+	<Box2D/Dynamics/Joints/b2Joint.h>
+
+1315365926 /home/juan/Documents/Programas en general/Box2D_v2.3.0/Box2D/Box2D/Dynamics/Joints/b2PrismaticJoint.h
+	<Box2D/Dynamics/Joints/b2Joint.h>
+
+1382546444 /home/juan/Documents/Programas en general/Box2D_v2.3.0/Box2D/Box2D/Dynamics/Joints/b2PulleyJoint.h
+	<Box2D/Dynamics/Joints/b2Joint.h>
+
+1315172372 /home/juan/Documents/Programas en general/Box2D_v2.3.0/Box2D/Box2D/Dynamics/Joints/b2RevoluteJoint.h
+	<Box2D/Dynamics/Joints/b2Joint.h>
+
+1315194213 /home/juan/Documents/Programas en general/Box2D_v2.3.0/Box2D/Box2D/Dynamics/Joints/b2RopeJoint.h
+	<Box2D/Dynamics/Joints/b2Joint.h>
+
+1315170663 /home/juan/Documents/Programas en general/Box2D_v2.3.0/Box2D/Box2D/Dynamics/Joints/b2WeldJoint.h
+	<Box2D/Dynamics/Joints/b2Joint.h>
+
+1382546500 /home/juan/Documents/Programas en general/Box2D_v2.3.0/Box2D/Box2D/Dynamics/Joints/b2WheelJoint.h
+	<Box2D/Dynamics/Joints/b2Joint.h>
 

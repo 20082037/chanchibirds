@@ -12,6 +12,15 @@ enum TAG{
 
 class System{
     public:
+
+        //Window components
+        SDL_Window *window;
+        const int WINDOW_WIDHT=1300;
+        const int WINDOW_HEIGHT=700;
+        SDL_GLContext glcontext;
+
+
+
         list<Platform> platforms;
         list<Bird> birds;
         Slingshot slingshot;
