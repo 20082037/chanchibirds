@@ -1,13 +1,13 @@
 #ifndef SPRITE_H_INCLUDED
 #define SPRITE_H_INCLUDED
 
-
+#include "system.h"
 
 class Sprite{
     public:
-        int tag;
+        TAG tag;
         GLint textureID;
-        int state;
+        STATE state;
 
         //Coordinates
         GLfloat x;
@@ -18,6 +18,7 @@ class Sprite{
         GLfloat width;
         GLfloat height;
 
+        Sprite(GLfloat x,GLfloat y,GLfloat z,GLfloat width,GLfloat height);
         void draw();
 
     private:
