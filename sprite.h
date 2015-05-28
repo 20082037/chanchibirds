@@ -21,6 +21,12 @@ class Sprite{
         //Dimensions
         GLfloat width;
         GLfloat height;
+
+
+        //
+        void mover(GLfloat x, GLfloat y);
+
+
     private:
 
 
