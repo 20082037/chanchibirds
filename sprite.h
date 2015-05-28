@@ -6,12 +6,14 @@ enum{
     PIG,
     BIRD,
     PLATFORM,
+    CANON,
 }
 
 class Sprite{
     public:
         int tag;
         GLint textureID;
+        int state;
 
         //Coordinates
         GLfloat x;
@@ -21,10 +23,12 @@ class Sprite{
         //Dimensions
         GLfloat width;
         GLfloat height;
+
+        void draw();
+
     private:
 
 
 };
-
 
 #endif // SPRITE_H_INCLUDED

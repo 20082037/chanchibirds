@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1432797752 source:/home/juan/Documents/UCSP/GIT/ChanchiBirds/chanchibirds/main.cpp
+	<SDL2/SDL.h>
+	<Box2D/Box2D.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<FreeImage.h>
+	<iostream>
+
