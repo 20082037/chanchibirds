@@ -4,7 +4,13 @@
 #include "sprite.h"
 
 class Pig: public Sprite{
-
+    public:
+        enum STATE{
+            NORMAL,
+            DAMAGED1,
+            DAMAGED2,
+            DEAD
+        };
 };
 
 

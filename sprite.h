@@ -19,7 +19,7 @@ class Sprite{
         GLfloat height;
 
         Sprite(GLfloat x,GLfloat y,GLfloat z,GLfloat width,GLfloat height);
-        void draw();
+        virtual void draw() = 0;
 
     private:
 

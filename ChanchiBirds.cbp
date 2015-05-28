@@ -38,6 +38,7 @@
 			<Add option="-lGL" />
 			<Add option="-lGLU" />
 		</Linker>
+		<Unit filename="bird.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="pig.h" />
 		<Unit filename="platform.h" />
