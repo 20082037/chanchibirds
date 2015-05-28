@@ -3,7 +3,12 @@
 
 class System{
     list<Platform> platforms;
+    Pig pig;
+
     map<int,map<int,GLfloat*>> textures;
+
+
+
 
 };
 

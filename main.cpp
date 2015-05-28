@@ -4,6 +4,7 @@
 #include <GL/glu.h>
 #include <FreeImage.h>
 #include <iostream>
+#include <time.h>
 
 using namespace std;
 
@@ -14,10 +15,16 @@ void render();
 SDL_Window *w = NULL;
 SDL_GLContext glcontext;
 
+GLfloat c=1.0;
+clock_t ti,tf;
 GLfloat despx=100.f,despy=-100.f;
 GLfloat juanx=-100.f, juany=-100.f;
+clock_t interval = 10000;
+
 
 int main(int argc, char*argv[]){
+    ti = clock();
+    cout<<ti<<endl;
     if(iniciar()){
         bool salir=false;
         SDL_Event jordan;
@@ -125,8 +132,21 @@ void render(){
     glEnd();
     glPushMatrix();
 
+    tf = clock();
+    cout<<" x : "<<tf-ti<<endl;
+    if(tf-ti > interval){
+        cout<<"HOLI"<<endl;
+        if(c==1.f){
+            c=0.f;
+        }else{
+            c=1.f;
+        }
+        swap(ti,tf);
+    }
+
     glTranslatef(despx,despy,0.f);
     glBegin(GL_QUADS);
+        glColor3f(1.f,0.f,1.f);
         glVertex3f(-50.f,50.f,0.f);
         glVertex3f(-50.f,-50.f,0.f);
         glVertex3f(50.f,-50.f,0.f);
@@ -139,7 +159,7 @@ void render(){
     glPushMatrix();
     glTranslatef(juanx,juany,0.f);
     glBegin(GL_QUADS);
-        glColor3f(0.f,1.f,1.f);
+        glColor3f(c,0.f,1.f);
         glVertex3f(-50.f,50.f,-5.f);
         glVertex3f(-50.f,-50.f,-5.f);
         glVertex3f(50.f,-50.f,-5.f);
