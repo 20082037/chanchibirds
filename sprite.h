@@ -2,12 +2,6 @@
 #define SPRITE_H_INCLUDED
 
 
-enum{
-    PIG,
-    BIRD,
-    PLATFORM,
-    CANON,
-}
 
 class Sprite{
     public:
