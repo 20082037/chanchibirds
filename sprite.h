@@ -5,9 +5,9 @@
 
 class Sprite{
     public:
-        TAG tag;
+        int tag;
         GLint textureID;
-        STATE state;
+        int state;
 
         //Coordinates
         GLfloat x;
@@ -18,7 +18,6 @@ class Sprite{
         GLfloat width;
         GLfloat height;
 
-        Sprite(GLfloat x,GLfloat y,GLfloat z,GLfloat width,GLfloat height);
         virtual void draw() = 0;
 
     private:
