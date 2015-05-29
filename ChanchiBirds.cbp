@@ -30,6 +30,7 @@
 		</Build>
 		<Compiler>
 			<Add option="-Wall" />
+			<Add directory="/home/juan/Documents/Programas en general/Box2D_v2.3.0/Box2D" />
 		</Compiler>
 		<Linker>
 			<Add option="-lfreeimage" />
@@ -37,6 +38,7 @@
 			<Add option="-lSDL2_image" />
 			<Add option="-lGL" />
 			<Add option="-lGLU" />
+			<Add library="/home/juan/Documents/Programas en general/Box2D_v2.3.0/Box2D/Build/Box2D/libBox2D.a" />
 		</Linker>
 		<Unit filename="bird.h" />
 		<Unit filename="main.cpp" />
