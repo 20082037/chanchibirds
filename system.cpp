@@ -35,7 +35,9 @@ bool System::setup(){
         cout<<"Fallo en inicializacion de SDL"<<endl;
         success=false;
     }
+    return success;
 }
+
 
 bool System::setupGL(){
 
@@ -68,67 +70,82 @@ bool System::loadMedia(){
 
 //    map<int,map<int,pair<GLfloat,GLfloat>* > > sprites;
     //map<TAG,map<STATE,COORDENADAS<GLfloat,GLfloat>* > >
-    textures[PIG] = loadTexture("");
-    textures[BIRD] = loadTexture("");
-    textures[PLATFORM] = loadTexture("");
-    textures[SLINGSHOT] = loadTexture("");
+    loadTexture("images/normalPig.png",textures[PIG]);
+    loadTexture("images/redBird.png",textures[BIRD]);
+    loadTexture("",textures[PLATFORM]);
+    loadTexture("",textures[SLINGSHOT]);
 
     pair<GLfloat,GLfloat>* spriteCoords;
 
     spriteCoords = new pair<GLfloat,GLfloat>[4];
-    spriteCoords[0]=make_pair(,); spriteCoords[1]=make_pair(,); spriteCoords[2]=make_pair(,); spriteCoords[3]=make_pair(,);
-    *(sprites[PIG])[Pig::NORMAL] =spriteCoords;
+    spriteCoords[0]=make_pair(0.f,1.f); spriteCoords[1]=make_pair(0.f,294.34f/374.f); spriteCoords[2]=make_pair(129.3f/388.f,294.34f/374.f); spriteCoords[3]=make_pair(129.3f/388.f,1.f);
+    sprites[PIG][Pig::NORMAL] =spriteCoords;
 
     spriteCoords = new pair<GLfloat,GLfloat>[4];
     spriteCoords[0]=make_pair(,); spriteCoords[1]=make_pair(,); spriteCoords[2]=make_pair(,); spriteCoords[3]=make_pair(,);
-    *(sprites[PIG])[Pig::DAMAGED1] =spriteCoords;
+    sprites[PIG][Pig::DAMAGED1] =spriteCoords;
 
     spriteCoords = new pair<GLfloat,GLfloat>[4];
     spriteCoords[0]=make_pair(,); spriteCoords[1]=make_pair(,); spriteCoords[2]=make_pair(,); spriteCoords[3]=make_pair(,);
-    *(sprites[PIG])[Pig::DAMAGED2] =spriteCoords;
+    sprites[PIG][Pig::DAMAGED2] =spriteCoords;
 
     spriteCoords = new pair<GLfloat,GLfloat>[4];
     spriteCoords[0]=make_pair(,); spriteCoords[1]=make_pair(,); spriteCoords[2]=make_pair(,); spriteCoords[3]=make_pair(,);
-    *(sprites[PIG])[Pig::DEAD] =spriteCoords;
-
-
-    spriteCoords = new pair<GLfloat,GLfloat>[4];
-    spriteCoords[0]=make_pair(,); spriteCoords[1]=make_pair(,); spriteCoords[2]=make_pair(,); spriteCoords[3]=make_pair(,);
-    *(sprites[BIRD])[Bird::NORMAL] =spriteCoords;
-
-    spriteCoords = new pair<GLfloat,GLfloat>[4];
-    spriteCoords[0]=make_pair(,); spriteCoords[1]=make_pair(,); spriteCoords[2]=make_pair(,); spriteCoords[3]=make_pair(,);
-    *(sprites[BIRD])[Bird::HIT] =spriteCoords;
+    sprites[PIG][Pig::DEAD] =spriteCoords;
 
 
     spriteCoords = new pair<GLfloat,GLfloat>[4];
     spriteCoords[0]=make_pair(,); spriteCoords[1]=make_pair(,); spriteCoords[2]=make_pair(,); spriteCoords[3]=make_pair(,);
-    *(sprites[PLATFORM])[Platform::NORMAL] =spriteCoords;
+    sprites[BIRD][Bird::NORMAL] =spriteCoords;
+
+    spriteCoords = new pair<GLfloat,GLfloat>[4];
+    spriteCoords[0]=make_pair(,); spriteCoords[1]=make_pair(,); spriteCoords[2]=make_pair(,); spriteCoords[3]=make_pair(,);
+    sprites[BIRD][Bird::HIT] =spriteCoords;
 
 
     spriteCoords = new pair<GLfloat,GLfloat>[4];
     spriteCoords[0]=make_pair(,); spriteCoords[1]=make_pair(,); spriteCoords[2]=make_pair(,); spriteCoords[3]=make_pair(,);
-    *(sprites[SLINGSHOT])[Slingshot::ANGLE1] =spriteCoords;
+    sprites[PLATFORM][Platform::NORMAL] =spriteCoords;
+
 
     spriteCoords = new pair<GLfloat,GLfloat>[4];
     spriteCoords[0]=make_pair(,); spriteCoords[1]=make_pair(,); spriteCoords[2]=make_pair(,); spriteCoords[3]=make_pair(,);
-    *(sprites[SLINGSHOT])[Slingshot::ANGLE2] =spriteCoords;
+    sprites[SLINGSHOT][Slingshot::ANGLE1] =spriteCoords;
 
     spriteCoords = new pair<GLfloat,GLfloat>[4];
     spriteCoords[0]=make_pair(,); spriteCoords[1]=make_pair(,); spriteCoords[2]=make_pair(,); spriteCoords[3]=make_pair(,);
-    *(sprites[SLINGSHOT])[Slingshot::ANGLE3] =spriteCoords;
+    sprites[SLINGSHOT][Slingshot::ANGLE2] =spriteCoords;
 
     spriteCoords = new pair<GLfloat,GLfloat>[4];
     spriteCoords[0]=make_pair(,); spriteCoords[1]=make_pair(,); spriteCoords[2]=make_pair(,); spriteCoords[3]=make_pair(,);
-    *(sprites[SLINGSHOT])[Slingshot::ANGLE4] =spriteCoords;
+    sprites[SLINGSHOT][Slingshot::ANGLE3] =spriteCoords;
 
     spriteCoords = new pair<GLfloat,GLfloat>[4];
     spriteCoords[0]=make_pair(,); spriteCoords[1]=make_pair(,); spriteCoords[2]=make_pair(,); spriteCoords[3]=make_pair(,);
-    *(sprites[SLINGSHOT])[Slingshot::ANGLE5] =spriteCoords;
+    sprites[SLINGSHOT][Slingshot::ANGLE4] =spriteCoords;
 
+    spriteCoords = new pair<GLfloat,GLfloat>[4];
+    spriteCoords[0]=make_pair(,); spriteCoords[1]=make_pair(,); spriteCoords[2]=make_pair(,); spriteCoords[3]=make_pair(,);
+    sprites[SLINGSHOT][Slingshot::ANGLE5] =spriteCoords;
+
+    if(textures[PIG] == NULL || textures[BIRD] == NULL || textures[PLATFORM] == NULL || textures[SLINGSHOT] == NULL){
+        cout<<"Error al cargar alguna imagen."<<endl;
+        return false;
+    }else{
+        return true;
+    }
 }
 
-GLuint System::loadTexture(string filenameString)
+System::System(){
+    if(loadMedia()){
+        //Podriamos generar una pos. inicial aleatoria
+        pair<GLfloat,GLfloat>
+        pig = new Pig(0.f,0.f,0.f,374.f-294.34f,129.3f,PIG,textures[PIG],Pig::NORMAL);
+        slingshot = new Slingshot();
+    }
+}
+
+void System::loadTexture(string filenameString, GLuint* tempTextureID)
 {
     GLenum minificationFilter = GL_LINEAR;
     GLenum magnificationFilter = GL_LINEAR;
@@ -140,10 +157,9 @@ GLuint System::loadTexture(string filenameString)
     if (format == -1)
     {
         cout << "Could not find image: " << filenameString << " - Aborting." << endl;
-        exit(-1);
+        tempTextureID = NULL;
     }
-
-    if (format == FIF_UNKNOWN)
+    else if (format == FIF_UNKNOWN)
     {
         cout << "Couldn't determine file format - attempting to get from file extension..." << endl;
 
@@ -152,81 +168,80 @@ GLuint System::loadTexture(string filenameString)
         if ( !FreeImage_FIFSupportsReading(format) )
         {
             cout << "Detected image format cannot be read!" << endl;
-            exit(-1);
+            tempTextureID = NULL;
         }
-    }
+    }else{
+        FIBITMAP* bitmap = FreeImage_Load(format, filename);
 
-    FIBITMAP* bitmap = FreeImage_Load(format, filename);
+        int bitsPerPixel =  FreeImage_GetBPP(bitmap);
 
-    int bitsPerPixel =  FreeImage_GetBPP(bitmap);
-
-    FIBITMAP* bitmap32;
-    if (bitsPerPixel == 32)
-    {
-        cout << "Source image has " << bitsPerPixel << " bits per pixel. Skipping conversion." << endl;
-        bitmap32 = bitmap;
-    }
-    else
-    {
-        cout << "Source image has " << bitsPerPixel << " bits per pixel. Converting to 32-bit colour." << endl;
-        bitmap32 = FreeImage_ConvertTo32Bits(bitmap);
-    }
-
-    int imageWidth  = FreeImage_GetWidth(bitmap32);
-    int imageHeight = FreeImage_GetHeight(bitmap32);
-    cout << "Image: " << filenameString << " is size: " << imageWidth << "x" << imageHeight << "." << endl;
-
-    GLubyte* textureData = FreeImage_GetBits(bitmap32);
-
-    GLuint tempTextureID;
-    glGenTextures(1, &tempTextureID);
-    glBindTexture(GL_TEXTURE_2D, tempTextureID);
-
-    glTexImage2D(GL_TEXTURE_2D,    // Type of texture
-                 0,                // Mipmap level (0 being the top level i.e. full size)
-                 GL_RGBA,          // Internal format
-                 imageWidth,       // Width of the texture
-                 imageHeight,      // Height of the texture,
-                 0,                // Border in pixels
-                 GL_BGRA,          // Data format
-                 GL_UNSIGNED_BYTE, // Type of texture data
-                 textureData);     // The image data to use for this texture
-
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, minificationFilter);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, magnificationFilter);
-
-    GLenum glError = glGetError();
-    if(glError)
-    {
-        cout << "There was an error loading the texture: "<< filenameString << endl;
-
-        switch (glError)
+        FIBITMAP* bitmap32;
+        if (bitsPerPixel == 32)
         {
-            case GL_INVALID_ENUM:
-                cout << "Invalid enum." << endl;
-                break;
-
-            case GL_INVALID_VALUE:
-                cout << "Invalid value." << endl;
-                break;
-
-            case GL_INVALID_OPERATION:
-                cout << "Invalid operation." << endl;
-
-            default:
-                cout << "Unrecognised GLenum." << endl;
-                break;
+            //cout << "Source image has " << bitsPerPixel << " bits per pixel. Skipping conversion." << endl;
+            bitmap32 = bitmap;
+        }
+        else
+        {
+            //cout << "Source image has " << bitsPerPixel << " bits per pixel. Converting to 32-bit colour." << endl;
+            bitmap32 = FreeImage_ConvertTo32Bits(bitmap);
         }
 
-        cout << "See https://www.opengl.org/sdk/docs/man/html/glTexImage2D.xhtml for further details." << endl;
+        int imageWidth  = FreeImage_GetWidth(bitmap32);
+        int imageHeight = FreeImage_GetHeight(bitmap32);
+        //cout << "Image: " << filenameString << " is size: " << imageWidth << "x" << imageHeight << "." << endl;
+
+        GLubyte* textureData = FreeImage_GetBits(bitmap32);
+
+    //    GLuint tempTextureID;
+        glGenTextures(1, tempTextureID);
+        glBindTexture(GL_TEXTURE_2D, *tempTextureID);
+
+        glTexImage2D(GL_TEXTURE_2D,    // Type of texture
+                     0,                // Mipmap level (0 being the top level i.e. full size)
+                     GL_RGBA,          // Internal format
+                     imageWidth,       // Width of the texture
+                     imageHeight,      // Height of the texture,
+                     0,                // Border in pixels
+                     GL_BGRA,          // Data format
+                     GL_UNSIGNED_BYTE, // Type of texture data
+                     textureData);     // The image data to use for this texture
+
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, minificationFilter);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, magnificationFilter);
+
+        GLenum glError = glGetError();
+        if(glError)
+        {
+            tempTextureID = NULL;
+            cout << "There was an error loading the texture: "<< filenameString << endl;
+            switch (glError)
+            {
+                case GL_INVALID_ENUM:
+                    cout << "Invalid enum." << endl;
+                    break;
+
+                case GL_INVALID_VALUE:
+                    cout << "Invalid value." << endl;
+                    break;
+
+                case GL_INVALID_OPERATION:
+                    cout << "Invalid operation." << endl;
+
+                default:
+                    cout << "Unrecognised GLenum." << endl;
+                    break;
+            }
+            cout << "See https://www.opengl.org/sdk/docs/man/html/glTexImage2D.xhtml for further details." << endl;
+        }
+        else
+        {
+            FreeImage_Unload(bitmap32);
+
+            if (bitsPerPixel != 32)
+            {
+                FreeImage_Unload(bitmap);
+            }
+        }
     }
-
-    FreeImage_Unload(bitmap32);
-
-    if (bitsPerPixel != 32)
-    {
-        FreeImage_Unload(bitmap);
-    }
-
-    return tempTextureID;
 }

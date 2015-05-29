@@ -11,6 +11,7 @@ class Pig: public Sprite{
             DAMAGED2,
             DEAD
         };
+        Pig(GLfloat,GLfloat,GLfloat,GLfloat,GLfloat,int,GLuint,int);
 };
 
 

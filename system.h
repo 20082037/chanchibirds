@@ -7,7 +7,7 @@ enum TAG{//Each tag has its only spritesheet and states
     PIG,
     BIRD,
     PLATFORM,
-    SLINGSHOT
+    SLINGSHOT,
 };
 
 class System{
@@ -20,14 +20,15 @@ class System{
         SDL_GLContext glcontext;
 
 
-
+        //Game components
         list<Platform> platforms;
         list<Bird> birds;
-        Slingshot slingshot;
-        Pig pig;
-        Background background;
+        Slingshot* slingshot;
+        Pig* pig;
+        Background* background;
 
-        map<int,GLuint> textures;
+
+        map<int,GLuint*> textures;
         //map<TAG,TEXTUREID>
 
         map<int,map<int,pair<GLfloat,GLfloat>* > > sprites;
@@ -39,7 +40,7 @@ class System{
     private:
         bool setup();
         bool setupGL();
-        bool loadMedia();
+        void loadMedia();
         GLuint loadTexture(string filenameString);
 };
 
