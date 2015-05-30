@@ -1,7 +1,3 @@
-#include <iostream>
-#include <SDL2/SDL.h>
-#include <GL/gl.h>
-#include <FreeImage.h>
 #include "system.h"
 #include "bird.h"
 #include "pig.h"
@@ -75,58 +71,46 @@ bool System::loadMedia(){
     loadTexture("",textures[PLATFORM]);
     loadTexture("",textures[SLINGSHOT]);
 
-    pair<GLfloat,GLfloat>* spriteCoords;
+    SpriteCoords sCoords;
 
-    spriteCoords = new pair<GLfloat,GLfloat>[4];
-    spriteCoords[0]=make_pair(0.f,1.f); spriteCoords[1]=make_pair(0.f,294.34f/374.f); spriteCoords[2]=make_pair(129.3f/388.f,294.34f/374.f); spriteCoords[3]=make_pair(129.3f/388.f,1.f);
-    sprites[PIG][Pig::NORMAL] =spriteCoords;
+    sCoords.c1=make_pair(0.f,1.f); sCoords.c2=make_pair(0.f,294.34f/374.f); 
+    sprites[PIG][Pig::NORMAL] =sCoords;
 
-    spriteCoords = new pair<GLfloat,GLfloat>[4];
-    spriteCoords[0]=make_pair(,); spriteCoords[1]=make_pair(,); spriteCoords[2]=make_pair(,); spriteCoords[3]=make_pair(,);
-    sprites[PIG][Pig::DAMAGED1] =spriteCoords;
+    sCoords.c1=make_pair(,); sCoords.c2=make_pair(,); 
+    sprites[PIG][Pig::DAMAGED1] =sCoords;
 
-    spriteCoords = new pair<GLfloat,GLfloat>[4];
-    spriteCoords[0]=make_pair(,); spriteCoords[1]=make_pair(,); spriteCoords[2]=make_pair(,); spriteCoords[3]=make_pair(,);
-    sprites[PIG][Pig::DAMAGED2] =spriteCoords;
+    sCoords.c1=make_pair(,); sCoords.c2=make_pair(,); 
+    sprites[PIG][Pig::DAMAGED2] =sCoords;
 
-    spriteCoords = new pair<GLfloat,GLfloat>[4];
-    spriteCoords[0]=make_pair(,); spriteCoords[1]=make_pair(,); spriteCoords[2]=make_pair(,); spriteCoords[3]=make_pair(,);
-    sprites[PIG][Pig::DEAD] =spriteCoords;
+    sCoords.c1=make_pair(,); sCoords.c2=make_pair(,); 
+    sprites[PIG][Pig::DEAD] =sCoords;
 
 
-    spriteCoords = new pair<GLfloat,GLfloat>[4];
-    spriteCoords[0]=make_pair(,); spriteCoords[1]=make_pair(,); spriteCoords[2]=make_pair(,); spriteCoords[3]=make_pair(,);
-    sprites[BIRD][Bird::NORMAL] =spriteCoords;
+    sCoords.c1=make_pair(,); sCoords.c2=make_pair(,); 
+    sprites[BIRD][Bird::NORMAL] =sCoords;
 
-    spriteCoords = new pair<GLfloat,GLfloat>[4];
-    spriteCoords[0]=make_pair(,); spriteCoords[1]=make_pair(,); spriteCoords[2]=make_pair(,); spriteCoords[3]=make_pair(,);
-    sprites[BIRD][Bird::HIT] =spriteCoords;
+    sCoords.c1=make_pair(,); sCoords.c2=make_pair(,); 
+    sprites[BIRD][Bird::HIT] =sCoords;
 
 
-    spriteCoords = new pair<GLfloat,GLfloat>[4];
-    spriteCoords[0]=make_pair(,); spriteCoords[1]=make_pair(,); spriteCoords[2]=make_pair(,); spriteCoords[3]=make_pair(,);
-    sprites[PLATFORM][Platform::NORMAL] =spriteCoords;
+    sCoords.c1=make_pair(,); sCoords.c2=make_pair(,); 
+    sprites[PLATFORM][Platform::NORMAL] =sCoords;
 
 
-    spriteCoords = new pair<GLfloat,GLfloat>[4];
-    spriteCoords[0]=make_pair(,); spriteCoords[1]=make_pair(,); spriteCoords[2]=make_pair(,); spriteCoords[3]=make_pair(,);
-    sprites[SLINGSHOT][Slingshot::ANGLE1] =spriteCoords;
+    sCoords.c1=make_pair(,); sCoords.c2=make_pair(,); 
+    sprites[SLINGSHOT][Slingshot::ANGLE1] =sCoords;
 
-    spriteCoords = new pair<GLfloat,GLfloat>[4];
-    spriteCoords[0]=make_pair(,); spriteCoords[1]=make_pair(,); spriteCoords[2]=make_pair(,); spriteCoords[3]=make_pair(,);
-    sprites[SLINGSHOT][Slingshot::ANGLE2] =spriteCoords;
+    sCoords.c1=make_pair(,); sCoords.c2=make_pair(,); 
+    sprites[SLINGSHOT][Slingshot::ANGLE2] =sCoords;
 
-    spriteCoords = new pair<GLfloat,GLfloat>[4];
-    spriteCoords[0]=make_pair(,); spriteCoords[1]=make_pair(,); spriteCoords[2]=make_pair(,); spriteCoords[3]=make_pair(,);
-    sprites[SLINGSHOT][Slingshot::ANGLE3] =spriteCoords;
+    sCoords.c1=make_pair(,); sCoords.c2=make_pair(,); 
+    sprites[SLINGSHOT][Slingshot::ANGLE3] =sCoords;
 
-    spriteCoords = new pair<GLfloat,GLfloat>[4];
-    spriteCoords[0]=make_pair(,); spriteCoords[1]=make_pair(,); spriteCoords[2]=make_pair(,); spriteCoords[3]=make_pair(,);
-    sprites[SLINGSHOT][Slingshot::ANGLE4] =spriteCoords;
+    sCoords.c1=make_pair(,); sCoords.c2=make_pair(,); 
+    sprites[SLINGSHOT][Slingshot::ANGLE4] =sCoords;
 
-    spriteCoords = new pair<GLfloat,GLfloat>[4];
-    spriteCoords[0]=make_pair(,); spriteCoords[1]=make_pair(,); spriteCoords[2]=make_pair(,); spriteCoords[3]=make_pair(,);
-    sprites[SLINGSHOT][Slingshot::ANGLE5] =spriteCoords;
+    sCoords.c1=make_pair(,); sCoords.c2=make_pair(,); 
+    sprites[SLINGSHOT][Slingshot::ANGLE5] =sCoords;
 
     if(textures[PIG] == NULL || textures[BIRD] == NULL || textures[PLATFORM] == NULL || textures[SLINGSHOT] == NULL){
         cout<<"Error al cargar alguna imagen."<<endl;
@@ -178,22 +162,18 @@ void System::loadTexture(string filenameString, GLuint* tempTextureID)
         FIBITMAP* bitmap32;
         if (bitsPerPixel == 32)
         {
-            //cout << "Source image has " << bitsPerPixel << " bits per pixel. Skipping conversion." << endl;
             bitmap32 = bitmap;
         }
         else
         {
-            //cout << "Source image has " << bitsPerPixel << " bits per pixel. Converting to 32-bit colour." << endl;
             bitmap32 = FreeImage_ConvertTo32Bits(bitmap);
         }
 
         int imageWidth  = FreeImage_GetWidth(bitmap32);
         int imageHeight = FreeImage_GetHeight(bitmap32);
-        //cout << "Image: " << filenameString << " is size: " << imageWidth << "x" << imageHeight << "." << endl;
 
         GLubyte* textureData = FreeImage_GetBits(bitmap32);
 
-    //    GLuint tempTextureID;
         glGenTextures(1, tempTextureID);
         glBindTexture(GL_TEXTURE_2D, *tempTextureID);
 
@@ -232,7 +212,6 @@ void System::loadTexture(string filenameString, GLuint* tempTextureID)
                     cout << "Unrecognised GLenum." << endl;
                     break;
             }
-            cout << "See https://www.opengl.org/sdk/docs/man/html/glTexImage2D.xhtml for further details." << endl;
         }
         else
         {
