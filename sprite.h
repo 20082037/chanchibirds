@@ -10,7 +10,7 @@ class Sprite{
         //They, as well, will be modified and have to get values from some external parameters
 
         //Events, power states?
-        GLint textureID;
+        GLuint textureID;
         SpriteCoordinates sprites*;
         int state;//By now, it can mean the health
 
@@ -25,6 +25,8 @@ class Sprite{
 
         virtual void draw() = 0;
         //A function to get the values changed by some Box2d function?
+        //Every character will draw itself with its own fields, it's not likely they will need extra parameters
+
     private:
 };
 

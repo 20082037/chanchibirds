@@ -73,43 +73,43 @@ bool System::loadMedia(){
 
     SpriteCoords sCoords;
 
-    sCoords.c1=make_pair(0.f,1.f); sCoords.c2=make_pair(0.f,294.34f/374.f); 
+    sCoords.c1=make_pair(0.f,1.f); sCoords.c2=make_pair(0.f,294.34f/374.f);
     sprites[PIG][Pig::NORMAL] =sCoords;
 
-    sCoords.c1=make_pair(,); sCoords.c2=make_pair(,); 
+    sCoords.c1=make_pair(,); sCoords.c2=make_pair(,);
     sprites[PIG][Pig::DAMAGED1] =sCoords;
 
-    sCoords.c1=make_pair(,); sCoords.c2=make_pair(,); 
+    sCoords.c1=make_pair(,); sCoords.c2=make_pair(,);
     sprites[PIG][Pig::DAMAGED2] =sCoords;
 
-    sCoords.c1=make_pair(,); sCoords.c2=make_pair(,); 
+    sCoords.c1=make_pair(,); sCoords.c2=make_pair(,);
     sprites[PIG][Pig::DEAD] =sCoords;
 
 
-    sCoords.c1=make_pair(,); sCoords.c2=make_pair(,); 
+    sCoords.c1=make_pair(,); sCoords.c2=make_pair(,);
     sprites[BIRD][Bird::NORMAL] =sCoords;
 
-    sCoords.c1=make_pair(,); sCoords.c2=make_pair(,); 
+    sCoords.c1=make_pair(,); sCoords.c2=make_pair(,);
     sprites[BIRD][Bird::HIT] =sCoords;
 
 
-    sCoords.c1=make_pair(,); sCoords.c2=make_pair(,); 
+    sCoords.c1=make_pair(,); sCoords.c2=make_pair(,);
     sprites[PLATFORM][Platform::NORMAL] =sCoords;
 
 
-    sCoords.c1=make_pair(,); sCoords.c2=make_pair(,); 
+    sCoords.c1=make_pair(,); sCoords.c2=make_pair(,);
     sprites[SLINGSHOT][Slingshot::ANGLE1] =sCoords;
 
-    sCoords.c1=make_pair(,); sCoords.c2=make_pair(,); 
+    sCoords.c1=make_pair(,); sCoords.c2=make_pair(,);
     sprites[SLINGSHOT][Slingshot::ANGLE2] =sCoords;
 
-    sCoords.c1=make_pair(,); sCoords.c2=make_pair(,); 
+    sCoords.c1=make_pair(,); sCoords.c2=make_pair(,);
     sprites[SLINGSHOT][Slingshot::ANGLE3] =sCoords;
 
-    sCoords.c1=make_pair(,); sCoords.c2=make_pair(,); 
+    sCoords.c1=make_pair(,); sCoords.c2=make_pair(,);
     sprites[SLINGSHOT][Slingshot::ANGLE4] =sCoords;
 
-    sCoords.c1=make_pair(,); sCoords.c2=make_pair(,); 
+    sCoords.c1=make_pair(,); sCoords.c2=make_pair(,);
     sprites[SLINGSHOT][Slingshot::ANGLE5] =sCoords;
 
     if(textures[PIG] == NULL || textures[BIRD] == NULL || textures[PLATFORM] == NULL || textures[SLINGSHOT] == NULL){
@@ -124,8 +124,9 @@ System::System(){
     if(loadMedia()){
         //Podriamos generar una pos. inicial aleatoria
         pair<GLfloat,GLfloat>
-        pig = new Pig(0.f,0.f,0.f,374.f-294.34f,129.3f,PIG,textures[PIG],Pig::NORMAL);
+        pig = new Pig(0.f,0.f,0.f,374.f-294.34f,129.3f,textures[PIG],sprites[PIG]]);
         slingshot = new Slingshot();
+
     }
 }
 

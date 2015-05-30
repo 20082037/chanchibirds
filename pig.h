@@ -9,9 +9,9 @@ class Pig: public Sprite{
             NORMAL,
             DAMAGED1,
             DAMAGED2,
-            DEAD 
+            DEAD
         };
-        Pig(GLfloat,GLfloat,GLfloat,GLfloat,GLfloat,int,GLuint,int);
+        Pig(GLfloat xi,GLfloat yi,GLfloat zi,GLuint texID,SpriteCoords* sCoords);
 };
 
 
