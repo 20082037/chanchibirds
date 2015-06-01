@@ -17,13 +17,13 @@ class Sprite{
         //Coordinates
         GLfloat x;
         GLfloat y;
-        GLfloat z;
+        GLfloat layer;
 
         //Dimensions
         GLfloat width;
         GLfloat height;
 
-        virtual void draw() = 0;
+        void draw();
         //A function to get the values changed by some Box2d function?
         //Every character will draw itself with its own fields, it's not likely they will need extra parameters
 

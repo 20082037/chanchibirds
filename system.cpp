@@ -3,7 +3,15 @@
 #include "pig.h"
 #include "platform.h"
 #include "slingshot.h"
+#define traverse(c,it) for( typeof(c.begin()) it = c.begin(); it!=c.end(); it++)
 
+void System::initGame(){
+    if(setup()){
+        if(loadMedia()){
+
+        }
+    }
+}
 
 bool System::setup(){
 
@@ -33,7 +41,6 @@ bool System::setup(){
     }
     return success;
 }
-
 
 bool System::setupGL(){
 
@@ -120,15 +127,6 @@ bool System::loadMedia(){
     }
 }
 
-System::System(){
-    if(loadMedia()){
-        //Podriamos generar una pos. inicial aleatoria
-        pair<GLfloat,GLfloat>
-        pig = new Pig(0.f,0.f,0.f,374.f-294.34f,129.3f,textures[PIG],sprites[PIG]]);
-        slingshot = new Slingshot();
-
-    }
-}
 
 void System::loadTexture(string filenameString, GLuint* tempTextureID)
 {
@@ -222,6 +220,15 @@ void System::loadTexture(string filenameString, GLuint* tempTextureID)
             {
                 FreeImage_Unload(bitmap);
             }
+        }
+    }
+}
+
+
+void System::renderGlobal{
+    traverse(canvas,sPair){
+        traverse(sPair->second,sprite){
+            sprite->draw();
         }
     }
 }

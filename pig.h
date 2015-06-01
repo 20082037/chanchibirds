@@ -11,6 +11,9 @@ class Pig: public Sprite{
             DAMAGED2,
             DEAD
         };
+        void jump();
+        void slideLeft();
+        void slideRight();
         Pig(GLfloat xi,GLfloat yi,GLfloat zi,GLuint texID,SpriteCoords* sCoords);
 };
 

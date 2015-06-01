@@ -8,6 +8,9 @@ class Platform: public Sprite{
         enum STATE{
             NORMAL,
         }
+        bool direction;
+        float speed;
+
 
 };
 
