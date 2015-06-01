@@ -14,7 +14,6 @@ void System::initGame(){
 }
 
 bool System::setup(){
-
     bool success=true;
 
     if(SDL_Init(SDL_INIT_VIDEO)>=0){
@@ -43,7 +42,6 @@ bool System::setup(){
 }
 
 bool System::setupGL(){
-
     GLenum error=GL_NO_ERROR;
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
@@ -63,16 +61,11 @@ bool System::setupGL(){
 
 void System::setdown(){
     SDL_DestroyWindow(window);
-    w=NULL;
+    window=NULL;
     SDL_Quit();
 }
 
 bool System::loadMedia(){
-//    map<int,GLuint> textures;
-    //map<TAG,TEXTUREID>
-
-//    map<int,map<int,pair<GLfloat,GLfloat>* > > sprites;
-    //map<TAG,map<STATE,COORDENADAS<GLfloat,GLfloat>* > >
     loadTexture("images/normalPig.png",textures[PIG]);
     loadTexture("images/redBird.png",textures[BIRD]);
     loadTexture("",textures[PLATFORM]);
@@ -80,44 +73,21 @@ bool System::loadMedia(){
 
     SpriteCoords sCoords;
 
-    sCoords.c1=make_pair(0.f,1.f); sCoords.c2=make_pair(0.f,294.34f/374.f);
-    sprites[PIG][Pig::NORMAL] =sCoords;
+    sCoords.c1=make_pair(0.f,1.f); sCoords.c2=make_pair(0.f,294.34f/374.f); sprites[PIG][Pig::NORMAL] =sCoords;
+    sCoords.c1=make_pair(,); sCoords.c2=make_pair(,); sprites[PIG][Pig::DAMAGED1] =sCoords;
+    sCoords.c1=make_pair(,); sCoords.c2=make_pair(,); sprites[PIG][Pig::DAMAGED2] =sCoords;
+    sCoords.c1=make_pair(,); sCoords.c2=make_pair(,); sprites[PIG][Pig::DEAD] =sCoords;
 
-    sCoords.c1=make_pair(,); sCoords.c2=make_pair(,);
-    sprites[PIG][Pig::DAMAGED1] =sCoords;
+    sCoords.c1=make_pair(,); sCoords.c2=make_pair(,); sprites[BIRD][Bird::NORMAL] =sCoords;
+    sCoords.c1=make_pair(,); sCoords.c2=make_pair(,); sprites[BIRD][Bird::HIT] =sCoords;
 
-    sCoords.c1=make_pair(,); sCoords.c2=make_pair(,);
-    sprites[PIG][Pig::DAMAGED2] =sCoords;
+    sCoords.c1=make_pair(,); sCoords.c2=make_pair(,); sprites[PLATFORM][Platform::NORMAL] =sCoords;
 
-    sCoords.c1=make_pair(,); sCoords.c2=make_pair(,);
-    sprites[PIG][Pig::DEAD] =sCoords;
-
-
-    sCoords.c1=make_pair(,); sCoords.c2=make_pair(,);
-    sprites[BIRD][Bird::NORMAL] =sCoords;
-
-    sCoords.c1=make_pair(,); sCoords.c2=make_pair(,);
-    sprites[BIRD][Bird::HIT] =sCoords;
-
-
-    sCoords.c1=make_pair(,); sCoords.c2=make_pair(,);
-    sprites[PLATFORM][Platform::NORMAL] =sCoords;
-
-
-    sCoords.c1=make_pair(,); sCoords.c2=make_pair(,);
-    sprites[SLINGSHOT][Slingshot::ANGLE1] =sCoords;
-
-    sCoords.c1=make_pair(,); sCoords.c2=make_pair(,);
-    sprites[SLINGSHOT][Slingshot::ANGLE2] =sCoords;
-
-    sCoords.c1=make_pair(,); sCoords.c2=make_pair(,);
-    sprites[SLINGSHOT][Slingshot::ANGLE3] =sCoords;
-
-    sCoords.c1=make_pair(,); sCoords.c2=make_pair(,);
-    sprites[SLINGSHOT][Slingshot::ANGLE4] =sCoords;
-
-    sCoords.c1=make_pair(,); sCoords.c2=make_pair(,);
-    sprites[SLINGSHOT][Slingshot::ANGLE5] =sCoords;
+    sCoords.c1=make_pair(,); sCoords.c2=make_pair(,); sprites[SLINGSHOT][Slingshot::ANGLE1] =sCoords;
+    sCoords.c1=make_pair(,); sCoords.c2=make_pair(,); sprites[SLINGSHOT][Slingshot::ANGLE2] =sCoords;
+    sCoords.c1=make_pair(,); sCoords.c2=make_pair(,); sprites[SLINGSHOT][Slingshot::ANGLE3] =sCoords;
+    sCoords.c1=make_pair(,); sCoords.c2=make_pair(,); sprites[SLINGSHOT][Slingshot::ANGLE4] =sCoords;
+    sCoords.c1=make_pair(,); sCoords.c2=make_pair(,); sprites[SLINGSHOT][Slingshot::ANGLE5] =sCoords;
 
     if(textures[PIG] == NULL || textures[BIRD] == NULL || textures[PLATFORM] == NULL || textures[SLINGSHOT] == NULL){
         cout<<"Error al cargar alguna imagen."<<endl;
@@ -137,45 +107,36 @@ void System::loadTexture(string filenameString, GLuint* tempTextureID)
 
     FREE_IMAGE_FORMAT format = FreeImage_GetFileType(filename , 0);
 
-    if (format == -1)
-    {
+    if (format == -1){
         cout << "Could not find image: " << filenameString << " - Aborting." << endl;
         tempTextureID = NULL;
     }
-    else if (format == FIF_UNKNOWN)
-    {
+    else if (format == FIF_UNKNOWN){
         cout << "Couldn't determine file format - attempting to get from file extension..." << endl;
-
         format = FreeImage_GetFIFFromFilename(filename);
 
-        if ( !FreeImage_FIFSupportsReading(format) )
-        {
+        if ( !FreeImage_FIFSupportsReading(format) ){
             cout << "Detected image format cannot be read!" << endl;
             tempTextureID = NULL;
         }
     }else{
         FIBITMAP* bitmap = FreeImage_Load(format, filename);
-
         int bitsPerPixel =  FreeImage_GetBPP(bitmap);
-
         FIBITMAP* bitmap32;
-        if (bitsPerPixel == 32)
-        {
+
+        if (bitsPerPixel == 32){
             bitmap32 = bitmap;
         }
-        else
-        {
+        else{
             bitmap32 = FreeImage_ConvertTo32Bits(bitmap);
         }
 
         int imageWidth  = FreeImage_GetWidth(bitmap32);
         int imageHeight = FreeImage_GetHeight(bitmap32);
-
         GLubyte* textureData = FreeImage_GetBits(bitmap32);
 
         glGenTextures(1, tempTextureID);
         glBindTexture(GL_TEXTURE_2D, *tempTextureID);
-
         glTexImage2D(GL_TEXTURE_2D,    // Type of texture
                      0,                // Mipmap level (0 being the top level i.e. full size)
                      GL_RGBA,          // Internal format
@@ -190,34 +151,27 @@ void System::loadTexture(string filenameString, GLuint* tempTextureID)
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, magnificationFilter);
 
         GLenum glError = glGetError();
-        if(glError)
-        {
+        if(glError){
             tempTextureID = NULL;
             cout << "There was an error loading the texture: "<< filenameString << endl;
-            switch (glError)
-            {
+            switch (glError){
                 case GL_INVALID_ENUM:
                     cout << "Invalid enum." << endl;
                     break;
-
                 case GL_INVALID_VALUE:
                     cout << "Invalid value." << endl;
                     break;
-
                 case GL_INVALID_OPERATION:
                     cout << "Invalid operation." << endl;
-
                 default:
                     cout << "Unrecognised GLenum." << endl;
                     break;
             }
         }
-        else
-        {
+        else{
             FreeImage_Unload(bitmap32);
 
-            if (bitsPerPixel != 32)
-            {
+            if (bitsPerPixel != 32){
                 FreeImage_Unload(bitmap);
             }
         }
