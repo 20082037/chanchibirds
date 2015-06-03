@@ -39,7 +39,10 @@
 			<Add option="-lGLU" />
 			<Add library="/home/jdiazc/Documents/Box2D_v2.3.0/Box2D/Build/Box2D/libBox2D.a" />
 		</Linker>
+		<Unit filename="animateSprite.h" />
+		<Unit filename="background.h" />
 		<Unit filename="bird.h" />
+		<Unit filename="inanimateSprite.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="pig.h" />
 		<Unit filename="platform.h" />

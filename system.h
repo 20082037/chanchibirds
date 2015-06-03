@@ -7,12 +7,6 @@
 #include <FreeImage.h>
 #include <map>
 
-enum TAG{//Each tag has its only spritesheet and states
-    PIG,
-    BIRD,
-    PLATFORM,
-    SLINGSHOT,
-};
 
 typedef struct SpriteCoords{
     pair<GLfloat,GLfloat> c1;
@@ -21,13 +15,21 @@ typedef struct SpriteCoords{
 
 
 class System{
+
+    enum TAG{//Each tag has its only spritesheet and states
+        PIG,
+        BIRD,
+        PLATFORM,
+        SLINGSHOT,
+        NUM_TAGS
+    };
+
     public:
         //Window components
         SDL_Window *window;
         const int WINDOW_WIDHT=1300;
         const int WINDOW_HEIGHT=700;
         SDL_GLContext glcontext;
-
 
         //Game components
         list<Platform*> platforms;

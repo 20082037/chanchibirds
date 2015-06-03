@@ -1,7 +1,9 @@
 #ifndef SLINGSHOT_H_INCLUDED
 #define SLINGSHOT_H_INCLUDED
 
-class Slingshot: public Sprite{
+#include "animateSprite.h"
+#include "bird.h"
+class Slingshot: public AnimateSprite{
     public:
         enum STATE{
             ANGLE1,
@@ -9,7 +11,10 @@ class Slingshot: public Sprite{
             ANGLE3,
             ANGLE4,
             ANGLE5,
+            NUM_STATES
         }
+        list<Bird*> birds;
+        void throwBird();
 
 
 };

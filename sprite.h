@@ -11,7 +11,7 @@ class Sprite{
 
         //Events, power states?
         GLuint textureID;
-        SpriteCoordinates sprites*;
+//        SpriteCoordinates sprites*; Pig is a sprite having an animation.
         int state;//By now, it can mean the health
 
         //Coordinates

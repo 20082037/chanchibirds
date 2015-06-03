@@ -1,14 +1,15 @@
 #ifndef BIRD_H_INCLUDED
 #define BIRD_H_INCLUDED
 
-#include "sprite.h"
+#include "animateSprite.h"
 
-class Bird: public Sprite{
+class Bird: public AnimateSprite{
     public:
         enum STATE{
             NORMAL,
-            HIT
+            NUM_STATES
         };
+        void fly();//missing parameters
 
 };
 

@@ -1,9 +1,9 @@
 #ifndef BACKGROUND_H_INCLUDED
 #define BACKGROUND_H_INCLUDED
 
-#include "sprite.h"
+#include "inanimateSprite.h"
 
-class Background: public Sprite{
+class Background: public InanimateSprite{
     enum STATE{
         NORMAL
     }

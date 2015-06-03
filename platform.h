@@ -3,7 +3,7 @@
 
 #include "sprite.h"
 
-class Platform: public Sprite{
+class Platform: public InanimateSprite{
     public:
         enum STATE{
             NORMAL,

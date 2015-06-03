@@ -1,15 +1,15 @@
 #ifndef PIG_H_INCLUDED
 #define PIG_H_INCLUDED
 
-#include "sprite.h"
+#include "animateSprite.h"
 
-class Pig: public Sprite{
+class Pig: public AnimateSprite{
     public:
         enum STATE{
             NORMAL,
             DAMAGED1,
             DAMAGED2,
-            DEAD
+            NUM_STATES
         };
         void jump();
         void slideLeft();
