@@ -10,7 +10,9 @@ class Sprite{
         //They, as well, will be modified and have to get values from some external parameters
 
         //Events, power states?
-        GLuint textureID;
+//        GLuint textureID;
+
+
 //        SpriteCoordinates sprites*; Pig is a sprite having an animation.
         int state;//By now, it can mean the health
 

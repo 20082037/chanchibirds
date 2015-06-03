@@ -39,6 +39,7 @@
 			<Add option="-lGLU" />
 			<Add library="/home/jdiazc/Documents/Box2D_v2.3.0/Box2D/Build/Box2D/libBox2D.a" />
 		</Linker>
+		<Unit filename="aSpriteSheet.h" />
 		<Unit filename="animateSprite.h" />
 		<Unit filename="background.h" />
 		<Unit filename="bird.h" />
@@ -49,6 +50,7 @@
 		<Unit filename="slingshot.h" />
 		<Unit filename="sprite.cpp" />
 		<Unit filename="sprite.h" />
+		<Unit filename="spriteSheet.h" />
 		<Unit filename="system.cpp" />
 		<Unit filename="system.h" />
 		<Extensions>

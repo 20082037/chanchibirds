@@ -5,7 +5,7 @@
 
 class AnimateSprite: public Sprite{
     public:
-        SpriteCoords sprites**;//podríamos usar una lista enlazada
+        AnimateSpriteSheet* sprites;
 };
 
 #endif // ANIMATESPRITE_H_INCLUDED

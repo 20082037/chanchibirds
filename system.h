@@ -6,13 +6,29 @@
 #include <GL/gl.h>
 #include <FreeImage.h>
 #include <map>
-
+#include "aSpriteSheet.h"
 
 typedef struct SpriteCoords{
     pair<GLfloat,GLfloat> c1;
     pair<GLfloat,GLfloat> c2;
 };
 
+enum PIG_TAG{
+    NORMAL,
+    HELMET,
+    KING,
+    NUM_PIG_TAGS
+};
+enum BIRD_TAG{
+    YELLOW,
+    NUM_BIRD_TAGS
+};
+enum PLATFORM_TAG{
+    WOODEN,
+    ICE,
+    IRON
+};
+enum SLINGSHOT_TAG{};
 
 class System{
 
@@ -37,11 +53,12 @@ class System{
         Slingshot* slingshot;
         Pig* pig;
 
-
-        map<int,GLuint*> textures;
-        //map<TAG,TEXTUREID>
-        map<int,map<int,SpriteCoords> > sprites;
+//        map<int,map<int,GLuint*> > textures;//Estara incluido en los objetos SpriteSheet
+        //map<TAG,map<TAGTYPE,TEXTUREID> >
+        map<int,map<int,AnimateSpriteSheet> > aSprites;
+        map<int,map<int,InanimateSpriteSheet> > iPrites;
         //map<TAG,map<STATE,SpriteCoords> >
+
         map<GLfloat,list<Sprite*> > canvas;
 
         System();
@@ -55,7 +72,4 @@ class System{
         void renderGlobal();
         GLuint loadTexture(string filenameString);
 };
-
-
-
 #endif // SYSTEM_H_INCLUDED

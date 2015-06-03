@@ -3,6 +3,7 @@
 #include "pig.h"
 #include "platform.h"
 #include "slingshot.h"
+
 #define traverse(c,it) for( typeof(c.begin()) it = c.begin(); it!=c.end(); it++)
 
 void System::initGame(){
@@ -66,28 +67,40 @@ void System::setdown(){
 }
 
 bool System::loadMedia(){
-    loadTexture("images/normalPig.png",textures[PIG]);
-    loadTexture("images/redBird.png",textures[BIRD]);
-    loadTexture("",textures[PLATFORM]);
-    loadTexture("",textures[SLINGSHOT]);
+    enum PIG_TAG{
+        NORMAL,
+        HELMET,
+        KING,
+        NUM_PIG_TAGS
+    };
+    enum BIRD_TAG{
+        YELLOW,
+        NUM_BIRD_TAGS
+    };
+    enum PLATFORM_TAG{
+        WOODEN,
+        ICE,
+        IRON
+    };
+    enum SLINGSHOT_TAG{};
 
-    SpriteCoords sCoords;
+    enum TAG{//Each tag has its only spritesheet and states
+        PIG,
+        BIRD,
+        PLATFORM,
+        SLINGSHOT,
+        NUM_TAGS
+    };
+    map<int,map<int,AnimateSpriteSheet> > aSprites;
+    map<int,map<int,InanimateSpriteSheet> > iPrites;
 
-    sCoords.c1=make_pair(0.f,1.f); sCoords.c2=make_pair(0.f,294.34f/374.f); sprites[PIG][Pig::NORMAL] =sCoords;
-    sCoords.c1=make_pair(,); sCoords.c2=make_pair(,); sprites[PIG][Pig::DAMAGED1] =sCoords;
-    sCoords.c1=make_pair(,); sCoords.c2=make_pair(,); sprites[PIG][Pig::DAMAGED2] =sCoords;
-    sCoords.c1=make_pair(,); sCoords.c2=make_pair(,); sprites[PIG][Pig::DEAD] =sCoords;
+    aSprites[PIG][NORMAL] = AnimateSpriteSheet();
+    aSprites[PIG][NORMAL].loadTextureFromFile(string filenameString);
+    aSprites[PIG][HELMET] = AnimateSpriteSheet();
+    aSprites[PIG][KING] =  AnimateSpriteSheet();
 
-    sCoords.c1=make_pair(,); sCoords.c2=make_pair(,); sprites[BIRD][Bird::NORMAL] =sCoords;
-    sCoords.c1=make_pair(,); sCoords.c2=make_pair(,); sprites[BIRD][Bird::HIT] =sCoords;
 
-    sCoords.c1=make_pair(,); sCoords.c2=make_pair(,); sprites[PLATFORM][Platform::NORMAL] =sCoords;
 
-    sCoords.c1=make_pair(,); sCoords.c2=make_pair(,); sprites[SLINGSHOT][Slingshot::ANGLE1] =sCoords;
-    sCoords.c1=make_pair(,); sCoords.c2=make_pair(,); sprites[SLINGSHOT][Slingshot::ANGLE2] =sCoords;
-    sCoords.c1=make_pair(,); sCoords.c2=make_pair(,); sprites[SLINGSHOT][Slingshot::ANGLE3] =sCoords;
-    sCoords.c1=make_pair(,); sCoords.c2=make_pair(,); sprites[SLINGSHOT][Slingshot::ANGLE4] =sCoords;
-    sCoords.c1=make_pair(,); sCoords.c2=make_pair(,); sprites[SLINGSHOT][Slingshot::ANGLE5] =sCoords;
 
     if(textures[PIG] == NULL || textures[BIRD] == NULL || textures[PLATFORM] == NULL || textures[SLINGSHOT] == NULL){
         cout<<"Error al cargar alguna imagen."<<endl;
