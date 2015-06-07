@@ -2,6 +2,7 @@
 #define ANIMATESPRITE_H_INCLUDED
 
 #include "sprite.h"
+#include "aSpriteSheet.h"
 
 class AnimateSprite: public Sprite{
     public:
@@ -9,3 +10,4 @@ class AnimateSprite: public Sprite{
 };
 
 #endif // ANIMATESPRITE_H_INCLUDED
+

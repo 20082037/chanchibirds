@@ -9,10 +9,53 @@
 void System::initGame(){
     if(setup()){
         if(loadMedia()){
-
+            initSprites();
+            bool salir=false;
+            SDL_Event e;
+            while(!salir){
+                while(SDL_PollEvent(&e) != 0){
+                    if(e.type == SDL_QUIT){
+                        salir = true;
+                    }
+                }
+                renderGLobal();
+                SDL_GL_SwapWindow(w);
+            }
+            cerrar();
         }
     }
 }
+
+void System::initSprites(){
+    //Plataformas
+    int nPlatforms;
+    GLfloat x=0.f,y=350.f,z=50.f;//Valores iniciales:cambiar
+    for(int i=1;i<=nPlatforms;i++){
+        if(i%5==4){
+            x=75.f;
+            y-=65.f;
+        }else{
+            if(i%5==1){
+                x=0.f;
+                y-=65.f;
+            }else{
+                x+=200.f;
+            }
+        }
+        platforms.push_back(new Platform(x,y,z,&iSprites[PLATFORM][PLATFORM_STONE]));
+        canvas[z].push_back(platforms.end()-1);
+    }
+
+    //Pájaros
+    x=-200.f;y=-400.f;z=30.f;
+    birds.push_back(new Platform(x,y,z,&aSprites[BIRD][BIRD_YELLOW]);
+    canvas[z].push_back(platforms.end()-1);
+    //Chancho
+    x=0.f;y=0.f;z=15.f;
+    pig = new Pig(x,y,z,&aSprites[PIG][PIG_NORMAL]);
+    canvas[z].push_back(pig);
+}
+
 
 bool System::setup(){
     bool success=true;
@@ -46,12 +89,14 @@ bool System::setupGL(){
     GLenum error=GL_NO_ERROR;
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
-    glOrtho(-WINDOW_WIDHT/2,WINDOW_WIDHT/2,-WINDOW_HEIGHT/2,WINDOW_HEIGHT/2,-150,150);
+    glOrtho(-WINDOW_WIDTH/2,WINDOW_WIDTH/2,-WINDOW_HEIGHT/2,WINDOW_HEIGHT/2,-150,150);
 
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
 
     glClearColor(0.f,0.f,0.f,1.f);
+    glEnable(GL_TEXTURE_2D);
+
     if((error=glGetError())!=GL_NO_ERROR){
         cout<<"Error al inicializar OpenGL"<<endl;
         return false;
@@ -67,132 +112,41 @@ void System::setdown(){
 }
 
 bool System::loadMedia(){
-    enum PIG_TAG{
-        NORMAL,
-        HELMET,
-        KING,
-        NUM_PIG_TAGS
-    };
-    enum BIRD_TAG{
-        YELLOW,
-        NUM_BIRD_TAGS
-    };
-    enum PLATFORM_TAG{
-        WOODEN,
-        ICE,
-        IRON
-    };
-    enum SLINGSHOT_TAG{};
+    bool success= true;
+    ifstream spritesCoords("SpriteCoordinates.txt");
 
-    enum TAG{//Each tag has its only spritesheet and states
-        PIG,
-        BIRD,
-        PLATFORM,
-        SLINGSHOT,
-        NUM_TAGS
-    };
-    map<int,map<int,AnimateSpriteSheet> > aSprites;
-    map<int,map<int,InanimateSpriteSheet> > iPrites;
+    success = aSprites[PIG][NORMAL].loadTextureFromFile("images/normalPig.png");
+    success = aSprites[PIG][NORMAL].loadSpriteMap(spritesCoords,PIG,PIG_NORMAL);
 
-    aSprites[PIG][NORMAL] = AnimateSpriteSheet();
-    aSprites[PIG][NORMAL].loadTextureFromFile(string filenameString);
-    aSprites[PIG][HELMET] = AnimateSpriteSheet();
-    aSprites[PIG][KING] =  AnimateSpriteSheet();
+    success = aSprites[PIG][HELMET].loadTextureFromFile("images/pig_helmet.png");
+    success = aSprites[PIG][HELMET].loadSpriteMap(spritesCoords,PIG,PIG_HELMET);
 
+    success = aSprites[PIG][KING].loadTextureFromFile("images/pig_crown.png");
+    success = aSprites[PIG][KING].loadSpriteMap(spritesCoords,PIG,PIG_KING);
 
+    success = aSprites[BIRD][YELLOW].loadTextureFromFile("images/pajaro_amarillo.png");
+    success = aSprites[BIRD][YELLOW].loadSpriteMap(spritesCoords,BIRD,BIRD_YELLOW,)
 
+    success = aSprites[BIRD][RED].loadTextureFromFile("images/redBird.png");
+    success = aSprites[BIRD][RED].loadSpriteMap(spritesCoords,BIRD,BIRD_RED);
 
-    if(textures[PIG] == NULL || textures[BIRD] == NULL || textures[PLATFORM] == NULL || textures[SLINGSHOT] == NULL){
-        cout<<"Error al cargar alguna imagen."<<endl;
-        return false;
-    }else{
-        return true;
-    }
+    success = iSprites[PLATFORM][STONE].loadTextureFromFile("images/bloqueconcreto.png");
+    success = iSprites[PLATFORM][STONE].loadSpriteMap(spritesCoords,PLATFORM,PLATFORM_STONE);
+
+    spritesCoords.close();
+    return success;
 }
 
 
-void System::loadTexture(string filenameString, GLuint* tempTextureID)
-{
-    GLenum minificationFilter = GL_LINEAR;
-    GLenum magnificationFilter = GL_LINEAR;
-
-    const char* filename = filenameString.c_str();
-
-    FREE_IMAGE_FORMAT format = FreeImage_GetFileType(filename , 0);
-
-    if (format == -1){
-        cout << "Could not find image: " << filenameString << " - Aborting." << endl;
-        tempTextureID = NULL;
-    }
-    else if (format == FIF_UNKNOWN){
-        cout << "Couldn't determine file format - attempting to get from file extension..." << endl;
-        format = FreeImage_GetFIFFromFilename(filename);
-
-        if ( !FreeImage_FIFSupportsReading(format) ){
-            cout << "Detected image format cannot be read!" << endl;
-            tempTextureID = NULL;
-        }
-    }else{
-        FIBITMAP* bitmap = FreeImage_Load(format, filename);
-        int bitsPerPixel =  FreeImage_GetBPP(bitmap);
-        FIBITMAP* bitmap32;
-
-        if (bitsPerPixel == 32){
-            bitmap32 = bitmap;
-        }
-        else{
-            bitmap32 = FreeImage_ConvertTo32Bits(bitmap);
-        }
-
-        int imageWidth  = FreeImage_GetWidth(bitmap32);
-        int imageHeight = FreeImage_GetHeight(bitmap32);
-        GLubyte* textureData = FreeImage_GetBits(bitmap32);
-
-        glGenTextures(1, tempTextureID);
-        glBindTexture(GL_TEXTURE_2D, *tempTextureID);
-        glTexImage2D(GL_TEXTURE_2D,    // Type of texture
-                     0,                // Mipmap level (0 being the top level i.e. full size)
-                     GL_RGBA,          // Internal format
-                     imageWidth,       // Width of the texture
-                     imageHeight,      // Height of the texture,
-                     0,                // Border in pixels
-                     GL_BGRA,          // Data format
-                     GL_UNSIGNED_BYTE, // Type of texture data
-                     textureData);     // The image data to use for this texture
-
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, minificationFilter);
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, magnificationFilter);
-
-        GLenum glError = glGetError();
-        if(glError){
-            tempTextureID = NULL;
-            cout << "There was an error loading the texture: "<< filenameString << endl;
-            switch (glError){
-                case GL_INVALID_ENUM:
-                    cout << "Invalid enum." << endl;
-                    break;
-                case GL_INVALID_VALUE:
-                    cout << "Invalid value." << endl;
-                    break;
-                case GL_INVALID_OPERATION:
-                    cout << "Invalid operation." << endl;
-                default:
-                    cout << "Unrecognised GLenum." << endl;
-                    break;
-            }
-        }
-        else{
-            FreeImage_Unload(bitmap32);
-
-            if (bitsPerPixel != 32){
-                FreeImage_Unload(bitmap);
-            }
-        }
-    }
-}
 
 
 void System::renderGlobal{
+    glDepthFunc(GL_LEQUAL);
+    glEnable(GL_DEPTH_TEST);
+    glClearDepth(1.0);
+    glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);
+    glMatrixMode(GL_MODELVIEW);
+
     traverse(canvas,sPair){
         traverse(sPair->second,sprite){
             sprite->draw();

@@ -1,7 +1,7 @@
 #ifndef PLATFORM_H_INCLUDED
 #define PLATFORM_H_INCLUDED
 
-#include "sprite.h"
+#include "inanimateSprite.h"
 
 class Platform: public InanimateSprite{
     public:
@@ -10,7 +10,9 @@ class Platform: public InanimateSprite{
         }
         bool direction;
         float speed;
-
+        Platform(GLfloat,GLfloat,GLfloat,InanimateSpriteSheet*);
+        void draw();
+        //Provisional, se debería proveer direction y speed
 
 };
 

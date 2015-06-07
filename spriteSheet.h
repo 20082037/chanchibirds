@@ -1,11 +1,13 @@
 #ifndef SPRITESHEET_H_INCLUDED
 #define SPRITESHEET_H_INCLUDED
 
-#include <GL.h>
+#include <GL/gl.h>
 
 class SpriteSheet{
     public:
-        int numStates;//The number of animation frames can vary, but the number of states shouldnt.
+        // int numStates;//The number of animation frames can vary, but the number of states shouldnt.
+        int imageWidth;
+        int imageHeight;
         GLuint texID;
         bool loadTextureFromFile(string filenameString);
 

@@ -5,16 +5,15 @@
 
 class Pig: public AnimateSprite{
     public:
-        enum STATE{
-            NORMAL,
-            DAMAGED1,
-            DAMAGED2,
-            NUM_STATES
-        };
+        int currentAnim;
+
+
         void jump();
         void slideLeft();
         void slideRight();
-        Pig(GLfloat xi,GLfloat yi,GLfloat zi,GLuint texID,SpriteCoords* sCoords);
+        void animate();
+        Pig(GLfloat xi,GLfloat yi,GLfloat zi,AnimateSpriteSheet* sCoords);
+
 };
 
 

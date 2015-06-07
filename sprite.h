@@ -10,22 +10,20 @@ class Sprite{
         //They, as well, will be modified and have to get values from some external parameters
 
         //Events, power states?
-//        GLuint textureID;
 
 
-//        SpriteCoordinates sprites*; Pig is a sprite having an animation.
         int state;//By now, it can mean the health
 
         //Coordinates
         GLfloat x;
         GLfloat y;
-        GLfloat layer;
+        GLfloat z;
 
         //Dimensions
         GLfloat width;
         GLfloat height;
 
-        void draw();
+        virtual void draw()=0;
         //A function to get the values changed by some Box2d function?
         //Every character will draw itself with its own fields, it's not likely they will need extra parameters
 

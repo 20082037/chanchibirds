@@ -9,6 +9,7 @@ class Bird: public AnimateSprite{
             NORMAL,
             NUM_STATES
         };
+        Bird(GLfloat,GLfloat,GLfloat,AnimateSpriteSheet*);
         void fly();//missing parameters
 
 };
