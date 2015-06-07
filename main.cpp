@@ -19,58 +19,62 @@ SDL_GLContext glcontext;//Crea el oontexto dentro de sdl
 int main(int argc, char*argv[]){
     if(iniciar()){
         //------CREACION DEL MUNDO--------
-        b2Vec2 gravity(0.0f,-10000.0);//Definir la gravedad
+        b2Vec2 gravity(0.0f,-10.0f);//Definir la gravedad
         b2World world(gravity); //Crear el mundo con parametro de la gravedad
 
 
 //--------------------------------------CREACION DEL CUADRADO----------------------------------------------------------
         b2BodyDef Caja1;//Creamos el objeto
-        Caja1.position.Set(0.0f,200.0f);//Colocando la posicion del cuerpo dinamico
+        Caja1.position.Set(-400.0f,-249.0f);//Colocando la posicion del cuerpo dinamico
         Caja1.type=b2_dynamicBody;//Volvemos el  objeto estatico en obetejo dinamico
         b2Body* Cuerpo1=world.CreateBody(&Caja1);//Coloca al cuerpo dinamico en el Mundo
 
+/*        b2MassData* data;
+        data->mass=45.0f;
+        Cuerpo1->SetMassData(data);*/
+
         b2PolygonShape Poligono1; //Creacion de un poligono
-        Poligono1.SetAsBox(50.0f,50.f); //creacion de un poligono en el sueloe
+        Poligono1.SetAsBox(50.0f,50.f); //TAMAÑOS
 
-        //CAJITA2.ComputeMass(b2MassData* jordan, float32 hola.density);
-        //b2MassData* jordan;
-
-        Cuerpo1->CreateFixture(&Poligono1,0.0f);
-        b2FixtureDef Accesorios1;
+        b2FixtureD<c3ef Accesorios1;
         Accesorios1.shape=&Poligono1;
-        Accesorios1.density=0.0f;
-        Accesorios1.restitution=0.0f;
+        Accesorios1.density=10.0f;
+        Accesorios1.restitution=5.6f;
+
+        Cuerpo1->CreateFixture(&Accesorios1); //CUERPO1 B2BODY
+
+        float impulse=Cuerpo1->GetMass()*10;
+        Cuerpo1->ApplyLinearImpulse(b2Vec2(0,impulse),Cuerpo1->GetWorldCenter(),true);
 
 //------------------------------CREACION DEL SEGUNDO CUADRADO--------------------------------------------------------
 
         b2BodyDef Caja2;//Creamos el objeto
-        Caja2.position.Set(100.0,0.0f);//Colocando la posicion del cuerpo dinamico
+        Caja2.position.Set(200.0f,-249.0f);//Colocando la posicion del cuerpo dinamico
         Caja2.type=b2_dynamicBody;//Volvemos el  objeto estatico en obetejo dinamico
         b2Body* Cuerpo2=world.CreateBody(&Caja2);//Coloca al cuerpo dinamico en el Mundo
 
         b2PolygonShape Poligono2; //Creacion de un poligono
-        Poligono2.SetAsBox(50.0f,50.f); //creacion de un poligono en el sueloe
+        Poligono2.SetAsBox(50.0f,50.0f); //creacion de un poligono en el sueloe
 
         //CAJITA2.ComputeMass(b2MassData* jordan, float32 hola.density);
         //b2MassData* jordan;
 
-        Cuerpo2->CreateFixture(&Poligono2,0.0f);
         b2FixtureDef Accesorios2;
         Accesorios2.shape=&Poligono2;
-        Accesorios2.density=0.0f;
-        Accesorios2.restitution=0.0f;
+        Accesorios2.density=999999999999.0f;
+        Accesorios2.restitution=0.6f;
+
+        Cuerpo2->CreateFixture(&Accesorios2);
+
 
 //-----------------------------CREACION DEL TERCER CUERPO----------------------------------------------------------------
-      /*  b2BodyDef Caja3;//Creamos el objeto
+       /* b2BodyDef Caja3;//Creamos el objeto
         Caja3.position.Set(90.0,0.0f);//Colocando la posicion del cuerpo dinamico
         Caja3.type=b2_dynamicBody;//Volvemos el  objeto estatico en obetejo dinamico
         b2Body* Cuerpo3=world.CreateBody(&Caja3);//Coloca al cuerpo dinamico en el Mundo
 
-        b2PolygonShape Poligono3; //Creacion de un poligono
-        Poligono3.SetAsBox(50.0f,50.f); //creacion de un poligono en el sueloe
+        b2CircleShape Circulo;
 
-        //CAJITA2.ComputeMass(b2MassData* jordan, float32 hola.density);
-        //b2MassData* jordan;
 
         Cuerpo2->CreateFixture(&Poligono3,0.0f);
         b2FixtureDef Accesorios3;
@@ -89,11 +93,12 @@ int main(int argc, char*argv[]){
         Terreno.SetAsBox(800.0f,1.0f); //creacion de un poligono en el suelo
 
         Suelo->CreateFixture(&Terreno ,0.0f);
+
 //---------------------------------------------ITERACIONES---------------------------------------------------------
         float32 timeSte = 1.0f/60.0f;
 
-        int32 velocityIteracion=6;
-        int32 positionIteracion=2;
+        int32 velocityIteracion=8;
+        int32 positionIteracion=3;
 //------------------------------------------------------------------------------------------------------
         bool salir=false;
         SDL_Event jordan;
