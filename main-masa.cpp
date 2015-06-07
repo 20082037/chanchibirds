@@ -1,66 +1,3 @@
-<<<<<<< HEAD
-#include <SDL2/SDL.h>
-#include <Box2D/Box2D.h>
-#include <GL/gl.h>
-#include <GL/glu.h>
-#include <FreeImage.h>
-#include <iostream>
-#include <time.h>
-
-using namespace std;
-
-bool iniciar();
-bool iniciarGL();
-void cerrar();
-void render();
-SDL_Window *w = NULL;
-SDL_GLContext glcontext;
-
-GLfloat c=1.0;
-clock_t ti,tf;
-GLfloat despx=100.f,despy=-100.f;
-GLfloat juanx=-100.f, juany=-100.f;
-clock_t interval = 10000;
-
-
-int main(int argc, char*argv[]){
-    ti = clock();
-    cout<<ti<<endl;
-    if(iniciar()){
-        bool salir=false;
-        SDL_Event jordan;
-        while(!salir){
-            while(SDL_PollEvent(&jordan) != 0){
-                if(jordan.type == SDL_QUIT){
-                    salir = true;
-                }else if(jordan.type == SDL_KEYDOWN){
-                    if(jordan.key.keysym.sym == SDLK_LEFT){
-                        despx += -5.f;
-                    }else if(jordan.key.keysym.sym == SDLK_RIGHT){
-                        despx += 5.f;
-                    }else if(jordan.key.keysym.sym == SDLK_DOWN){
-                        despy += -5.f;
-                    }else if(jordan.key.keysym.sym == SDLK_UP){
-                        despy += 5.f;
-                    }else if(jordan.key.keysym.sym == SDLK_a){
-                        juanx += -5.f;
-                    }else if(jordan.key.keysym.sym == SDLK_d){
-                        juanx += 5.f;
-                    }else if(jordan.key.keysym.sym == SDLK_w){
-                        juany += 5.f;
-                    }else if(jordan.key.keysym.sym == SDLK_s){
-                        juany += -5.f;
-                    }
-                }
-            }
-            render();
-            SDL_GL_SwapWindow(w);
-        }
-        cerrar();
-    }
-    return 0;
-}
-=======
 #include <iostream>
 #include <SDL2/SDL.h>
 #include <GL/gl.h>
@@ -82,117 +19,58 @@ SDL_GLContext glcontext;//Crea el oontexto dentro de sdl
 int main(int argc, char*argv[]){
     if(iniciar()){
         //------CREACION DEL MUNDO--------
-        b2Vec2 gravity(0.0f,-10.0f);//Definir la gravedad
+        b2Vec2 gravity(0.0f,-10000.0);//Definir la gravedad
         b2World world(gravity); //Crear el mundo con parametro de la gravedad
->>>>>>> 3b4474796f97cf6641a2b8e22bad3540a086e9ee
 
 
 //--------------------------------------CREACION DEL CUADRADO----------------------------------------------------------
         b2BodyDef Caja1;//Creamos el objeto
-        Caja1.position.Set(-400.0f,-249.0f);//Colocando la posicion del cuerpo dinamico
+        Caja1.position.Set(0.0f,200.0f);//Colocando la posicion del cuerpo dinamico
         Caja1.type=b2_dynamicBody;//Volvemos el  objeto estatico en obetejo dinamico
         b2Body* Cuerpo1=world.CreateBody(&Caja1);//Coloca al cuerpo dinamico en el Mundo
 
-/*        b2MassData* data;
-        data->mass=45.0f;
-        Cuerpo1->SetMassData(data);*/
-
         b2PolygonShape Poligono1; //Creacion de un poligono
-        Poligono1.SetAsBox(50.0f,50.f); //TAMAÑOS
+        Poligono1.SetAsBox(50.0f,50.f); //creacion de un poligono en el sueloe
 
-        b2FixtureD<c3ef Accesorios1;
+        //CAJITA2.ComputeMass(b2MassData* jordan, float32 hola.density);
+        //b2MassData* jordan;
+
+        Cuerpo1->CreateFixture(&Poligono1,0.0f);
+        b2FixtureDef Accesorios1;
         Accesorios1.shape=&Poligono1;
-        Accesorios1.density=10.0f;
-        Accesorios1.restitution=5.6f;
-
-<<<<<<< HEAD
-void render(){
-    glDepthFunc(GL_LEQUAL);
-    glEnable(GL_DEPTH_TEST);
-    glClearDepth(1.0);
-    glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);
-    glMatrixMode(GL_MODELVIEW);
-
-    glBegin(GL_QUADS);
-        glColor3f(1.f,0.f,1.f);
-        glVertex3f(-50.f,50.f,0.f);
-        glVertex3f(-50.f,-50.f,0.f);
-        glVertex3f(50.f,-50.f,0.f);
-        glVertex3f(50.f,50.f,0.f);
-    glEnd();
-    glPushMatrix();
-
-    tf = clock();
-    clock_t dt;
-    dt = tf-ti;
-    cout<<" x : "<<dt<<endl;
-    static int count=0;
-    count += dt;
-    if(count > interval){
-        count =0;
-        cout<<"HOLI"<<endl;
-        if(c==1.f){
-            c=0.f;
-        }else{
-            c=1.f;
-        }
-    }
-
-    swap(ti,tf);
-    glTranslatef(despx,despy,0.f);
-    glBegin(GL_QUADS);
-        glColor3f(1.f,0.f,1.f);
-        glVertex3f(-50.f,50.f,0.f);
-        glVertex3f(-50.f,-50.f,0.f);
-        glVertex3f(50.f,-50.f,0.f);
-        glVertex3f(50.f,50.f,0.f);
-    glEnd();
-=======
-        Cuerpo1->CreateFixture(&Accesorios1); //CUERPO1 B2BODY
-
-        float impulse=Cuerpo1->GetMass()*10;
-        Cuerpo1->ApplyLinearImpulse(b2Vec2(0,impulse),Cuerpo1->GetWorldCenter(),true);
+        Accesorios1.density=0.0f;
+        Accesorios1.restitution=0.0f;
 
 //------------------------------CREACION DEL SEGUNDO CUADRADO--------------------------------------------------------
 
         b2BodyDef Caja2;//Creamos el objeto
-        Caja2.position.Set(200.0f,-249.0f);//Colocando la posicion del cuerpo dinamico
+        Caja2.position.Set(100.0,0.0f);//Colocando la posicion del cuerpo dinamico
         Caja2.type=b2_dynamicBody;//Volvemos el  objeto estatico en obetejo dinamico
         b2Body* Cuerpo2=world.CreateBody(&Caja2);//Coloca al cuerpo dinamico en el Mundo
 
         b2PolygonShape Poligono2; //Creacion de un poligono
-        Poligono2.SetAsBox(50.0f,50.0f); //creacion de un poligono en el sueloe
+        Poligono2.SetAsBox(50.0f,50.f); //creacion de un poligono en el sueloe
 
         //CAJITA2.ComputeMass(b2MassData* jordan, float32 hola.density);
         //b2MassData* jordan;
->>>>>>> 3b4474796f97cf6641a2b8e22bad3540a086e9ee
 
+        Cuerpo2->CreateFixture(&Poligono2,0.0f);
         b2FixtureDef Accesorios2;
         Accesorios2.shape=&Poligono2;
-        Accesorios2.density=999999999999.0f;
-        Accesorios2.restitution=0.6f;
-
-        Cuerpo2->CreateFixture(&Accesorios2);
-
-<<<<<<< HEAD
-    glPushMatrix();
-    glTranslatef(juanx,juany,0.f);
-    glBegin(GL_QUADS);
-        glColor3f(c,0.f,1.f);
-        glVertex3f(-50.f,50.f,-5.f);
-        glVertex3f(-50.f,-50.f,-5.f);
-        glVertex3f(50.f,-50.f,-5.f);
-        glVertex3f(50.f,50.f,-5.f);
-=======
+        Accesorios2.density=0.0f;
+        Accesorios2.restitution=0.0f;
 
 //-----------------------------CREACION DEL TERCER CUERPO----------------------------------------------------------------
-       /* b2BodyDef Caja3;//Creamos el objeto
+      /*  b2BodyDef Caja3;//Creamos el objeto
         Caja3.position.Set(90.0,0.0f);//Colocando la posicion del cuerpo dinamico
         Caja3.type=b2_dynamicBody;//Volvemos el  objeto estatico en obetejo dinamico
         b2Body* Cuerpo3=world.CreateBody(&Caja3);//Coloca al cuerpo dinamico en el Mundo
 
-        b2CircleShape Circulo;
+        b2PolygonShape Poligono3; //Creacion de un poligono
+        Poligono3.SetAsBox(50.0f,50.f); //creacion de un poligono en el sueloe
 
+        //CAJITA2.ComputeMass(b2MassData* jordan, float32 hola.density);
+        //b2MassData* jordan;
 
         Cuerpo2->CreateFixture(&Poligono3,0.0f);
         b2FixtureDef Accesorios3;
@@ -211,12 +89,11 @@ void render(){
         Terreno.SetAsBox(800.0f,1.0f); //creacion de un poligono en el suelo
 
         Suelo->CreateFixture(&Terreno ,0.0f);
-
 //---------------------------------------------ITERACIONES---------------------------------------------------------
         float32 timeSte = 1.0f/60.0f;
 
-        int32 velocityIteracion=8;
-        int32 positionIteracion=3;
+        int32 velocityIteracion=6;
+        int32 positionIteracion=2;
 //------------------------------------------------------------------------------------------------------
         bool salir=false;
         SDL_Event jordan;
@@ -316,7 +193,6 @@ void render(b2World &world,float32 timeSte, int32 velocityIteracion, int32 posit
         glVertex3f(CUERPO_CUADRADO->GetPosition().x-50.f,CUERPO_CUADRADO->GetPosition().y-50.f,0.f);
         glVertex3f(CUERPO_CUADRADO->GetPosition().x+50.f,CUERPO_CUADRADO->GetPosition().y-50.f,0.f);
         glVertex3f(CUERPO_CUADRADO->GetPosition().x+50.f,CUERPO_CUADRADO->GetPosition().y+50.f,0.f);
->>>>>>> 3b4474796f97cf6641a2b8e22bad3540a086e9ee
     glEnd();
 
     glBegin(GL_QUADS);
