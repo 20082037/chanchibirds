@@ -25,39 +25,39 @@ int main(int argc, char*argv[]){
 
 //--------------------------------------CREACION DEL CUADRADO----------------------------------------------------------
         b2BodyDef Caja1;//Creamos el objeto
-        Caja1.position.Set(-400.0f,-249.0f);//Colocando la posicion del cuerpo dinamico
+        Caja1.position.Set(-400.0f,-200.0f);//Colocando la posicion del cuerpo dinamico -249
         Caja1.type=b2_dynamicBody;//Volvemos el  objeto estatico en obetejo dinamico
         b2Body* Cuerpo1=world.CreateBody(&Caja1);//Coloca al cuerpo dinamico en el Mundo
-
-/*        b2MassData* data;
-        data->mass=45.0f;
-        Cuerpo1->SetMassData(data);*/
 
         b2PolygonShape Poligono1; //Creacion de un poligono
         Poligono1.SetAsBox(50.0f,50.f); //TAMAÑOS
 
-        b2FixtureD<c3ef Accesorios1;
+        b2FixtureDef Accesorios1;
         Accesorios1.shape=&Poligono1;
         Accesorios1.density=10.0f;
-        Accesorios1.restitution=5.6f;
+        Accesorios1.restitution=0.6f;
 
+        b2MassData masaa;
+        masaa.mass=30.0f;
+
+        Cuerpo1->SetMassData(&masaa);
         Cuerpo1->CreateFixture(&Accesorios1); //CUERPO1 B2BODY
 
-        float impulse=Cuerpo1->GetMass()*10;
-        Cuerpo1->ApplyLinearImpulse(b2Vec2(0,impulse),Cuerpo1->GetWorldCenter(),true);
+
+
+
+        //float impulse=Cuerpo1->GetMass()*10;
+        //Cuerpo1->ApplyLinearImpulse(b2Vec2(0,impulse),Cuerpo1->GetWorldCenter(),true);
 
 //------------------------------CREACION DEL SEGUNDO CUADRADO--------------------------------------------------------
 
         b2BodyDef Caja2;//Creamos el objeto
-        Caja2.position.Set(200.0f,-249.0f);//Colocando la posicion del cuerpo dinamico
+        Caja2.position.Set(200.0f,-200.0f);//Colocando la posicion del cuerpo dinamico -249.0f
         Caja2.type=b2_dynamicBody;//Volvemos el  objeto estatico en obetejo dinamico
         b2Body* Cuerpo2=world.CreateBody(&Caja2);//Coloca al cuerpo dinamico en el Mundo
 
         b2PolygonShape Poligono2; //Creacion de un poligono
         Poligono2.SetAsBox(50.0f,50.0f); //creacion de un poligono en el sueloe
-
-        //CAJITA2.ComputeMass(b2MassData* jordan, float32 hola.density);
-        //b2MassData* jordan;
 
         b2FixtureDef Accesorios2;
         Accesorios2.shape=&Poligono2;
