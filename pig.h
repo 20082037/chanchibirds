@@ -22,9 +22,9 @@ class Pig: public AnimateSprite{
         int currentAnim;
 
 
-        void jump();
-        void slideLeft();
-        void slideRight();
+//        void jump();
+//        void slideLeft();
+//        void slideRight();
         void animate();
         Pig(GLfloat xi,GLfloat yi,GLfloat zi,AnimateSpriteSheet* sCoords);
 

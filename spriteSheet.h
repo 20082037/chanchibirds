@@ -10,6 +10,7 @@ class SpriteSheet{
         int imageHeight;
         GLuint texID;
         bool loadTextureFromFile(string filenameString);
+        float stof(string);
 
 };
 

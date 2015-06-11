@@ -12,7 +12,7 @@
 #include "bird.h"
 #include "pig.h"
 #include "platform.h"
-#include "slingshot.h"
+//#include "slingshot.h"
 
 using namespace std;
 

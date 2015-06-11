@@ -18,11 +18,10 @@ class Platform: public InanimateSprite{
 		    PLATFORM_DAMAGED3,
 		    NUM_PLATFORM_HEALTH
 		};
-        bool direction;
-        float speed;
+        //bool direction;
+        //float speed;
         Platform(GLfloat,GLfloat,GLfloat,InanimateSpriteSheet*);
         void draw();
-        //Provisional, se debería proveer direction y speed
 
 };
 

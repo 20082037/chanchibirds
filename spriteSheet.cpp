@@ -79,6 +79,19 @@ bool SpriteSheet::loadTextureFromFile(string filenameString){
         }
     }
     return success;
+}
 
+float SpriteSheet::stof(string s){
+	float result;
+	int pos = s.find(".");
+	int size = s.size();
+	if(pos != string::npos){
+		int intPart = atoi(s.substr(0,pos+1).c_str());
+		float floatPart = atoi(s.substr(pos+1,size-pos-1).c_str()) / pow(10,size-pos-1);
+		result = intPart + floatPart;
+	}else{
+		result = atoi(s.c_str());
+	}
+	return result;
 }
 

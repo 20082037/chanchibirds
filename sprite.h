@@ -6,12 +6,6 @@
 
 class Sprite{
     public:
-        //Tag deleted because Sprite only needs a textureID and its sprite coordinates to be drawn.
-        //They, as well, will be modified and have to get values from some external parameters
-
-        //Events, power states?
-
-
         int state;//By now, it can mean the health
 
         //Coordinates

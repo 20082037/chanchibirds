@@ -17,7 +17,7 @@ class Bird: public AnimateSprite{
 
         int currentAnim;
         Bird(GLfloat,GLfloat,GLfloat,AnimateSpriteSheet*);
-        void fly();//missing parameters
+        //void fly();//missing parameters
 
 };
 
