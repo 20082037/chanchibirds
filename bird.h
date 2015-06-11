@@ -5,10 +5,17 @@
 
 class Bird: public AnimateSprite{
     public:
-        enum STATE{
-            NORMAL,
-            NUM_STATES
-        };
+    	enum BIRD_TAG{
+		    BIRD_YELLOW,
+		    BIRD_RED,
+		    NUM_BIRD_TAGS
+		};
+		enum BIRD_HEALTH{
+		    BIRD_HEALTHY,
+		    NUM_BIRD_HEALTH
+		};
+
+        int currentAnim;
         Bird(GLfloat,GLfloat,GLfloat,AnimateSpriteSheet*);
         void fly();//missing parameters
 

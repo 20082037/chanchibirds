@@ -5,6 +5,20 @@
 
 class Pig: public AnimateSprite{
     public:
+    	enum PIG_TAG{
+		    PIG_NORMAL,
+		    PIG_HELMET,
+		    PIG_KING,
+		    NUM_PIG_TAGS
+		};
+
+		enum PIG_HEALTH{
+		    PIG_HEALTHY,
+		    PIG_DAMAGED1,
+		    PIG_DAMAGED2,
+		    NUM_PIG_HEALTH
+		};
+
         int currentAnim;
 
 

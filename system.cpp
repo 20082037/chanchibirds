@@ -1,8 +1,4 @@
 #include "system.h"
-#include "bird.h"
-#include "pig.h"
-#include "platform.h"
-#include "slingshot.h"
 
 #define traverse(c,it) for( typeof(c.begin()) it = c.begin(); it!=c.end(); it++)
 
@@ -21,14 +17,14 @@ void System::initGame(){
                 renderGLobal();
                 SDL_GL_SwapWindow(w);
             }
-            cerrar();
+            setdown();
         }
     }
 }
 
 void System::initSprites(){
     //Plataformas
-    int nPlatforms;
+    int nPlatforms=10;
     GLfloat x=0.f,y=350.f,z=50.f;//Valores iniciales:cambiar
     for(int i=1;i<=nPlatforms;i++){
         if(i%5==4){
@@ -42,17 +38,18 @@ void System::initSprites(){
                 x+=200.f;
             }
         }
-        platforms.push_back(new Platform(x,y,z,&iSprites[PLATFORM][PLATFORM_STONE]));
+        platforms.push_back(new Platform(x,y,z,&iSprites[PLATFORM][Platform::PLATFORM_STONE]));
         canvas[z].push_back(platforms.end()-1);
     }
 
     //Pájaros
     x=-200.f;y=-400.f;z=30.f;
-    birds.push_back(new Platform(x,y,z,&aSprites[BIRD][BIRD_YELLOW]);
+    birds.push_back(new Bird(x,y,z,&aSprites[BIRD][Bird::BIRD_YELLOW]);
     canvas[z].push_back(platforms.end()-1);
+
     //Chancho
     x=0.f;y=0.f;z=15.f;
-    pig = new Pig(x,y,z,&aSprites[PIG][PIG_NORMAL]);
+    pig = new Pig(x,y,z,&aSprites[PIG][Pig::PIG_NORMAL]);
     canvas[z].push_back(pig);
 }
 
@@ -115,30 +112,27 @@ bool System::loadMedia(){
     bool success= true;
     ifstream spritesCoords("SpriteCoordinates.txt");
 
-    success = aSprites[PIG][NORMAL].loadTextureFromFile("images/normalPig.png");
-    success = aSprites[PIG][NORMAL].loadSpriteMap(spritesCoords,PIG,PIG_NORMAL);
+    success = aSprites[PIG][Pig::PIG_NORMAL].loadTextureFromFile("images/normalPig.png");
+    success = aSprites[PIG][Pig::PIG_NORMAL].loadSpriteMap(spritesCoords,PIG,Pig::PIG_NORMAL);
 
-    success = aSprites[PIG][HELMET].loadTextureFromFile("images/pig_helmet.png");
-    success = aSprites[PIG][HELMET].loadSpriteMap(spritesCoords,PIG,PIG_HELMET);
+    success = aSprites[PIG][Pig::PIG_HELMET].loadTextureFromFile("images/pig_helmet.png");
+    success = aSprites[PIG][Pig::PIG_HELMET].loadSpriteMap(spritesCoords,PIG,Pig::PIG_HELMET);
 
-    success = aSprites[PIG][KING].loadTextureFromFile("images/pig_crown.png");
-    success = aSprites[PIG][KING].loadSpriteMap(spritesCoords,PIG,PIG_KING);
+    success = aSprites[PIG][Pig::PIG_KING].loadTextureFromFile("images/pig_crown.png");
+    success = aSprites[PIG][Pig::PIG_KING].loadSpriteMap(spritesCoords,PIG,Pig::PIG_KING);
 
-    success = aSprites[BIRD][YELLOW].loadTextureFromFile("images/pajaro_amarillo.png");
-    success = aSprites[BIRD][YELLOW].loadSpriteMap(spritesCoords,BIRD,BIRD_YELLOW,)
+    success = aSprites[BIRD][Bird::BIRD_YELLOW].loadTextureFromFile("images/pajaro_amarillo.png");
+    success = aSprites[BIRD][Bird::BIRD_YELLOW].loadSpriteMap(spritesCoords,Bird::BIRD,BIRD_YELLOW,)
 
-    success = aSprites[BIRD][RED].loadTextureFromFile("images/redBird.png");
-    success = aSprites[BIRD][RED].loadSpriteMap(spritesCoords,BIRD,BIRD_RED);
+    success = aSprites[BIRD][Bird::BIRD_RED].loadTextureFromFile("images/redBird.png");
+    success = aSprites[BIRD][Bird::BIRD_RED].loadSpriteMap(spritesCoords,BIRD,Bird::BIRD_RED);
 
-    success = iSprites[PLATFORM][STONE].loadTextureFromFile("images/bloqueconcreto.png");
-    success = iSprites[PLATFORM][STONE].loadSpriteMap(spritesCoords,PLATFORM,PLATFORM_STONE);
+    success = iSprites[PLATFORM][Platform::PLATFORM_STONE].loadTextureFromFile("images/bloqueconcreto.png");
+    success = iSprites[PLATFORM][Platform::PLATFORM_STONE].loadSpriteMap(spritesCoords,Platform::PLATFORM,PLATFORM_STONE);
 
     spritesCoords.close();
     return success;
 }
-
-
-
 
 void System::renderGlobal{
     glDepthFunc(GL_LEQUAL);

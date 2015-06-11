@@ -3,20 +3,25 @@
 
 #include <iostream>
 #include <map>
+#include <list>
 
 #include <SDL2/SDL.h>
 #include <GL/gl.h>
 #include <FreeImage.h>
 
-#include "aSpriteSheet.h"
-#include "iSpriteSheet.h"
+#include "bird.h"
+#include "pig.h"
+#include "platform.h"
+#include "slingshot.h"
+
+using namespace std;
 
 typedef struct SpriteCoords{
     pair<GLfloat,GLfloat> c1;
     pair<GLfloat,GLfloat> c2;
 };
 
-enum TAG{//Each tag has its only spritesheet and states
+enum TAG{
     PIG,
     BIRD,
     PLATFORM,
@@ -61,9 +66,6 @@ enum PLATFORM_HEALTH{
     PLATFORM_DAMAGED2,
     PLATFORM_DAMAGED3,
     NUM_PLATFORM_HEALTH
-};
-
-enum PLATFORM_HEALTH{
 };
 
 enum SLINGSHOT_TAG{};
