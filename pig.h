@@ -19,7 +19,8 @@ class Pig: public AnimateSprite{
 		    NUM_PIG_HEALTH
 		};
 
-        int currentAnim;
+        //int currentAnim;
+        list<SpriteCoords>::iterator currentAnim;
 
 
 //        void jump();

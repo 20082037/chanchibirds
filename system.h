@@ -6,8 +6,9 @@
 #include <list>
 
 #include <SDL2/SDL.h>
+#include <SDL2/SDL_opengl.h>
 #include <GL/gl.h>
-#include <FreeImage.h>
+//#include <FreeImage.h>
 
 #include "bird.h"
 #include "pig.h"
@@ -70,22 +71,22 @@ class System{
     public:
         //Window components
         SDL_Window *window;
-        const int WINDOW_WIDTH=1300;
-        const int WINDOW_HEIGHT=700;
+        int WINDOW_WIDTH;
+        int WINDOW_HEIGHT;
         SDL_GLContext glcontext;
 
         //Game components
         list<Platform*> platforms;
         list<Bird*> birds;
-        Slingshot* slingshot;
+//        Slingshot* slingshot;
         Pig* pig;
 
         map<int,map<int,AnimateSpriteSheet> > aSprites;
-        map<int,map<int,InanimateSpriteSheet> > iPrites;
+        map<int,map<int,InanimateSpriteSheet> > iSprites;
 
         map<GLfloat,list<Sprite*> > canvas;
 
-        System();
+        System(){WINDOW_WIDTH=1300;WINDOW_HEIGHT=700;};
         void initGame();
 
     private:

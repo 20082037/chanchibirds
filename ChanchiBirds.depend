@@ -369,3 +369,88 @@
 1434256033 /home/jordan/Documentos/ChanchiBirdsJafeth/chanchibirds/spriteCoords.h
 	<GL/gl.h>
 
+1434266225 source:/home/wilson/Documentos/ChanchiBirdsJafeth/chanchibirds/aSpriteSheet.cpp
+	"aSpriteSheet.h"
+
+1434264526 /home/wilson/Documentos/ChanchiBirdsJafeth/chanchibirds/aSpriteSheet.h
+	"spriteSheet.h"
+	"spriteCoords.h"
+	<map>
+	<list>
+	<vector>
+	<fstream>
+
+1434262003 /home/wilson/Documentos/ChanchiBirdsJafeth/chanchibirds/spriteSheet.h
+	<GL/gl.h>
+	<iostream>
+	<string.h>
+	<stdlib.h>
+	<math.h>
+	<FreeImage.h>
+
+1434257708 /home/wilson/Documentos/ChanchiBirdsJafeth/chanchibirds/spriteCoords.h
+	<GL/gl.h>
+
+1434257708 source:/home/wilson/Documentos/ChanchiBirdsJafeth/chanchibirds/main.cpp
+	<iostream>
+	"system.h"
+
+1434265041 /home/wilson/Documentos/ChanchiBirdsJafeth/chanchibirds/system.h
+	<iostream>
+	<map>
+	<list>
+	<SDL2/SDL.h>
+	<SDL2/SDL_opengl.h>
+	<GL/gl.h>
+	"bird.h"
+	"pig.h"
+	"platform.h"
+
+1434258448 /home/wilson/Documentos/ChanchiBirdsJafeth/chanchibirds/bird.h
+	"animateSprite.h"
+
+1434257708 /home/wilson/Documentos/ChanchiBirdsJafeth/chanchibirds/animateSprite.h
+	"sprite.h"
+	"aSpriteSheet.h"
+
+1434261881 /home/wilson/Documentos/ChanchiBirdsJafeth/chanchibirds/sprite.h
+	<GL/gl.h>
+
+1434258560 /home/wilson/Documentos/ChanchiBirdsJafeth/chanchibirds/pig.h
+	"animateSprite.h"
+
+1434257708 /home/wilson/Documentos/ChanchiBirdsJafeth/chanchibirds/platform.h
+	"inanimateSprite.h"
+
+1434261965 /home/wilson/Documentos/ChanchiBirdsJafeth/chanchibirds/inanimateSprite.h
+	"sprite.h"
+	"iSpriteSheet.h"
+
+1434264535 /home/wilson/Documentos/ChanchiBirdsJafeth/chanchibirds/iSpriteSheet.h
+	"spriteSheet.h"
+	"spriteCoords.h"
+	<map>
+	<vector>
+	<fstream>
+
+1434267719 source:/home/wilson/Documentos/ChanchiBirdsJafeth/chanchibirds/bird.cpp
+	"bird.h"
+
+1434266205 source:/home/wilson/Documentos/ChanchiBirdsJafeth/chanchibirds/iSpriteSheet.cpp
+	"iSpriteSheet.h"
+
+1434268071 source:/home/wilson/Documentos/ChanchiBirdsJafeth/chanchibirds/pig.cpp
+	"pig.h"
+
+1434267726 source:/home/wilson/Documentos/ChanchiBirdsJafeth/chanchibirds/platform.cpp
+	"platform.h"
+
+1434257708 source:/home/wilson/Documentos/ChanchiBirdsJafeth/chanchibirds/sprite.cpp
+	"sprite.h"
+
+1434257708 source:/home/wilson/Documentos/ChanchiBirdsJafeth/chanchibirds/spriteSheet.cpp
+	"spriteSheet.h"
+
+1434267992 source:/home/wilson/Documentos/ChanchiBirdsJafeth/chanchibirds/system.cpp
+	"system.h"
+

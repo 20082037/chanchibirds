@@ -1,8 +1,9 @@
 #include "iSpriteSheet.h"
 
-bool InanimateSpriteSheet::loadSpriteMap(ifstream &file,int TAG,int TAG_TYPE){
+bool InanimateSpriteSheet::loadSpriteMap(char* filename,int TAG,int TAG_TYPE){
     bool success=true;
     string line;
+    ifstream file(filename);
     if(file.is_open()){
         vector<float> coords;
         SpriteCoords sc;
@@ -47,13 +48,17 @@ bool InanimateSpriteSheet::loadSpriteMap(ifstream &file,int TAG,int TAG_TYPE){
                     }
                 }
                 states[coords[2]] = sc;
-                anim.clear();
             }
             coords.clear();
         }
         file.close();
+        for(typeof(states.begin()) it = states.begin(); it!=states.end();it++){
+            cout<<"<<<  "<<it->first<<"  >>>"<<endl;
+                cout<<it->second.c1.first<<" "<<it->second.c1.second<<" | "<<it->second.c2.first<<" "<<it->second.c2.second<<endl;
+        }
+
     }else{
-        cout<<"InanimateSpriteSheet/loadSpriteMap - No se pudo abrir el archivo de coordenadas."<<endl;
+        cout<<"InanimateSpriteSheet/loadSpriteMap - El archivo de coordenadas no esta abierto."<<endl;
         success = false;
     }
     return success;

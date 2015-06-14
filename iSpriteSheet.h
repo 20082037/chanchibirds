@@ -2,6 +2,7 @@
 #define ISPRITESHEET_H_INCLUDED
 
 #include "spriteSheet.h"
+#include "spriteCoords.h"
 #include <map>
 #include <vector>
 #include <fstream>
@@ -9,8 +10,8 @@
 class InanimateSpriteSheet: public SpriteSheet{
     public:
         map<int,SpriteCoords > states;
-        bool loadSpriteMap(ifstream& file,int TAG,int TAG_TYPE);
-        InanimateSpriteSheet();
+        bool loadSpriteMap(char*,int TAG,int TAG_TYPE);
+        InanimateSpriteSheet(){};
 };
 
 

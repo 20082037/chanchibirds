@@ -15,7 +15,8 @@ class Bird: public AnimateSprite{
 		    NUM_BIRD_HEALTH
 		};
 
-        int currentAnim;
+        //int currentAnimation : no, porque list<>::iterator solo permite operadores ++ o --
+        list<SpriteCoords>::iterator currentAnim;
         Bird(GLfloat,GLfloat,GLfloat,AnimateSpriteSheet*);
         void draw();
         void animate();

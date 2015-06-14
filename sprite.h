@@ -16,7 +16,7 @@ class Sprite{
         GLfloat width;
         GLfloat height;
 
-        Sprite();
+        Sprite(){};
         virtual void draw()=0;
         //A function to get the values changed by some Box2d function?
         //Every character will draw itself with its own fields, it's not likely they will need extra parameters

@@ -7,7 +7,7 @@
 class InanimateSprite: public Sprite{
     public:
 		InanimateSpriteSheet* sprites;
-		InanimateSprite();
+		InanimateSprite(){};
 };
 
 

@@ -11,8 +11,9 @@
 class AnimateSpriteSheet: public SpriteSheet{
     public:
         map<int,list<SpriteCoords> > states;
-        bool loadSpriteMap(ifstream &file,int TAG,int TAG_TYPE);
-        AnimateSpriteSheet();
+        bool loadSpriteMap(char*,int TAG,int TAG_TYPE);
+
+        AnimateSpriteSheet(){};
 };
 
 #endif // ASPRITESHEET_H_INCLUDED

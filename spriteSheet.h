@@ -5,6 +5,8 @@
 #include <iostream>
 #include <string.h>
 #include <stdlib.h>//atoi
+#include <math.h>//pow
+#include <FreeImage.h>
 using namespace std;
 class SpriteSheet{
     public:
@@ -12,7 +14,7 @@ class SpriteSheet{
         int imageHeight;
         GLuint texID;
 
-        SpriteSheet();
+        SpriteSheet(){};
         bool loadTextureFromFile(string);
         float stof(string);
 };
