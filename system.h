@@ -16,10 +16,6 @@
 
 using namespace std;
 
-typedef struct SpriteCoords{
-    pair<GLfloat,GLfloat> c1;
-    pair<GLfloat,GLfloat> c2;
-};
 
 enum TAG{
     PIG,
@@ -94,8 +90,9 @@ class System{
 
     private:
         bool setup();
+        void setdown();
         bool setupGL();
-        void loadMedia();
+        bool loadMedia();
         void initSprites();
         void renderGlobal();
 };

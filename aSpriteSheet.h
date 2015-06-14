@@ -3,6 +3,8 @@
 
 #include "spriteSheet.h"
 
+#include <map>
+#include <list>
 class AnimateSpriteSheet: public SpriteSheet{
     public:
         map<int,list<SpriteCoords> > states;

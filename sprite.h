@@ -1,8 +1,12 @@
 #ifndef SPRITE_H_INCLUDED
 #define SPRITE_H_INCLUDED
 
-#include "system.h"
-#include <GL.h>
+#include <GL/gl.h>
+
+struct SpriteCoords{
+    pair<GLfloat,GLfloat> c1;
+    pair<GLfloat,GLfloat> c2;
+};
 
 class Sprite{
     public:

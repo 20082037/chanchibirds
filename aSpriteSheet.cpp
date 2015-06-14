@@ -55,7 +55,8 @@ bool AnimateSpriteSheet::loadSpriteMap(ifstream &file,int TAG,int TAG_TYPE){
 		}
 		file.close();
 	}else{
-		cout<<"No se pudo abrir el archivo de coordenadas."<<endl;
+		cout<<"AnimateSpriteSheet/loadSpriteMap - No se pudo abrir el archivo de coordenadas."<<endl;
         success = false;
 	}
+    return success;
 }

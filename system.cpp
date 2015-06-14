@@ -53,7 +53,6 @@ void System::initSprites(){
     canvas[z].push_back(pig);
 }
 
-
 bool System::setup(){
     bool success=true;
 
@@ -69,14 +68,14 @@ bool System::setup(){
                     success=false;
                 }
             }else{
-                cout<<"Fallo al crear contexto OpenGL"<<endl;
+                cout<<"System/setup - Fallo al crear contexto OpenGL: glcontext == NULL"<<endl;
             }
         }else{
-            cout<<"Fallo en crear la ventana"<<endl;
+            cout<<"System/setup - Fallo en crear la ventana: window == NULL"<<endl;
             success=false;
         }
     }else{
-        cout<<"Fallo en inicializacion de SDL"<<endl;
+        cout<<"System/setup - Fallo en inicializacion de SDL: SDL_Init(SDL_INIT_VIDEO)<0"<<endl;
         success=false;
     }
     return success;
@@ -84,6 +83,7 @@ bool System::setup(){
 
 bool System::setupGL(){
     GLenum error=GL_NO_ERROR;
+
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
     glOrtho(-WINDOW_WIDTH/2,WINDOW_WIDTH/2,-WINDOW_HEIGHT/2,WINDOW_HEIGHT/2,-150,150);
@@ -97,7 +97,7 @@ bool System::setupGL(){
 
     error = glGetError();
     if( error != GL_NO_ERROR){
-        cout<<"Error al inicializar OpenGL"<<endl;
+        cout<<"System/setupGL - Error al inicializar OpenGL"<<endl;
         return false;
     }else{
         return true;

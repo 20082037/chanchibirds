@@ -2,14 +2,17 @@
 #define SPRITESHEET_H_INCLUDED
 
 #include <GL/gl.h>
-
+#include <iostream>
+#include <string.h>
+#include <stdlib.h>//atoi
+using namespace std;
 class SpriteSheet{
     public:
-        // int numStates;//The number of animation frames can vary, but the number of states shouldnt.
+
         int imageWidth;
         int imageHeight;
         GLuint texID;
-        bool loadTextureFromFile(string filenameString);
+        bool loadTextureFromFile(string);
         float stof(string);
 
 };
