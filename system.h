@@ -29,46 +29,46 @@ enum TAG{
     NUM_TAGS
 };
 
-enum PIG_TAG{
-    PIG_NORMAL,
-    PIG_HELMET,
-    PIG_KING,
-    NUM_PIG_TAGS
-};
+// enum PIG_TAG{
+//     PIG_NORMAL,
+//     PIG_HELMET,
+//     PIG_KING,
+//     NUM_PIG_TAGS
+// };
 
-enum PIG_HEALTH{
-    PIG_HEALTHY,
-    PIG_DAMAGED1,
-    PIG_DAMAGED2,
-    PIG_NUM_HEALTH
-};
+// enum PIG_HEALTH{
+//     PIG_HEALTHY,
+//     PIG_DAMAGED1,
+//     PIG_DAMAGED2,
+//     PIG_NUM_HEALTH
+// };
 
-enum BIRD_TAG{
-    BIRD_YELLOW,
-    BIRD_RED,
-    NUM_BIRD_TAGS
-};
+// enum BIRD_TAG{
+//     BIRD_YELLOW,
+//     BIRD_RED,
+//     NUM_BIRD_TAGS
+// };
 
-enum BIRD_HEALTH{
-    BIRD_HEALTHY,
-    NUM_BIRD_HEALTH
-};
+// enum BIRD_HEALTH{
+//     BIRD_HEALTHY,
+//     NUM_BIRD_HEALTH
+// };
 
-enum PLATFORM_TAG{
-    PLATFORM_WOODEN,
-    PLATFORM_ICE,
-    PLATFORM_STONE
-};
+// enum PLATFORM_TAG{
+//     PLATFORM_WOODEN,
+//     PLATFORM_ICE,
+//     PLATFORM_STONE
+// };
 
-enum PLATFORM_HEALTH{
-    PLATFORM_HEALTHY,
-    PLATFORM_DAMAGED1,
-    PLATFORM_DAMAGED2,
-    PLATFORM_DAMAGED3,
-    NUM_PLATFORM_HEALTH
-};
+// enum PLATFORM_HEALTH{
+//     PLATFORM_HEALTHY,
+//     PLATFORM_DAMAGED1,
+//     PLATFORM_DAMAGED2,
+//     PLATFORM_DAMAGED3,
+//     NUM_PLATFORM_HEALTH
+// };
 
-enum SLINGSHOT_TAG{};
+// enum SLINGSHOT_TAG{};
 
 class System{
     public:
@@ -84,11 +84,8 @@ class System{
         Slingshot* slingshot;
         Pig* pig;
 
-//        map<int,map<int,GLuint*> > textures;//Estara incluido en los objetos SpriteSheet
-        //map<TAG,map<TAGTYPE,TEXTUREID> >
         map<int,map<int,AnimateSpriteSheet> > aSprites;
         map<int,map<int,InanimateSpriteSheet> > iPrites;
-        //map<TAG,map<STATE,SpriteCoords> >
 
         map<GLfloat,list<Sprite*> > canvas;
 
@@ -102,4 +99,5 @@ class System{
         void initSprites();
         void renderGlobal();
 };
+
 #endif // SYSTEM_H_INCLUDED

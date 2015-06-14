@@ -60,10 +60,10 @@ bool System::setup(){
     if(SDL_Init(SDL_INIT_VIDEO)>=0){
         SDL_GL_SetAttribute(SDL_GL_CONTENT_MAJOR_VERSION,2);
         SDL_GL_SetAttribute(SDL_GL_CONTENT_MINOR_VERSION,1);
-        window=SDL_CreateWindow("Chanchi Birds",SDL_WINDOWPOS_UNDEFINED,SDL_WINDOWPOS_UNDEFINED,WIDHT,HEIGHT,SDL_WINDOW_OPENGL|SDL_WINDOW_SHOWN);
+        window=SDL_CreateWindow("Chanchi Birds",SDL_WINDOWPOS_UNDEFINED,SDL_WINDOWPOS_UNDEFINED,WINDOW_WIDTH,WINDOW_HEIGHT,SDL_WINDOW_OPENGL|SDL_WINDOW_SHOWN);
 
         if(window!=NULL){
-            glcontext=SDL_GL_CreateContext(window);
+            glcontext = SDL_GL_CreateContext(window);
             if(glcontext!=NULL){
                 if(!setupGL()){
                     success=false;
@@ -94,7 +94,9 @@ bool System::setupGL(){
     glClearColor(0.f,0.f,0.f,1.f);
     glEnable(GL_TEXTURE_2D);
 
-    if((error=glGetError())!=GL_NO_ERROR){
+
+    error = glGetError();
+    if( error != GL_NO_ERROR){
         cout<<"Error al inicializar OpenGL"<<endl;
         return false;
     }else{
