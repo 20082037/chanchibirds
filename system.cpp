@@ -124,7 +124,7 @@ bool System::loadMedia(){
     success = aSprites[PIG][Pig::PIG_KING].loadSpriteMap(spritesCoords,PIG,Pig::PIG_KING);
 
     success = aSprites[BIRD][Bird::BIRD_YELLOW].loadTextureFromFile("images/pajaro_amarillo.png");
-    success = aSprites[BIRD][Bird::BIRD_YELLOW].loadSpriteMap(spritesCoords,Bird::BIRD,BIRD_YELLOW,)
+    success = aSprites[BIRD][Bird::BIRD_YELLOW].loadSpriteMap(spritesCoords,BIRD,Bird::BIRD_YELLOW,)
 
     success = aSprites[BIRD][Bird::BIRD_RED].loadTextureFromFile("images/redBird.png");
     success = aSprites[BIRD][Bird::BIRD_RED].loadSpriteMap(spritesCoords,BIRD,Bird::BIRD_RED);
@@ -145,7 +145,7 @@ void System::renderGlobal{
 
     traverse(canvas,sPair){
         traverse(sPair->second,sprite){
-            sprite->draw();
+            (*sprite)->draw();
         }
     }
 }

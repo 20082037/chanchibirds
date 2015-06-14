@@ -26,6 +26,7 @@ class Pig: public AnimateSprite{
 //        void slideLeft();
 //        void slideRight();
         void animate();
+        void draw();
         Pig(GLfloat xi,GLfloat yi,GLfloat zi,AnimateSpriteSheet* sCoords);
 
 };
