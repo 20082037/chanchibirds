@@ -8,13 +8,13 @@
 using namespace std;
 class SpriteSheet{
     public:
-
         int imageWidth;
         int imageHeight;
         GLuint texID;
+
+        SpriteSheet();
         bool loadTextureFromFile(string);
         float stof(string);
-
 };
 
 

@@ -349,3 +349,23 @@
 1382546500 /home/juan/Documents/Programas en general/Box2D_v2.3.0/Box2D/Box2D/Dynamics/Joints/b2WheelJoint.h
 	<Box2D/Dynamics/Joints/b2Joint.h>
 
+1434251618 source:/home/jordan/Documentos/ChanchiBirdsJafeth/chanchibirds/aSpriteSheet.cpp
+	"aSpriteSheet.h"
+
+1434256151 /home/jordan/Documentos/ChanchiBirdsJafeth/chanchibirds/aSpriteSheet.h
+	"spriteSheet.h"
+	"spriteCoords.h"
+	<map>
+	<list>
+	<vector>
+	<fstream>
+
+1434254881 /home/jordan/Documentos/ChanchiBirdsJafeth/chanchibirds/spriteSheet.h
+	<GL/gl.h>
+	<iostream>
+	<string.h>
+	<stdlib.h>
+
+1434256033 /home/jordan/Documentos/ChanchiBirdsJafeth/chanchibirds/spriteCoords.h
+	<GL/gl.h>
+
