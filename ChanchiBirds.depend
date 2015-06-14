@@ -433,16 +433,16 @@
 	<vector>
 	<fstream>
 
-1434267719 source:/home/wilson/Documentos/ChanchiBirdsJafeth/chanchibirds/bird.cpp
+1434270205 source:/home/wilson/Documentos/ChanchiBirdsJafeth/chanchibirds/bird.cpp
 	"bird.h"
 
 1434266205 source:/home/wilson/Documentos/ChanchiBirdsJafeth/chanchibirds/iSpriteSheet.cpp
 	"iSpriteSheet.h"
 
-1434268071 source:/home/wilson/Documentos/ChanchiBirdsJafeth/chanchibirds/pig.cpp
+1434270220 source:/home/wilson/Documentos/ChanchiBirdsJafeth/chanchibirds/pig.cpp
 	"pig.h"
 
-1434267726 source:/home/wilson/Documentos/ChanchiBirdsJafeth/chanchibirds/platform.cpp
+1434270106 source:/home/wilson/Documentos/ChanchiBirdsJafeth/chanchibirds/platform.cpp
 	"platform.h"
 
 1434257708 source:/home/wilson/Documentos/ChanchiBirdsJafeth/chanchibirds/sprite.cpp
@@ -451,6 +451,6 @@
 1434257708 source:/home/wilson/Documentos/ChanchiBirdsJafeth/chanchibirds/spriteSheet.cpp
 	"spriteSheet.h"
 
-1434267992 source:/home/wilson/Documentos/ChanchiBirdsJafeth/chanchibirds/system.cpp
+1434269605 source:/home/wilson/Documentos/ChanchiBirdsJafeth/chanchibirds/system.cpp
 	"system.h"
 

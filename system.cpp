@@ -16,6 +16,8 @@ void System::initGame(){
                         switch(e.key.keysym.sym){
                             case SDLK_RIGHT: pig->animate();
                             break;
+                            case SDLK_LEFT: (*birds.begin())->animate();
+                            break;
                         }
                     }
                 }
@@ -44,6 +46,8 @@ void System::initSprites(){
                 x+=200.f;
             }
         }
+        cout<<"Plataforma "<<i<<endl;
+        cout<<"X: "<<x<<" Y: "<<y<<" Z: "<<z<<endl;
         paux = new Platform(x,y,z,&iSprites[PLATFORM][Platform::PLATFORM_STONE]);
         platforms.push_back(paux);
         canvas[z].push_back(paux);
@@ -51,7 +55,7 @@ void System::initSprites(){
 
     //Pájaros
     Bird* baux;
-    x=-200.f;y=-400.f;z=30.f;
+    x=-400.f;y=-200.f;z=30.f;
     //It then will iterate
     baux = new Bird(x,y,z,&aSprites[BIRD][Bird::BIRD_YELLOW]);
     birds.push_back(baux);

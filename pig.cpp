@@ -20,11 +20,11 @@ void Pig::animate(){
 }
 
 void Pig::draw(){
-    cout<<"I'm drawing a pig!"<<endl;
+    //cout<<"I'm drawing a pig!"<<endl;
     glPushMatrix();
     glTranslatef(this->x,this->y,this->z);
-    cout<<"X: "<<this->x<<" Y: "<<this->y<<" Z: "<<this->z<<endl;
-    cout<<"W: "<<this->width<<" - H: "<<this->height<<endl;
+    //cout<<"X: "<<this->x<<" Y: "<<this->y<<" Z: "<<this->z<<endl;
+    //cout<<"W: "<<this->width<<" - H: "<<this->height<<endl;
     glBindTexture(GL_TEXTURE_2D,sprites->texID);
     glBegin(GL_QUADS);
         glTexCoord2f(currentAnim->c1.first / sprites->imageWidth,currentAnim->c2.second / sprites->imageHeight);
