@@ -21,15 +21,16 @@ class Pig: public AnimateSprite{
 
         //int currentAnim;
         list<SpriteCoords>::iterator currentAnim;
-
+        b2CircleShape shape;
+        b2FixtureDef fixture;
+        b2MassData mass;
 
 //        void jump();
 //        void slideLeft();
 //        void slideRight();
         void animate();
         void draw();
-        Pig(GLfloat xi,GLfloat yi,GLfloat zi,AnimateSpriteSheet* sCoords);
-
+        Pig(GLfloat xi,GLfloat yi,GLfloat zi,AnimateSpriteSheet* sCoords,b2World*);
 };
 
 

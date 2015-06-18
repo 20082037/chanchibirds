@@ -8,6 +8,7 @@
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_opengl.h>
 #include <GL/gl.h>
+#include <Box2D/Box2D.h>
 //#include <FreeImage.h>
 
 #include "bird.h"
@@ -17,53 +18,14 @@
 
 using namespace std;
 
-
 enum TAG{
     PIG,
     BIRD,
     PLATFORM,
     SLINGSHOT,
+    GROUND,
     NUM_TAGS
 };
-
-// enum PIG_TAG{
-//     PIG_NORMAL,
-//     PIG_HELMET,
-//     PIG_KING,
-//     NUM_PIG_TAGS
-// };
-
-// enum PIG_HEALTH{
-//     PIG_HEALTHY,
-//     PIG_DAMAGED1,
-//     PIG_DAMAGED2,
-//     PIG_NUM_HEALTH
-// };
-
-// enum BIRD_TAG{
-//     BIRD_YELLOW,
-//     BIRD_RED,
-//     NUM_BIRD_TAGS
-// };
-
-// enum BIRD_HEALTH{
-//     BIRD_HEALTHY,
-//     NUM_BIRD_HEALTH
-// };
-
-// enum PLATFORM_TAG{
-//     PLATFORM_WOODEN,
-//     PLATFORM_ICE,
-//     PLATFORM_STONE
-// };
-
-// enum PLATFORM_HEALTH{
-//     PLATFORM_HEALTHY,
-//     PLATFORM_DAMAGED1,
-//     PLATFORM_DAMAGED2,
-//     PLATFORM_DAMAGED3,
-//     NUM_PLATFORM_HEALTH
-// };
 
 // enum SLINGSHOT_TAG{};
 
@@ -75,18 +37,34 @@ class System{
         int WINDOW_HEIGHT;
         SDL_GLContext glcontext;
 
+        //Box2D components
+        b2Vec2 gravity;
+        b2World world;
+        float32 timeStep;
+        int32 velocityIteracion;
+        int32 positionIteration;
+
         //Game components
         list<Platform*> platforms;
         list<Bird*> birds;
 //        Slingshot* slingshot;
         Pig* pig;
 
+
         map<int,map<int,AnimateSpriteSheet> > aSprites;
         map<int,map<int,InanimateSpriteSheet> > iSprites;
 
         map<GLfloat,list<Sprite*> > canvas;
 
-        System(){WINDOW_WIDTH=1300;WINDOW_HEIGHT=700;};
+        System(): gravity(0.f,-10.f), world(gravity)
+        {
+            WINDOW_WIDTH=1300;
+            WINDOW_HEIGHT=700;
+            timeStep=1.0f/60.0f;
+            velocityIteracion=8;
+            positionIteration=3;
+        };
+
         void initGame();
 
     private:
@@ -97,5 +75,4 @@ class System{
         void initSprites();
         void renderGlobal();
 };
-
 #endif // SYSTEM_H_INCLUDED

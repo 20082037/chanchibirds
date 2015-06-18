@@ -21,6 +21,7 @@ void System::initGame(){
                         }
                     }
                 }
+                world.Step(timeSte,velocityIteracion,positionIteracion);
                 renderGlobal();
                 SDL_GL_SwapWindow(window);
             }

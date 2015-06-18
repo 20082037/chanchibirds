@@ -349,10 +349,10 @@
 1382546500 /home/juan/Documents/Programas en general/Box2D_v2.3.0/Box2D/Box2D/Dynamics/Joints/b2WheelJoint.h
 	<Box2D/Dynamics/Joints/b2Joint.h>
 
-1434251618 source:/home/jordan/Documentos/ChanchiBirdsJafeth/chanchibirds/aSpriteSheet.cpp
+1434580408 source:/home/jordan/Documentos/ChanchiBirdsJafeth/chanchibirds/aSpriteSheet.cpp
 	"aSpriteSheet.h"
 
-1434256151 /home/jordan/Documentos/ChanchiBirdsJafeth/chanchibirds/aSpriteSheet.h
+1434580174 /home/jordan/Documentos/ChanchiBirdsJafeth/chanchibirds/aSpriteSheet.h
 	"spriteSheet.h"
 	"spriteCoords.h"
 	<map>
@@ -360,11 +360,13 @@
 	<vector>
 	<fstream>
 
-1434254881 /home/jordan/Documentos/ChanchiBirdsJafeth/chanchibirds/spriteSheet.h
+1434572383 /home/jordan/Documentos/ChanchiBirdsJafeth/chanchibirds/spriteSheet.h
 	<GL/gl.h>
 	<iostream>
 	<string.h>
 	<stdlib.h>
+	<math.h>
+	<FreeImage.h>
 
 1434256033 /home/jordan/Documentos/ChanchiBirdsJafeth/chanchibirds/spriteCoords.h
 	<GL/gl.h>
@@ -453,4 +455,231 @@
 
 1434269605 source:/home/wilson/Documentos/ChanchiBirdsJafeth/chanchibirds/system.cpp
 	"system.h"
+
+1434580455 source:/home/jordan/Documentos/ChanchiBirdsJafeth/chanchibirds/bird.cpp
+	"bird.h"
+
+1434580420 /home/jordan/Documentos/ChanchiBirdsJafeth/chanchibirds/bird.h
+	"animateSprite.h"
+
+1434252026 /home/jordan/Documentos/ChanchiBirdsJafeth/chanchibirds/animateSprite.h
+	"sprite.h"
+	"aSpriteSheet.h"
+
+1434579808 /home/jordan/Documentos/ChanchiBirdsJafeth/chanchibirds/sprite.h
+	<Box2D/Box2D.h>
+	<GL/gl.h>
+
+1434580397 source:/home/jordan/Documentos/ChanchiBirdsJafeth/chanchibirds/iSpriteSheet.cpp
+	"iSpriteSheet.h"
+
+1434572383 /home/jordan/Documentos/ChanchiBirdsJafeth/chanchibirds/iSpriteSheet.h
+	"spriteSheet.h"
+	"spriteCoords.h"
+	<map>
+	<vector>
+	<fstream>
+
+1434250962 source:/home/jordan/Documentos/ChanchiBirdsJafeth/chanchibirds/main.cpp
+	<iostream>
+	"system.h"
+
+1434581408 /home/jordan/Documentos/ChanchiBirdsJafeth/chanchibirds/system.h
+	<iostream>
+	<map>
+	<list>
+	<SDL2/SDL.h>
+	<SDL2/SDL_opengl.h>
+	<GL/gl.h>
+	<Box2D/Box2D.h>
+	"bird.h"
+	"pig.h"
+	"platform.h"
+
+1434580416 /home/jordan/Documentos/ChanchiBirdsJafeth/chanchibirds/pig.h
+	"animateSprite.h"
+
+1434249908 /home/jordan/Documentos/ChanchiBirdsJafeth/chanchibirds/platform.h
+	"inanimateSprite.h"
+
+1434572383 /home/jordan/Documentos/ChanchiBirdsJafeth/chanchibirds/inanimateSprite.h
+	"sprite.h"
+	"iSpriteSheet.h"
+
+1434580429 source:/home/jordan/Documentos/ChanchiBirdsJafeth/chanchibirds/pig.cpp
+	"pig.h"
+
+1434580778 source:/home/jordan/Documentos/ChanchiBirdsJafeth/chanchibirds/platform.cpp
+	"platform.h"
+
+1434249908 source:/home/jordan/Documentos/ChanchiBirdsJafeth/chanchibirds/sprite.cpp
+	"sprite.h"
+
+1434249908 source:/home/jordan/Documentos/ChanchiBirdsJafeth/chanchibirds/spriteSheet.cpp
+	"spriteSheet.h"
+
+1434572383 source:/home/jordan/Documentos/ChanchiBirdsJafeth/chanchibirds/system.cpp
+	"system.h"
+
+1332136811 /home/jordan/Documentos/Box2D_v2.3.0/Box2D/Box2D/Box2D.h
+	<Box2D/Common/b2Settings.h>
+	<Box2D/Common/b2Draw.h>
+	<Box2D/Common/b2Timer.h>
+	<Box2D/Collision/Shapes/b2CircleShape.h>
+	<Box2D/Collision/Shapes/b2EdgeShape.h>
+	<Box2D/Collision/Shapes/b2ChainShape.h>
+	<Box2D/Collision/Shapes/b2PolygonShape.h>
+	<Box2D/Collision/b2BroadPhase.h>
+	<Box2D/Collision/b2Distance.h>
+	<Box2D/Collision/b2DynamicTree.h>
+	<Box2D/Collision/b2TimeOfImpact.h>
+	<Box2D/Dynamics/b2Body.h>
+	<Box2D/Dynamics/b2Fixture.h>
+	<Box2D/Dynamics/b2WorldCallbacks.h>
+	<Box2D/Dynamics/b2TimeStep.h>
+	<Box2D/Dynamics/b2World.h>
+	<Box2D/Dynamics/Contacts/b2Contact.h>
+	<Box2D/Dynamics/Joints/b2DistanceJoint.h>
+	<Box2D/Dynamics/Joints/b2FrictionJoint.h>
+	<Box2D/Dynamics/Joints/b2GearJoint.h>
+	<Box2D/Dynamics/Joints/b2MotorJoint.h>
+	<Box2D/Dynamics/Joints/b2MouseJoint.h>
+	<Box2D/Dynamics/Joints/b2PrismaticJoint.h>
+	<Box2D/Dynamics/Joints/b2PulleyJoint.h>
+	<Box2D/Dynamics/Joints/b2RevoluteJoint.h>
+	<Box2D/Dynamics/Joints/b2RopeJoint.h>
+	<Box2D/Dynamics/Joints/b2WeldJoint.h>
+	<Box2D/Dynamics/Joints/b2WheelJoint.h>
+
+1382856099 /home/jordan/Documentos/Box2D_v2.3.0/Box2D/Box2D/Common/b2Settings.h
+	<stddef.h>
+	<assert.h>
+	<float.h>
+
+1322352523 /home/jordan/Documentos/Box2D_v2.3.0/Box2D/Box2D/Common/b2Draw.h
+	<Box2D/Common/b2Math.h>
+
+1382856060 /home/jordan/Documentos/Box2D_v2.3.0/Box2D/Box2D/Common/b2Math.h
+	<Box2D/Common/b2Settings.h>
+	<math.h>
+
+1375425743 /home/jordan/Documentos/Box2D_v2.3.0/Box2D/Box2D/Common/b2Timer.h
+	<Box2D/Common/b2Settings.h>
+
+1300987018 /home/jordan/Documentos/Box2D_v2.3.0/Box2D/Box2D/Collision/Shapes/b2CircleShape.h
+	<Box2D/Collision/Shapes/b2Shape.h>
+
+1313981392 /home/jordan/Documentos/Box2D_v2.3.0/Box2D/Box2D/Collision/Shapes/b2Shape.h
+	<Box2D/Common/b2BlockAllocator.h>
+	<Box2D/Common/b2Math.h>
+	<Box2D/Collision/b2Collision.h>
+
+1300987018 /home/jordan/Documentos/Box2D_v2.3.0/Box2D/Box2D/Common/b2BlockAllocator.h
+	<Box2D/Common/b2Settings.h>
+
+1382854526 /home/jordan/Documentos/Box2D_v2.3.0/Box2D/Box2D/Collision/b2Collision.h
+	<Box2D/Common/b2Math.h>
+	<limits.h>
+
+1314859986 /home/jordan/Documentos/Box2D_v2.3.0/Box2D/Box2D/Collision/Shapes/b2EdgeShape.h
+	<Box2D/Collision/Shapes/b2Shape.h>
+
+1382857618 /home/jordan/Documentos/Box2D_v2.3.0/Box2D/Box2D/Collision/Shapes/b2ChainShape.h
+	<Box2D/Collision/Shapes/b2Shape.h>
+
+1324249490 /home/jordan/Documentos/Box2D_v2.3.0/Box2D/Box2D/Collision/Shapes/b2PolygonShape.h
+	<Box2D/Collision/Shapes/b2Shape.h>
+
+1332054490 /home/jordan/Documentos/Box2D_v2.3.0/Box2D/Box2D/Collision/b2BroadPhase.h
+	<Box2D/Common/b2Settings.h>
+	<Box2D/Collision/b2Collision.h>
+	<Box2D/Collision/b2DynamicTree.h>
+	<algorithm>
+
+1332054496 /home/jordan/Documentos/Box2D_v2.3.0/Box2D/Box2D/Collision/b2DynamicTree.h
+	<Box2D/Collision/b2Collision.h>
+	<Box2D/Common/b2GrowableStack.h>
+
+1383025930 /home/jordan/Documentos/Box2D_v2.3.0/Box2D/Box2D/Common/b2GrowableStack.h
+	<Box2D/Common/b2Settings.h>
+	<memory.h>
+
+1300987018 /home/jordan/Documentos/Box2D_v2.3.0/Box2D/Box2D/Collision/b2Distance.h
+	<Box2D/Common/b2Math.h>
+
+1375425734 /home/jordan/Documentos/Box2D_v2.3.0/Box2D/Box2D/Collision/b2TimeOfImpact.h
+	<Box2D/Common/b2Math.h>
+	<Box2D/Collision/b2Distance.h>
+
+1382854090 /home/jordan/Documentos/Box2D_v2.3.0/Box2D/Box2D/Dynamics/b2Body.h
+	<Box2D/Common/b2Math.h>
+	<Box2D/Collision/Shapes/b2Shape.h>
+	<memory>
+
+1315072341 /home/jordan/Documentos/Box2D_v2.3.0/Box2D/Box2D/Dynamics/b2Fixture.h
+	<Box2D/Dynamics/b2Body.h>
+	<Box2D/Collision/b2Collision.h>
+	<Box2D/Collision/Shapes/b2Shape.h>
+
+1314073600 /home/jordan/Documentos/Box2D_v2.3.0/Box2D/Box2D/Dynamics/b2WorldCallbacks.h
+	<Box2D/Common/b2Settings.h>
+
+1315809130 /home/jordan/Documentos/Box2D_v2.3.0/Box2D/Box2D/Dynamics/b2TimeStep.h
+	<Box2D/Common/b2Math.h>
+
+1383020095 /home/jordan/Documentos/Box2D_v2.3.0/Box2D/Box2D/Dynamics/b2World.h
+	<Box2D/Common/b2Math.h>
+	<Box2D/Common/b2BlockAllocator.h>
+	<Box2D/Common/b2StackAllocator.h>
+	<Box2D/Dynamics/b2ContactManager.h>
+	<Box2D/Dynamics/b2WorldCallbacks.h>
+	<Box2D/Dynamics/b2TimeStep.h>
+
+1300987018 /home/jordan/Documentos/Box2D_v2.3.0/Box2D/Box2D/Common/b2StackAllocator.h
+	<Box2D/Common/b2Settings.h>
+
+1300987018 /home/jordan/Documentos/Box2D_v2.3.0/Box2D/Box2D/Dynamics/b2ContactManager.h
+	<Box2D/Collision/b2BroadPhase.h>
+
+1383025930 /home/jordan/Documentos/Box2D_v2.3.0/Box2D/Box2D/Dynamics/Contacts/b2Contact.h
+	<Box2D/Common/b2Math.h>
+	<Box2D/Collision/b2Collision.h>
+	<Box2D/Collision/Shapes/b2Shape.h>
+	<Box2D/Dynamics/b2Fixture.h>
+
+1315162982 /home/jordan/Documentos/Box2D_v2.3.0/Box2D/Box2D/Dynamics/Joints/b2DistanceJoint.h
+	<Box2D/Dynamics/Joints/b2Joint.h>
+
+1332136763 /home/jordan/Documentos/Box2D_v2.3.0/Box2D/Box2D/Dynamics/Joints/b2Joint.h
+	<Box2D/Common/b2Math.h>
+
+1315174277 /home/jordan/Documentos/Box2D_v2.3.0/Box2D/Box2D/Dynamics/Joints/b2FrictionJoint.h
+	<Box2D/Dynamics/Joints/b2Joint.h>
+
+1315174532 /home/jordan/Documentos/Box2D_v2.3.0/Box2D/Box2D/Dynamics/Joints/b2GearJoint.h
+	<Box2D/Dynamics/Joints/b2Joint.h>
+
+1382487182 /home/jordan/Documentos/Box2D_v2.3.0/Box2D/Box2D/Dynamics/Joints/b2MotorJoint.h
+	<Box2D/Dynamics/Joints/b2Joint.h>
+
+1332051882 /home/jordan/Documentos/Box2D_v2.3.0/Box2D/Box2D/Dynamics/Joints/b2MouseJoint.h
+	<Box2D/Dynamics/Joints/b2Joint.h>
+
+1315365926 /home/jordan/Documentos/Box2D_v2.3.0/Box2D/Box2D/Dynamics/Joints/b2PrismaticJoint.h
+	<Box2D/Dynamics/Joints/b2Joint.h>
+
+1382546444 /home/jordan/Documentos/Box2D_v2.3.0/Box2D/Box2D/Dynamics/Joints/b2PulleyJoint.h
+	<Box2D/Dynamics/Joints/b2Joint.h>
+
+1315172372 /home/jordan/Documentos/Box2D_v2.3.0/Box2D/Box2D/Dynamics/Joints/b2RevoluteJoint.h
+	<Box2D/Dynamics/Joints/b2Joint.h>
+
+1315194213 /home/jordan/Documentos/Box2D_v2.3.0/Box2D/Box2D/Dynamics/Joints/b2RopeJoint.h
+	<Box2D/Dynamics/Joints/b2Joint.h>
+
+1315170663 /home/jordan/Documentos/Box2D_v2.3.0/Box2D/Box2D/Dynamics/Joints/b2WeldJoint.h
+	<Box2D/Dynamics/Joints/b2Joint.h>
+
+1382546500 /home/jordan/Documentos/Box2D_v2.3.0/Box2D/Box2D/Dynamics/Joints/b2WheelJoint.h
+	<Box2D/Dynamics/Joints/b2Joint.h>
 

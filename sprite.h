@@ -1,11 +1,16 @@
 #ifndef SPRITE_H_INCLUDED
 #define SPRITE_H_INCLUDED
 
+#include <Box2D/Box2D.h>
 #include <GL/gl.h>
 
 class Sprite{
     public:
         int state;//By now, it can mean the health
+
+        //Box2D
+        b2BodyDef defBody;
+        b2Body* body;
 
         //Coordinates
         GLfloat x;

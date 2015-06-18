@@ -8,7 +8,8 @@ class Platform: public InanimateSprite{
 		enum PLATFORM_TAG{
 		    PLATFORM_WOODEN,
 		    PLATFORM_ICE,
-		    PLATFORM_STONE
+		    PLATFORM_STONE,
+		    NUM_PLATFORM_TAGS
 		};
 
 		enum PLATFORM_HEALTH{
@@ -20,7 +21,10 @@ class Platform: public InanimateSprite{
 		};
         //bool direction;
         //float speed;
-        Platform(GLfloat,GLfloat,GLfloat,InanimateSpriteSheet*);
+        b2PolygonShape shape;
+        b2FixtureDef fixture;
+        b2MassData mass;
+        Platform(GLfloat,GLfloat,GLfloat,InanimateSpriteSheet*,b2World*);
         void draw();
 
 };

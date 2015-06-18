@@ -1,6 +1,6 @@
 #include "bird.h"
 
-Bird::Bird(GLfloat xi,GLfloat yi,GLfloat zi,AnimateSpriteSheet* ssheet){
+Bird::Bird(GLfloat xi,GLfloat yi,GLfloat zi,AnimateSpriteSheet* ssheet, b2World* world){
     this->x=xi;
     this->y=yi;
     this->z=zi;
@@ -9,6 +9,20 @@ Bird::Bird(GLfloat xi,GLfloat yi,GLfloat zi,AnimateSpriteSheet* ssheet){
     this->height=ssheet->states[BIRD_HEALTHY].begin()->c2.first - ssheet->states[BIRD_HEALTHY].begin()->c1.first;
     this->state=BIRD_HEALTHY;
     this->currentAnim=sprites->states[state].begin();
+
+    this->defBody.type = b2_dynamicBody;
+    this->defBody.position.Set(this->x,this->yi);
+    this->body = world -> CreateBody(& this->defBody);
+    this->shape.m_p.Set(0.f,0.f);
+    this->shape.m_radius = 20.0f;
+    this->fixture.shape =  & this->shape;
+    this->fixture.restitution = 0.6f;
+    this->filter.groupIndex = -8;
+
+    this->body->CreateFixture(& this->fixture);
+
+    this->mass.mass=300.f;
+    this->body->SetMassData(&this->mass);
 }
 
 void Bird::animate(){
@@ -20,11 +34,8 @@ void Bird::animate(){
 }
 
 void Bird::draw(){
-    //cout<<"I'm drawing a bird!"<<endl;
     glPushMatrix();
     glTranslatef(this->x,this->y,this->z);
-    //cout<<"X: "<<this->x<<" Y: "<<this->y<<" Z: "<<this->z<<endl;
-    //cout<<"W: "<<this->width<<" - H: "<<this->height<<endl;
     glBindTexture(GL_TEXTURE_2D,sprites->texID);
     glBegin(GL_QUADS);
         glTexCoord2f( currentAnim->c1.first / sprites->imageWidth, currentAnim->c2.second / sprites->imageHeight);

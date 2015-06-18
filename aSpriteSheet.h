@@ -12,6 +12,8 @@ class AnimateSpriteSheet: public SpriteSheet{
     public:
         map<int,list<SpriteCoords> > states;
         bool loadSpriteMap(char*,int TAG,int TAG_TYPE);
+        list<SpriteCoords>::iterator currentAnim;
+
 
         AnimateSpriteSheet(){};
 };

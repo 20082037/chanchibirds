@@ -67,3 +67,4 @@ bool AnimateSpriteSheet::loadSpriteMap(char* filename,int TAG,int TAG_TYPE){
 	}
     return success;
 }
+
