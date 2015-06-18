@@ -25,7 +25,7 @@ class Pig: public AnimateSprite{
         b2FixtureDef fixture;
         b2MassData mass;
 
-//        void jump();
+       void jump();
 //        void slideLeft();
 //        void slideRight();
         void animate();

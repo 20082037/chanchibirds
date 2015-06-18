@@ -13,8 +13,6 @@ class Sprite{
         b2Body* body;
 
         //Coordinates
-        GLfloat x;
-        GLfloat y;
         GLfloat z;
 
         //Dimensions

@@ -45,6 +45,8 @@
 		<Unit filename="background.h" />
 		<Unit filename="bird.cpp" />
 		<Unit filename="bird.h" />
+		<Unit filename="ground.cpp" />
+		<Unit filename="ground.h" />
 		<Unit filename="iSpriteSheet.cpp" />
 		<Unit filename="iSpriteSheet.h" />
 		<Unit filename="inanimateSprite.h" />

@@ -8,13 +8,14 @@ class Ground: public InanimateSprite{
         enum GROUND_TAG{
             GROUND_NORMAL,
             NUM_GROUND_TAGS
-        }
+        };
         enum GROUND_HEALTH{
         	GROUND_HEALTHY,
         	NUM_GROUND_HEALTH
-        }
+        };
         b2PolygonShape shape;
         Ground(float,float,float,InanimateSpriteSheet*,b2World*);
+        void draw();
 };
 
 #endif // GROUND_H_INCLUDED

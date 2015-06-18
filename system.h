@@ -14,6 +14,7 @@
 #include "bird.h"
 #include "pig.h"
 #include "platform.h"
+#include "ground.h"
 //#include "slingshot.h"
 
 using namespace std;
@@ -41,7 +42,7 @@ class System{
         b2Vec2 gravity;
         b2World world;
         float32 timeStep;
-        int32 velocityIteracion;
+        int32 velocityIteration;
         int32 positionIteration;
 
         //Game components
@@ -49,6 +50,7 @@ class System{
         list<Bird*> birds;
 //        Slingshot* slingshot;
         Pig* pig;
+        Ground* ground;
 
 
         map<int,map<int,AnimateSpriteSheet> > aSprites;
@@ -61,7 +63,7 @@ class System{
             WINDOW_WIDTH=1300;
             WINDOW_HEIGHT=700;
             timeStep=1.0f/60.0f;
-            velocityIteracion=8;
+            velocityIteration=8;
             positionIteration=3;
         };
 

@@ -18,10 +18,12 @@ void System::initGame(){
                             break;
                             case SDLK_LEFT: (*birds.begin())->animate();
                             break;
+                            case SDLK_UP: pig->jump();
+                            break;
                         }
                     }
                 }
-                world.Step(timeSte,velocityIteracion,positionIteracion);
+                world.Step(timeStep,velocityIteration,positionIteration);
                 renderGlobal();
                 SDL_GL_SwapWindow(window);
             }
@@ -49,7 +51,7 @@ void System::initSprites(){
         }
         cout<<"Plataforma "<<i<<endl;
         cout<<"X: "<<x<<" Y: "<<y<<" Z: "<<z<<endl;
-        paux = new Platform(x,y,z,&iSprites[PLATFORM][Platform::PLATFORM_STONE]);
+        paux = new Platform(x,y,z,&iSprites[PLATFORM][Platform::PLATFORM_STONE],&world);
         platforms.push_back(paux);
         canvas[z].push_back(paux);
     }
@@ -58,13 +60,18 @@ void System::initSprites(){
     Bird* baux;
     x=-400.f;y=-200.f;z=30.f;
     //It then will iterate
-    baux = new Bird(x,y,z,&aSprites[BIRD][Bird::BIRD_YELLOW]);
+    baux = new Bird(x,y,z,&aSprites[BIRD][Bird::BIRD_YELLOW],&world);
     birds.push_back(baux);
     canvas[z].push_back(baux);
     //Chancho
     x=0.f;y=0.f;z=15.f;
-    pig = new Pig(x,y,z,&aSprites[PIG][Pig::PIG_NORMAL]);
+    pig = new Pig(x,y,z,&aSprites[PIG][Pig::PIG_NORMAL],&world);
     canvas[z].push_back(pig);
+
+    //Piso
+    x=0.f;y=-300.f;z=5.f;
+    ground = new Ground(x,y,z,&iSprites[GROUND][Ground::GROUND_NORMAL],&world);
+    canvas[z].push_back(ground);
 }
 
 bool System::setup(){
@@ -143,6 +150,9 @@ bool System::loadMedia(){
 
     success = iSprites[PLATFORM][Platform::PLATFORM_STONE].loadTextureFromFile("images/bloqueconcreto.png");
     success = iSprites[PLATFORM][Platform::PLATFORM_STONE].loadSpriteMap("SpriteCoordinates.txt",PLATFORM,Platform::PLATFORM_STONE);
+
+    success = iSprites[GROUND][Ground::GROUND_NORMAL].loadTextureFromFile("images/ground.jpg");
+    success = iSprites[GROUND][Ground::GROUND_NORMAL].loadSpriteMap("SpriteCoordinates.txt",GROUND,Ground::GROUND_NORMAL);
 
     return success;
 }

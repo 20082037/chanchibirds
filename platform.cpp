@@ -1,17 +1,8 @@
 #include "platform.h"
 
 Platform::Platform(GLfloat xi,GLfloat yi,GLfloat zi,InanimateSpriteSheet* ssheet,b2World* world){//Provisional, se debería proveer direction y speed
-    this->x=xi;
-    this->y=yi;
-    this->z=zi;
-    this->sprites = ssheet;
-    this->width = 100.f;
-    this->height = 10.f;
-    //this->width=ssheet->states[PLATFORM_HEALTHY].c2.second-ssheet->states[PLATFORM_HEALTHY].c1.second;
-    //this->height=ssheet->states[PLATFORM_HEALTHY].c2.first-ssheet->states[PLATFORM_HEALTHY].c1.first;
-    this->state=PLATFORM_HEALTHY;
 
-    this->defBody.position.Set(this->x,this->y);
+    this->defBody.position.Set(xi,yi);
     this->defBody.type = b2_kinematicBody;
     this->defBody.linearVelocity.Set(0.f,20.f);
     this->body = world->CreateBody(& this->defBody);
@@ -23,16 +14,27 @@ Platform::Platform(GLfloat xi,GLfloat yi,GLfloat zi,InanimateSpriteSheet* ssheet
     this->fixture.filter.groupIndex = 8;
     this->fixture.restitution = 0.f;
 
-    this->body->createFixture(&this->fixture);
+    this->body->CreateFixture(&this->fixture);
 
     this->mass.mass = 300.f;
 
     this->body->SetMassData(&this->mass);
+
+    // this->x= & this->body->GetPosition().x;
+    // this->y= & this->body->GetPosition().y;
+    this->z=zi;
+    this->sprites = ssheet;
+    this->width = 100.f;
+    this->height = 10.f;
+    //this->width=ssheet->states[PLATFORM_HEALTHY].c2.second-ssheet->states[PLATFORM_HEALTHY].c1.second;
+    //this->height=ssheet->states[PLATFORM_HEALTHY].c2.first-ssheet->states[PLATFORM_HEALTHY].c1.first;
+    this->state=PLATFORM_HEALTHY;
 }
 
 void Platform::draw(){
     glPushMatrix();
-    glTranslatef(this->x,this->y,this->z);
+    // glTranslatef(this->x,this->y,this->z);
+    glTranslatef(this->body->GetPosition().x,this->body->GetPosition().y,this->z);
     glBindTexture(GL_TEXTURE_2D,sprites->texID);
     glBegin(GL_QUADS);
         glTexCoord2f(sprites->states[state].c1.first/sprites->imageWidth,sprites->states[state].c2.second/sprites->imageHeight);
