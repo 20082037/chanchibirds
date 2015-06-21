@@ -8,6 +8,7 @@ Bird::Bird(GLfloat xi,GLfloat yi,GLfloat zi,AnimateSpriteSheet* ssheet, b2World*
     height=ssheet->states[BIRD_HEALTHY].begin()->c2.first - ssheet->states[BIRD_HEALTHY].begin()->c1.first;
     state=BIRD_HEALTHY;
     currentAnim=sprites->states[state].begin();
+    dt = 0, ti=clock();
 
     defBody.position.Set(xi,yi);
     defBody.type = b2_dynamicBody;
@@ -36,6 +37,12 @@ void Bird::animate(){
 
 void Bird::draw(){
     // cout<<"I'm a pig : pos: "<<this->body->GetPosition().x<<" "<<this->body->GetPosition().y<<endl;
+    dt += clock()-ti;
+    ti = clock();//No habra pasado mucho tiempo
+    if(dt>6000){
+        animate();
+        dt = 0;
+    }
     glPushMatrix();
     glTranslatef(body->GetPosition().x,body->GetPosition().y,z);
     glBindTexture(GL_TEXTURE_2D,sprites->texID);

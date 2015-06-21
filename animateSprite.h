@@ -7,8 +7,12 @@
 class AnimateSprite: public Sprite{
     public:
         AnimateSpriteSheet* sprites;
+        list<SpriteCoords>::iterator currentAnim;
+        clock_t dt;
+        clock_t ti;
+
         AnimateSprite(){
-            sprites = NULL;
+
         };
 };
 

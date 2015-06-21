@@ -17,7 +17,6 @@ class Bird: public AnimateSprite{
 		};
 
         //int currentAnimation : no, porque list<>::iterator solo permite operadores ++ o --
-        list<SpriteCoords>::iterator currentAnim;
         b2CircleShape shape;
         b2FixtureDef fixture;
         b2MassData massDa;

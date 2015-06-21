@@ -6,6 +6,7 @@ Pig::Pig(GLfloat xi,GLfloat yi,GLfloat zi,AnimateSpriteSheet* ssheet, b2World* w
     width=ssheet->states[PIG_HEALTHY].begin()->c2.second - ssheet->states[PIG_HEALTHY].begin()->c1.second;
     height=ssheet->states[PIG_HEALTHY].begin()->c2.first - ssheet->states[PIG_HEALTHY].begin()->c1.first;
 //    cout<<"PIG: "<<width<<" "<<height<<endl;
+    dt = 0, ti=clock();
 
     state=PIG_HEALTHY;
     currentAnim=sprites->states[state].begin();
@@ -24,17 +25,12 @@ Pig::Pig(GLfloat xi,GLfloat yi,GLfloat zi,AnimateSpriteSheet* ssheet, b2World* w
 
     body->CreateFixture(&fixture);
 
-//    massDa.mass=300.f;
-//    body->SetMassData(&massDa);
     shape.ComputeMass(&massDa, fixture.density);
-    
-//    cout<<"PIG MASS: "<<body->GetMass()<<endl;
 
-    // this->x= & this->body->GetPosition().x;
-    // this->y= & this->body->GetPosition().y;
 }
 
 void Pig::animate(){
+
     if(currentAnim==--sprites->states[state].end()){
         currentAnim=sprites->states[state].begin();
     }else{
@@ -43,10 +39,17 @@ void Pig::animate(){
 }
 
 void Pig::draw(){
+    dt += clock()-ti;
+    ti = clock();//No habra pasado mucho tiempo
+    if(dt>6000){
+        animate();
+        dt = 0;
+    }
+
+
     glPushMatrix();
     glTranslatef(body->GetPosition().x,body->GetPosition().y,z);
-    //cout<<"Chancho Posicion: "<<body->GetPosition().x<<" "<<body->GetPosition().y<<endl;
-    // glTranslatef(this->x,this->y,this->z);
+
     glBindTexture(GL_TEXTURE_2D,sprites->texID);
     glBegin(GL_QUADS);
         glTexCoord2f(currentAnim->c1.first / sprites->imageWidth,currentAnim->c2.second / sprites->imageHeight);
@@ -62,7 +65,16 @@ void Pig::draw(){
 }
 
 void Pig::jump(){
+    body->ApplyForce(b2Vec2(0.0f,5000000.f),body->GetWorldCenter(),true);
+}
 
-    body->ApplyForce(b2Vec2(0.0f,999999999.f),body->GetWorldCenter(),true);
+void Pig::slideLeft(){
+    body->ApplyForce(b2Vec2(-5000000.f,0.f),body->GetWorldCenter(),true);
+}
+void Pig::slideRight(){
+    body->ApplyForce(b2Vec2(5000000.f,0.f),body->GetWorldCenter(),true);
+}
 
+void Pig::down(){
+    body->ApplyForce(b2Vec2(0.f,-5000000.f),body->GetWorldCenter(),true);
 }

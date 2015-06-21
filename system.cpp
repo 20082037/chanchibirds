@@ -14,11 +14,13 @@ void System::initGame(){
                         salir = true;
                     }else if(e.type == SDL_KEYDOWN){
                         switch(e.key.keysym.sym){
-                            case SDLK_RIGHT: pig->animate();
+                            case SDLK_RIGHT: pig->slideRight();
                             break;
-                            case SDLK_LEFT: (*birds.begin())->animate();
+                            case SDLK_LEFT: pig->slideLeft();
                             break;
                             case SDLK_UP: pig->jump();
+                            break;
+                            case SDLK_DOWN: pig->down();
                             break;
                         }
                     }
@@ -132,19 +134,19 @@ void System::setdown(){
 
 bool System::loadMedia(){
     bool success= true;
-    success = aSprites[PIG][Pig::PIG_NORMAL].loadTextureFromFile("images/normalPig.png");
+    success = aSprites[PIG][Pig::PIG_NORMAL].loadTextureFromFile("images/normalPig.jpg");
     success = aSprites[PIG][Pig::PIG_NORMAL].loadSpriteMap("SpriteCoordinates.txt",PIG,Pig::PIG_NORMAL);
 
-    success = aSprites[PIG][Pig::PIG_HELMET].loadTextureFromFile("images/pig_helmet.png");
+    success = aSprites[PIG][Pig::PIG_HELMET].loadTextureFromFile("images/pig_helmet.jpg");
     success = aSprites[PIG][Pig::PIG_HELMET].loadSpriteMap("SpriteCoordinates.txt",PIG,Pig::PIG_HELMET);
 
-    success = aSprites[PIG][Pig::PIG_KING].loadTextureFromFile("images/pig_crown.png");
+    success = aSprites[PIG][Pig::PIG_KING].loadTextureFromFile("images/pig_crown.jpg");
     success = aSprites[PIG][Pig::PIG_KING].loadSpriteMap("SpriteCoordinates.txt",PIG,Pig::PIG_KING);
 
-    success = aSprites[BIRD][Bird::BIRD_YELLOW].loadTextureFromFile("images/pajaro_amarillo.png");
+    success = aSprites[BIRD][Bird::BIRD_YELLOW].loadTextureFromFile("images/pajaro_amarillo.jpg");
     success = aSprites[BIRD][Bird::BIRD_YELLOW].loadSpriteMap("SpriteCoordinates.txt",BIRD,Bird::BIRD_YELLOW);
 
-    success = aSprites[BIRD][Bird::BIRD_RED].loadTextureFromFile("images/redBird.png");
+    success = aSprites[BIRD][Bird::BIRD_RED].loadTextureFromFile("images/redBird.jpg");
     success = aSprites[BIRD][Bird::BIRD_RED].loadSpriteMap("SpriteCoordinates.txt",BIRD,Bird::BIRD_RED);
 
     success = iSprites[PLATFORM][Platform::PLATFORM_STONE].loadTextureFromFile("images/bloqueconcreto.png");
