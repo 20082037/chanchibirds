@@ -41,6 +41,11 @@ class System{
         //Box2D components
         b2Vec2 gravity;
         b2World world;
+        b2BodyDef limits;
+        b2Body* windowLimits;
+        b2EdgeShape positionsLimits;
+        b2FixtureDef fixtureLimits;
+
         float32 timeStep;
         int32 velocityIteration;
         int32 positionIteration;
@@ -65,6 +70,20 @@ class System{
             timeStep = 1.f/60.f;
             velocityIteration=8;
             positionIteration=3;
+
+            limits.position.Set(-650,-350);
+            windowLimits = world.CreateBody(&limits);
+            fixtureLimits.shape = &positionsLimits;
+            positionsLimits.Set(b2Vec2(0.f,0.f),b2Vec2(1300.f,0.f));
+            windowLimits->CreateFixture(&fixtureLimits);
+            positionsLimits.Set(b2Vec2(1300.f,0.f),b2Vec2(1300.f,700.f));
+
+            windowLimits->CreateFixture(&fixtureLimits);
+            positionsLimits.Set(b2Vec2(1300.f,700.f),b2Vec2(0.f,700.f));
+            windowLimits->CreateFixture(&fixtureLimits);
+            positionsLimits.Set(b2Vec2(0.f,700.f),b2Vec2(0.f,0.f));
+            windowLimits->CreateFixture(&fixtureLimits);
+
         };
 
         void initGame();

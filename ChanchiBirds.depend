@@ -484,7 +484,7 @@
 	<iostream>
 	"system.h"
 
-1434860605 /home/jordan/Documentos/ChanchiBirdsJafeth/chanchibirds/system.h
+1434868513 /home/jordan/Documentos/ChanchiBirdsJafeth/chanchibirds/system.h
 	<iostream>
 	<map>
 	<list>
@@ -507,7 +507,7 @@
 	"sprite.h"
 	"iSpriteSheet.h"
 
-1434866855 source:/home/jordan/Documentos/ChanchiBirdsJafeth/chanchibirds/pig.cpp
+1434867615 source:/home/jordan/Documentos/ChanchiBirdsJafeth/chanchibirds/pig.cpp
 	"pig.h"
 
 1434859016 source:/home/jordan/Documentos/ChanchiBirdsJafeth/chanchibirds/platform.cpp
