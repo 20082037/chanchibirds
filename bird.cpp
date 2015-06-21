@@ -4,11 +4,12 @@ Bird::Bird(GLfloat xi,GLfloat yi,GLfloat zi,AnimateSpriteSheet* ssheet, b2World*
 
     z= zi;
     sprites = ssheet;
-    width=ssheet->states[BIRD_HEALTHY].begin()->c2.second - ssheet->states[BIRD_HEALTHY].begin()->c1.second;
-    height=ssheet->states[BIRD_HEALTHY].begin()->c2.first - ssheet->states[BIRD_HEALTHY].begin()->c1.first;
     state=BIRD_HEALTHY;
     currentAnim=sprites->states[state].begin();
-    dt = 0, ti=clock();
+    width=currentAnim->c2.second - currentAnim->c1.second;
+    height=currentAnim->c2.first - currentAnim->c1.first;
+    dt = 0,ti = clock();
+
 
     defBody.position.Set(xi,yi);
     defBody.type = b2_dynamicBody;

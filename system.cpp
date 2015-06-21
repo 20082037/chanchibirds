@@ -25,6 +25,17 @@ void System::initGame(){
                         }
                     }
                 }
+                dtBird += clock()-tiBird;
+                tiBird = clock();//No habra pasado mucho tiempo
+                if(dtBird>700000){
+                    Bird* baux;
+                    GLfloat x=-400.f+birds.size()*10,y=-200.f,z=15.f;
+                    //It then will iterate
+                    baux = new Bird(x,y,z,&aSprites[BIRD][Bird::BIRD_RED],&world);
+                    birds.push_back(baux);
+                    canvas[z].push_back(baux);
+                    dtBird = 0;
+                }
                 world.Step(timeStep,velocityIteration,positionIteration);
                 renderGlobal();
                 SDL_GL_SwapWindow(window);
@@ -37,41 +48,41 @@ void System::initGame(){
 void System::initSprites(){
     //Plataformas
     int nPlatforms=10;
-    GLfloat x=0.f,y=350.f,z=50.f;//Valores iniciales:cambiar
+    GLfloat x=0.f,y=350.f,z=5.f;//Valores iniciales:cambiar
     Platform* paux;
     for(int i=1;i<=nPlatforms;i++){
         if(i%5==4){
             x=75.f;
-            y-=65.f;
+            y-=120.f;
         }else{
             if(i%5==1){
                 x=0.f;
-                y-=65.f;
+                y-=120.f;
             }else{
-                x+=200.f;
+                x+=250.f;
             }
         }
-        paux = new Platform(x,y,z,&iSprites[PLATFORM][Platform::PLATFORM_STONE],&world);
+        paux = new Platform(x,y,z,&iSprites[PLATFORM][Platform::PLATFORM_STONE],&world, WINDOW_WIDTH);
         platforms.push_back(paux);
         canvas[z].push_back(paux);
     }
 
     //Pájaros
     Bird* baux;
-    x=-400.f;y=-200.f;z=30.f;
+    x=-400.f;y=-200.f;z=15.f;
     //It then will iterate
-    baux = new Bird(x,y,z,&aSprites[BIRD][Bird::BIRD_YELLOW],&world);
+    baux = new Bird(x,y,z,&aSprites[BIRD][Bird::BIRD_RED],&world);
     birds.push_back(baux);
     canvas[z].push_back(baux);
 
     //Chancho
-    x=0.f;y=0.f;z=15.f;
-    pig = new Pig(x,y,z,&aSprites[PIG][Pig::PIG_NORMAL],&world);
+    x=0.f;y=0.f;z=30.f;
+    pig = new Pig(x,y,z,&aSprites[PIG][Pig::PIG_HELMET],&world,WINDOW_WIDTH);
     canvas[z].push_back(pig);
 
     //Piso
-    x=0.f;y=-300.f;z=5.f;
-    ground = new Ground(x,y,z,&iSprites[GROUND][Ground::GROUND_NORMAL],&world);
+    x=0.f;y=-300.f;z=50.f;
+    ground = new Ground(x,y,z,&iSprites[GROUND][Ground::GROUND_NORMAL],&world,WINDOW_WIDTH);
     canvas[z].push_back(ground);
 }
 
@@ -134,19 +145,19 @@ void System::setdown(){
 
 bool System::loadMedia(){
     bool success= true;
-    success = aSprites[PIG][Pig::PIG_NORMAL].loadTextureFromFile("images/normalPig.jpg");
-    success = aSprites[PIG][Pig::PIG_NORMAL].loadSpriteMap("SpriteCoordinates.txt",PIG,Pig::PIG_NORMAL);
+    //success = aSprites[PIG][Pig::PIG_NORMAL].loadTextureFromFile("images/normalPig.png");
+    //success = aSprites[PIG][Pig::PIG_NORMAL].loadSpriteMap("SpriteCoordinates.txt",PIG,Pig::PIG_NORMAL);
 
-    success = aSprites[PIG][Pig::PIG_HELMET].loadTextureFromFile("images/pig_helmet.jpg");
+    success = aSprites[PIG][Pig::PIG_HELMET].loadTextureFromFile("images/pig_helmet.png");
     success = aSprites[PIG][Pig::PIG_HELMET].loadSpriteMap("SpriteCoordinates.txt",PIG,Pig::PIG_HELMET);
 
-    success = aSprites[PIG][Pig::PIG_KING].loadTextureFromFile("images/pig_crown.jpg");
+    success = aSprites[PIG][Pig::PIG_KING].loadTextureFromFile("images/pig_crown.png");
     success = aSprites[PIG][Pig::PIG_KING].loadSpriteMap("SpriteCoordinates.txt",PIG,Pig::PIG_KING);
 
-    success = aSprites[BIRD][Bird::BIRD_YELLOW].loadTextureFromFile("images/pajaro_amarillo.jpg");
+    success = aSprites[BIRD][Bird::BIRD_YELLOW].loadTextureFromFile("images/pajaro_amarillo.png");
     success = aSprites[BIRD][Bird::BIRD_YELLOW].loadSpriteMap("SpriteCoordinates.txt",BIRD,Bird::BIRD_YELLOW);
 
-    success = aSprites[BIRD][Bird::BIRD_RED].loadTextureFromFile("images/redBird.jpg");
+    success = aSprites[BIRD][Bird::BIRD_RED].loadTextureFromFile("images/redBird.png");
     success = aSprites[BIRD][Bird::BIRD_RED].loadSpriteMap("SpriteCoordinates.txt",BIRD,Bird::BIRD_RED);
 
     success = iSprites[PLATFORM][Platform::PLATFORM_STONE].loadTextureFromFile("images/bloqueconcreto.png");

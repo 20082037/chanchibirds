@@ -31,7 +31,7 @@ class Pig: public AnimateSprite{
         void down();
         void animate();
         void draw();
-        Pig(GLfloat xi,GLfloat yi,GLfloat zi,AnimateSpriteSheet*,b2World*);
+        Pig(GLfloat xi,GLfloat yi,GLfloat zi,AnimateSpriteSheet*,b2World*,int);
 };
 
 

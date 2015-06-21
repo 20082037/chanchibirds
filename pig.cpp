@@ -1,15 +1,18 @@
 #include "pig.h"
 
-Pig::Pig(GLfloat xi,GLfloat yi,GLfloat zi,AnimateSpriteSheet* ssheet, b2World* world){//Provisional, se debería proveer direction y speed
+Pig::Pig(GLfloat xi,GLfloat yi,GLfloat zi,AnimateSpriteSheet* ssheet, b2World* world, int wWidth){//Provisional, se debería proveer direction y speed
     z=zi;
     sprites = ssheet;
-    width=ssheet->states[PIG_HEALTHY].begin()->c2.second - ssheet->states[PIG_HEALTHY].begin()->c1.second;
-    height=ssheet->states[PIG_HEALTHY].begin()->c2.first - ssheet->states[PIG_HEALTHY].begin()->c1.first;
-//    cout<<"PIG: "<<width<<" "<<height<<endl;
-    dt = 0, ti=clock();
-
     state=PIG_HEALTHY;
     currentAnim=sprites->states[state].begin();
+    width=currentAnim->c2.second - currentAnim->c1.second;
+    height=currentAnim->c2.first - currentAnim->c1.first;
+    scale = 1/20.f;
+    height = scale*wWidth*height / width;
+    width = scale*wWidth;
+
+    dt = 0, ti=clock();
+
 
 
     defBody.type = b2_dynamicBody;
@@ -41,7 +44,7 @@ void Pig::animate(){
 void Pig::draw(){
     dt += clock()-ti;
     ti = clock();//No habra pasado mucho tiempo
-    if(dt>6000){
+    if(dt>100000){
         animate();
         dt = 0;
     }
@@ -65,6 +68,8 @@ void Pig::draw(){
 }
 
 void Pig::jump(){
+
+
     body->ApplyForce(b2Vec2(0.0f,5000000.f),body->GetWorldCenter(),true);
 }
 

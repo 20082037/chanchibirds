@@ -57,6 +57,10 @@ class System{
         Pig* pig;
         Ground* ground;
 
+        clock_t dtBird;
+        clock_t tiBird;
+
+
 
         map<int,map<int,AnimateSpriteSheet> > aSprites;
         map<int,map<int,InanimateSpriteSheet> > iSprites;
@@ -70,6 +74,8 @@ class System{
             timeStep = 1.f/60.f;
             velocityIteration=8;
             positionIteration=3;
+            dtBird = 0;
+            tiBird = clock();
 
             limits.position.Set(-650,-350);
             windowLimits = world.CreateBody(&limits);

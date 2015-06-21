@@ -1,18 +1,23 @@
 #include "platform.h"
 
-Platform::Platform(GLfloat xi,GLfloat yi,GLfloat zi,InanimateSpriteSheet* ssheet,b2World* world){//Provisional, se debería proveer direction y speed
+Platform::Platform(GLfloat xi,GLfloat yi,GLfloat zi,InanimateSpriteSheet* ssheet,b2World* world, int wWidth){//Provisional, se debería proveer direction y speed
     z=zi;
     sprites = ssheet;
-    width = 100.f;
-    height = 5.f;
-    //this->width=ssheet->states[PLATFORM_HEALTHY].c2.second-ssheet->states[PLATFORM_HEALTHY].c1.second;
-    //this->height=ssheet->states[PLATFORM_HEALTHY].c2.first-ssheet->states[PLATFORM_HEALTHY].c1.first;
+    //width = 100.f;
+    //height = 5.f;
+    height=ssheet->states[PLATFORM_HEALTHY].c2.second-ssheet->states[PLATFORM_HEALTHY].c1.second;
+    width=ssheet->states[PLATFORM_HEALTHY].c2.first-ssheet->states[PLATFORM_HEALTHY].c1.first;
     state=PLATFORM_HEALTHY;
+    scale = 1/10.f;
+    height = scale*wWidth*height / width;
+    width = scale*wWidth;
 
+    limy = -300.f - height/2;
+    cout<<"limy: "<<limy<<endl;
 
     defBody.position.Set(xi,yi);
     defBody.type = b2_kinematicBody;
-    defBody.linearVelocity.Set(0.f,20.f);
+    defBody.linearVelocity.Set(0.f,-20.f);
     body = world->CreateBody(&defBody);
 
     shape.SetAsBox(width/2, height/2);
@@ -31,7 +36,17 @@ Platform::Platform(GLfloat xi,GLfloat yi,GLfloat zi,InanimateSpriteSheet* ssheet
 }
 
 void Platform::draw(){
+
     glPushMatrix();
+    if(body->GetPosition().y < limy){
+        b2World* aux = body->GetWorld();
+
+        defBody.position.Set(body->GetPosition().x,230.f);
+        body = aux->CreateBody(&defBody);
+        body->CreateFixture(&fixture);
+        body->SetMassData(&massDa);
+
+    }
     // glTranslatef(this->x,this->y,this->z);
     glTranslatef(body->GetPosition().x,body->GetPosition().y,z);
 

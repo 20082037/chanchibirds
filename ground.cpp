@@ -1,11 +1,15 @@
 #include "ground.h"
 
-Ground::Ground(float xi,float yi,float zi,InanimateSpriteSheet* ssheet,b2World* world){
+Ground::Ground(float xi,float yi,float zi,InanimateSpriteSheet* ssheet,b2World* world,int wWidth){
     z = zi;
     sprites = ssheet;
     state=0;
     height = ssheet->states[0].c2.second - ssheet->states[0].c1.second;
     width = ssheet->states[0].c2.first - ssheet->states[0].c1.first;
+    scale = 1;
+    height = scale*wWidth*height / width;
+    width = scale*wWidth;
+
 
     defBody.type = b2_staticBody;
     defBody.position.Set(xi,yi);

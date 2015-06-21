@@ -18,6 +18,7 @@ class Sprite{
         //Dimensions
         GLfloat width;
         GLfloat height;
+        float scale;
 
         Sprite(){};
         virtual void draw()=0;

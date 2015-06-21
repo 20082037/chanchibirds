@@ -28,4 +28,5 @@ class Bird: public AnimateSprite{
 
 };
 
+
 #endif // BIRD_H_INCLUDED
