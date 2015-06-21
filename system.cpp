@@ -49,8 +49,6 @@ void System::initSprites(){
                 x+=200.f;
             }
         }
-        cout<<"Plataforma "<<i<<endl;
-        cout<<"X: "<<x<<" Y: "<<y<<" Z: "<<z<<endl;
         paux = new Platform(x,y,z,&iSprites[PLATFORM][Platform::PLATFORM_STONE],&world);
         platforms.push_back(paux);
         canvas[z].push_back(paux);
@@ -63,6 +61,7 @@ void System::initSprites(){
     baux = new Bird(x,y,z,&aSprites[BIRD][Bird::BIRD_YELLOW],&world);
     birds.push_back(baux);
     canvas[z].push_back(baux);
+
     //Chancho
     x=0.f;y=0.f;z=15.f;
     pig = new Pig(x,y,z,&aSprites[PIG][Pig::PIG_NORMAL],&world);
@@ -153,6 +152,8 @@ bool System::loadMedia(){
 
     success = iSprites[GROUND][Ground::GROUND_NORMAL].loadTextureFromFile("images/ground.jpg");
     success = iSprites[GROUND][Ground::GROUND_NORMAL].loadSpriteMap("SpriteCoordinates.txt",GROUND,Ground::GROUND_NORMAL);
+
+
 
     return success;
 }

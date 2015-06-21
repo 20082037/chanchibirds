@@ -62,7 +62,7 @@ class System{
         {
             WINDOW_WIDTH=1300;
             WINDOW_HEIGHT=700;
-            timeStep=1.0f/60.0f;
+            timeStep = 1.f/60.f;
             velocityIteration=8;
             positionIteration=3;
         };

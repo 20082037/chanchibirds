@@ -7,6 +7,9 @@
 class AnimateSprite: public Sprite{
     public:
         AnimateSpriteSheet* sprites;
+        AnimateSprite(){
+            sprites = NULL;
+        };
 };
 
 #endif // ANIMATESPRITE_H_INCLUDED

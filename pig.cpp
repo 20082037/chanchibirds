@@ -1,30 +1,37 @@
 #include "pig.h"
 
 Pig::Pig(GLfloat xi,GLfloat yi,GLfloat zi,AnimateSpriteSheet* ssheet, b2World* world){//Provisional, se debería proveer direction y speed
+    z=zi;
+    sprites = ssheet;
+    width=ssheet->states[PIG_HEALTHY].begin()->c2.second - ssheet->states[PIG_HEALTHY].begin()->c1.second;
+    height=ssheet->states[PIG_HEALTHY].begin()->c2.first - ssheet->states[PIG_HEALTHY].begin()->c1.first;
+//    cout<<"PIG: "<<width<<" "<<height<<endl;
 
-    this->defBody.type = b2_dynamicBody;
-    this->defBody.position.Set(xi,yi);
-    this->body = world -> CreateBody(& this->defBody);
+    state=PIG_HEALTHY;
+    currentAnim=sprites->states[state].begin();
 
-    this->shape.m_p.Set(0.f,0.f);
-    this->shape.m_radius=20.0f;
-    this->fixture.shape =  & this->shape;
-    this->fixture.restitution = 0.6f;
-    this->fixture.friction = 0.3f;
 
-    this->body->CreateFixture(& this->fixture);
+    defBody.type = b2_dynamicBody;
+    defBody.position.Set(xi,yi);
+    body = world -> CreateBody(&defBody);
 
-    this->mass.mass=300.f;
-    this->body->SetMassData(&this->mass);
+    shape.m_p.Set(0.f,0.f);
+    shape.m_radius=height/2;
+    fixture.shape =  &shape;
+    fixture.restitution = 0.3f;
+    fixture.friction = 0.3f;
+    fixture.density = 0.3f;
+
+    body->CreateFixture(&fixture);
+
+//    massDa.mass=300.f;
+//    body->SetMassData(&massDa);
+    shape.ComputeMass(&massDa, fixture.density);
+    
+//    cout<<"PIG MASS: "<<body->GetMass()<<endl;
 
     // this->x= & this->body->GetPosition().x;
     // this->y= & this->body->GetPosition().y;
-    this->z=zi;
-    this->sprites = ssheet;
-    this->width=ssheet->states[PIG_HEALTHY].begin()->c2.second - ssheet->states[PIG_HEALTHY].begin()->c1.second;
-    this->height=ssheet->states[PIG_HEALTHY].begin()->c2.first - ssheet->states[PIG_HEALTHY].begin()->c1.first;
-    this->state=PIG_HEALTHY;
-    this->currentAnim=sprites->states[state].begin();
 }
 
 void Pig::animate(){
@@ -37,7 +44,8 @@ void Pig::animate(){
 
 void Pig::draw(){
     glPushMatrix();
-    glTranslatef(this->body->GetPosition().x,this->body->GetPosition().y,this->z);
+    glTranslatef(body->GetPosition().x,body->GetPosition().y,z);
+    //cout<<"Chancho Posicion: "<<body->GetPosition().x<<" "<<body->GetPosition().y<<endl;
     // glTranslatef(this->x,this->y,this->z);
     glBindTexture(GL_TEXTURE_2D,sprites->texID);
     glBegin(GL_QUADS);
@@ -55,6 +63,6 @@ void Pig::draw(){
 
 void Pig::jump(){
 
-    this->body->ApplyForce(b2Vec2(0.0f,999999999.0f),this->body->GetWorldCenter(),true);
+    body->ApplyForce(b2Vec2(0.0f,999999999.f),body->GetWorldCenter(),true);
 
 }

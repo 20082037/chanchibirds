@@ -10,7 +10,7 @@ class Bird: public AnimateSprite{
 		    BIRD_RED,
 		    NUM_BIRD_TAGS
 		};
-        
+
 		enum BIRD_HEALTH{
 		    BIRD_HEALTHY,
 		    NUM_BIRD_HEALTH
@@ -20,7 +20,7 @@ class Bird: public AnimateSprite{
         list<SpriteCoords>::iterator currentAnim;
         b2CircleShape shape;
         b2FixtureDef fixture;
-        b2MassData mass;
+        b2MassData massDa;
 
         Bird(GLfloat,GLfloat,GLfloat,AnimateSpriteSheet*,b2World*);
         void draw();
