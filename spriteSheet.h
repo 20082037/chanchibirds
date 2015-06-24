@@ -8,6 +8,7 @@
 #include <math.h>//pow
 #include <FreeImage.h>
 using namespace std;
+
 class SpriteSheet{
     public:
         int imageWidth;
@@ -18,6 +19,5 @@ class SpriteSheet{
         bool loadTextureFromFile(string);
         float stof(string);
 };
-
 
 #endif // SPRITESHEET_H_INCLUDED

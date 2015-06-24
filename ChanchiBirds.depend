@@ -352,7 +352,7 @@
 1434849627 source:/home/jordan/Documentos/ChanchiBirdsJafeth/chanchibirds/aSpriteSheet.cpp
 	"aSpriteSheet.h"
 
-1434580174 /home/jordan/Documentos/ChanchiBirdsJafeth/chanchibirds/aSpriteSheet.h
+1435188525 /home/jordan/Documentos/ChanchiBirdsJafeth/chanchibirds/aSpriteSheet.h
 	"spriteSheet.h"
 	"spriteCoords.h"
 	<map>
@@ -360,7 +360,7 @@
 	<vector>
 	<fstream>
 
-1434572383 /home/jordan/Documentos/ChanchiBirdsJafeth/chanchibirds/spriteSheet.h
+1435188545 /home/jordan/Documentos/ChanchiBirdsJafeth/chanchibirds/spriteSheet.h
 	<GL/gl.h>
 	<iostream>
 	<string.h>
@@ -456,7 +456,7 @@
 1434269605 source:/home/wilson/Documentos/ChanchiBirdsJafeth/chanchibirds/system.cpp
 	"system.h"
 
-1434906800 source:/home/jordan/Documentos/ChanchiBirdsJafeth/chanchibirds/bird.cpp
+1435006343 source:/home/jordan/Documentos/ChanchiBirdsJafeth/chanchibirds/bird.cpp
 	"bird.h"
 
 1434908951 /home/jordan/Documentos/ChanchiBirdsJafeth/chanchibirds/bird.h
@@ -473,7 +473,7 @@
 1434860488 source:/home/jordan/Documentos/ChanchiBirdsJafeth/chanchibirds/iSpriteSheet.cpp
 	"iSpriteSheet.h"
 
-1434572383 /home/jordan/Documentos/ChanchiBirdsJafeth/chanchibirds/iSpriteSheet.h
+1435188454 /home/jordan/Documentos/ChanchiBirdsJafeth/chanchibirds/iSpriteSheet.h
 	"spriteSheet.h"
 	"spriteCoords.h"
 	<map>
@@ -484,7 +484,7 @@
 	<iostream>
 	"system.h"
 
-1434908904 /home/jordan/Documentos/ChanchiBirdsJafeth/chanchibirds/system.h
+1435189358 /home/jordan/Documentos/ChanchiBirdsJafeth/chanchibirds/system.h
 	<iostream>
 	<map>
 	<list>
@@ -500,14 +500,14 @@
 1434899351 /home/jordan/Documentos/ChanchiBirdsJafeth/chanchibirds/pig.h
 	"animateSprite.h"
 
-1434904054 /home/jordan/Documentos/ChanchiBirdsJafeth/chanchibirds/platform.h
+1435188565 /home/jordan/Documentos/ChanchiBirdsJafeth/chanchibirds/platform.h
 	"inanimateSprite.h"
 
 1434849857 /home/jordan/Documentos/ChanchiBirdsJafeth/chanchibirds/inanimateSprite.h
 	"sprite.h"
 	"iSpriteSheet.h"
 
-1434904451 source:/home/jordan/Documentos/ChanchiBirdsJafeth/chanchibirds/pig.cpp
+1434909163 source:/home/jordan/Documentos/ChanchiBirdsJafeth/chanchibirds/pig.cpp
 	"pig.h"
 
 1434904158 source:/home/jordan/Documentos/ChanchiBirdsJafeth/chanchibirds/platform.cpp
@@ -519,7 +519,7 @@
 1434249908 source:/home/jordan/Documentos/ChanchiBirdsJafeth/chanchibirds/spriteSheet.cpp
 	"spriteSheet.h"
 
-1434909079 source:/home/jordan/Documentos/ChanchiBirdsJafeth/chanchibirds/system.cpp
+1435186474 source:/home/jordan/Documentos/ChanchiBirdsJafeth/chanchibirds/system.cpp
 	"system.h"
 
 1332136811 /home/jordan/Documentos/Box2D_v2.3.0/Box2D/Box2D/Box2D.h

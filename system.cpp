@@ -124,7 +124,7 @@ bool System::setupGL(){
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
 
-    glClearColor(0.f,0.f,0.f,1.f);
+    glClearColor(0.f,0.f,0.f,0.f);
     glEnable(GL_TEXTURE_2D);
 
 

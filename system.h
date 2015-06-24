@@ -9,7 +9,6 @@
 #include <SDL2/SDL_opengl.h>
 #include <GL/gl.h>
 #include <Box2D/Box2D.h>
-//#include <FreeImage.h>
 
 #include "bird.h"
 #include "pig.h"
@@ -28,8 +27,6 @@ enum TAG{
     NUM_TAGS
 };
 
-// enum SLINGSHOT_TAG{};
-
 class System{
     public:
         //Window components
@@ -41,6 +38,7 @@ class System{
         //Box2D components
         b2Vec2 gravity;
         b2World world;
+
         b2BodyDef limits;
         b2Body* windowLimits;
         b2EdgeShape positionsLimits;
@@ -50,7 +48,7 @@ class System{
         int32 velocityIteration;
         int32 positionIteration;
 
-        //Game components
+       //Game components
         list<Platform*> platforms;
         list<Bird*> birds;
 //        Slingshot* slingshot;
@@ -59,7 +57,6 @@ class System{
 
         clock_t dtBird;
         clock_t tiBird;
-
 
 
         map<int,map<int,AnimateSpriteSheet> > aSprites;
@@ -71,23 +68,24 @@ class System{
         {
             WINDOW_WIDTH=1300;
             WINDOW_HEIGHT=700;
+
             timeStep = 1.f/60.f;
             velocityIteration=8;
             positionIteration=3;
+
             dtBird = 0;
             tiBird = clock();
 
-            limits.position.Set(-650,-350);
+            limits.position.Set(-WINDOW_WIDTH/2,-WINDOW_HEIGHT/2);
             windowLimits = world.CreateBody(&limits);
             fixtureLimits.shape = &positionsLimits;
-            positionsLimits.Set(b2Vec2(0.f,0.f),b2Vec2(1300.f,0.f));
+            positionsLimits.Set(b2Vec2(0.f,0.f),b2Vec2((float)WINDOW_WIDTH,0.f));
             windowLimits->CreateFixture(&fixtureLimits);
-            positionsLimits.Set(b2Vec2(1300.f,0.f),b2Vec2(1300.f,700.f));
-
+            positionsLimits.Set(b2Vec2((float)WINDOW_WIDTH,0.f),b2Vec2((float)WINDOW_WIDTH,(float)WINDOW_HEIGHT));
             windowLimits->CreateFixture(&fixtureLimits);
-            positionsLimits.Set(b2Vec2(1300.f,700.f),b2Vec2(0.f,700.f));
+            positionsLimits.Set(b2Vec2((float)WINDOW_WIDTH,(float)WINDOW_HEIGHT),b2Vec2(0.f,(float)WINDOW_HEIGHT));
             windowLimits->CreateFixture(&fixtureLimits);
-            positionsLimits.Set(b2Vec2(0.f,700.f),b2Vec2(0.f,0.f));
+            positionsLimits.Set(b2Vec2(0.f,(float)WINDOW_HEIGHT),b2Vec2(0.f,0.f));
             windowLimits->CreateFixture(&fixtureLimits);
 
         };

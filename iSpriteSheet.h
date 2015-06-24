@@ -10,7 +10,7 @@
 class InanimateSpriteSheet: public SpriteSheet{
     public:
         map<int,SpriteCoords > states;
-        bool loadSpriteMap(char*,int TAG,int TAG_TYPE);
+        bool loadSpriteMap(char* filename,int TAG,int TAG_TYPE);
         InanimateSpriteSheet(){};
 };
 
