@@ -16,12 +16,13 @@ class Bird: public AnimateSprite{
 		    NUM_BIRD_HEALTH
 		};
 
+
         //int currentAnimation : no, porque list<>::iterator solo permite operadores ++ o --
         b2CircleShape shape;
         b2FixtureDef fixture;
         b2MassData massDa;
 
-        Bird(GLfloat,GLfloat,GLfloat,AnimateSpriteSheet*,b2World*);
+        Bird(GLfloat,GLfloat,GLfloat,AnimateSpriteSheet*,b2World*,int);
         void draw();
         void animate();
         //void fly();//missing parameters

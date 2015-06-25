@@ -1,6 +1,7 @@
 #include "background.h"
 
-Background::Background(GLfloat xi,GLfloat yi,GLfloat zi,InanimateSpriteSheet* ssheet,int wWidth){
+Background::Background(GLfloat xi,GLfloat yi,GLfloat zi,InanimateSpriteSheet* ssheet,int wWidth,int ta){
+    tag = ta;
     x = xi;
     y = yi;
     z = zi;
@@ -11,12 +12,13 @@ Background::Background(GLfloat xi,GLfloat yi,GLfloat zi,InanimateSpriteSheet* ss
     scale = 1;
     height = scale*wWidth*height / width;
     width = scale*wWidth;
+
+//    body->SetUserData(this);
 }
 
 void Background::draw(){
     glPushMatrix();
     glTranslatef(x,y,z);
-    cout<<"Background"<<endl;
     glBindTexture(GL_TEXTURE_2D,sprites->texID);
     glBegin(GL_QUADS);
         glTexCoord2f(sprites->states[state].c1.first/sprites->imageWidth,sprites->states[state].c2.second/sprites->imageHeight);

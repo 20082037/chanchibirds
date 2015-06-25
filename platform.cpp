@@ -1,6 +1,7 @@
 #include "platform.h"
 
-Platform::Platform(GLfloat xi,GLfloat yi,GLfloat zi,InanimateSpriteSheet* ssheet,b2World* world, int wWidth){//Provisional, se debería proveer direction y speed
+Platform::Platform(GLfloat xi,GLfloat yi,GLfloat zi,InanimateSpriteSheet* ssheet,b2World* world, int wWidth,int ta){//Provisional, se debería proveer direction y speed
+    tag = ta;
     z=zi;
     sprites = ssheet;
     //width = 100.f;
@@ -18,6 +19,7 @@ Platform::Platform(GLfloat xi,GLfloat yi,GLfloat zi,InanimateSpriteSheet* ssheet
     defBody.type = b2_kinematicBody;
     defBody.linearVelocity.Set(0.f,-20.f);
     body = world->CreateBody(&defBody);
+    body->SetUserData(this);
 
     shape.SetAsBox(width/2, height/2);
 
@@ -32,6 +34,7 @@ Platform::Platform(GLfloat xi,GLfloat yi,GLfloat zi,InanimateSpriteSheet* ssheet
 
     body->SetMassData(&massDa);
 
+//    body->SetUserData(this);
 }
 
 void Platform::draw(){
@@ -39,7 +42,6 @@ void Platform::draw(){
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     glBlendEquation(GL_FUNC_ADD);
-    cout<<"platform drawing"<<endl;
 
 
     if(body->GetPosition().y < limy){

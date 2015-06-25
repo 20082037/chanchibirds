@@ -15,6 +15,7 @@
 #include "platform.h"
 #include "ground.h"
 #include "background.h"
+#include "ContentListener.h"
 //#include "slingshot.h"
 
 using namespace std;
@@ -28,6 +29,7 @@ enum TAG{
     BACKGROUND,
     NUM_TAGS
 };
+
 
 class System{
     public:
@@ -49,6 +51,9 @@ class System{
         float32 timeStep;
         int32 velocityIteration;
         int32 positionIteration;
+
+        ContentListener contactL;
+
 
        //Game components
         list<Platform*> platforms;
@@ -92,6 +97,8 @@ class System{
             windowLimits->CreateFixture(&fixtureLimits);
             positionsLimits.Set(b2Vec2(0.f,(float)WINDOW_HEIGHT),b2Vec2(0.f,0.f));
             windowLimits->CreateFixture(&fixtureLimits);
+
+            world.SetContactListener(&contactL);
 
         };
 

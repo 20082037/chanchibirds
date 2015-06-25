@@ -1,6 +1,8 @@
 #include "bird.h"
 
-Bird::Bird(GLfloat xi,GLfloat yi,GLfloat zi,AnimateSpriteSheet* ssheet, b2World* world){
+Bird::Bird(GLfloat xi,GLfloat yi,GLfloat zi,AnimateSpriteSheet* ssheet, b2World* world,int ta){
+    tag = ta;
+    alive = true;
     z= zi;
     sprites = ssheet;
     state=BIRD_HEALTHY;
@@ -13,6 +15,7 @@ Bird::Bird(GLfloat xi,GLfloat yi,GLfloat zi,AnimateSpriteSheet* ssheet, b2World*
     defBody.position.Set(xi,yi);
     defBody.type = b2_dynamicBody;
     body = world -> CreateBody(&defBody);
+    body->SetUserData(this);
 
     shape.m_p.Set(0.f,0.f);
     shape.m_radius = height/2;
@@ -22,11 +25,14 @@ Bird::Bird(GLfloat xi,GLfloat yi,GLfloat zi,AnimateSpriteSheet* ssheet, b2World*
     fixture.filter.groupIndex = -8;
     fixture.density=0.3f;
 
+
     body->CreateFixture(&fixture);
     body->ApplyForce(b2Vec2 (839999999999999.0f,999999999999999.0f),body->GetWorldCenter(),true);
 
 
     shape.ComputeMass(&massDa, fixture.density);
+
+
 }
 
 void Bird::animate(){
@@ -49,7 +55,6 @@ void Bird::draw(){
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     glBlendEquation(GL_FUNC_ADD);
-    cout<<"Bird"<<endl;
 
     glTranslatef(body->GetPosition().x,body->GetPosition().y,z);
     glBindTexture(GL_TEXTURE_2D,sprites->texID);

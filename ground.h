@@ -14,7 +14,7 @@ class Ground: public InanimateSprite{
         	NUM_GROUND_HEALTH
         };
         b2PolygonShape shape;
-        Ground(float,float,float,InanimateSpriteSheet*,b2World*,int);
+        Ground(float,float,float,InanimateSpriteSheet*,b2World*,int,int);
         void draw();
 };
 

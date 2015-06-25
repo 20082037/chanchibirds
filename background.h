@@ -18,7 +18,7 @@ public:
     };
     GLfloat x;
     GLfloat y;
-    Background(GLfloat,GLfloat,GLfloat,InanimateSpriteSheet*,int);
+    Background(GLfloat,GLfloat,GLfloat,InanimateSpriteSheet*,int,int);
     void draw();
 
 };

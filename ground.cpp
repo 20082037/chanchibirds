@@ -1,6 +1,7 @@
 #include "ground.h"
 
-Ground::Ground(float xi,float yi,float zi,InanimateSpriteSheet* ssheet,b2World* world,int wWidth){
+Ground::Ground(float xi,float yi,float zi,InanimateSpriteSheet* ssheet,b2World* world,int wWidth,int ta){
+    tag = ta;
     z = zi;
     sprites = ssheet;
     state=0;
@@ -14,15 +15,17 @@ Ground::Ground(float xi,float yi,float zi,InanimateSpriteSheet* ssheet,b2World* 
     defBody.type = b2_staticBody;
     defBody.position.Set(xi,yi);
     body = world -> CreateBody(&defBody);
+    body->SetUserData(this);
+
     shape.SetAsBox(width/2 , height/2);
     body->CreateFixture(&shape,0.0f);
+    //body->SetUserData(this);
 }
 
 void Ground::draw(){
     glPushMatrix();
     // glTranslatef(this->x,this->y,this->z);
     glTranslatef(body->GetPosition().x,body->GetPosition().y,z);
-    cout<<"Ground"<<endl;
     glBindTexture(GL_TEXTURE_2D,sprites->texID);
     glBegin(GL_QUADS);
         glTexCoord2f(sprites->states[state].c1.first/sprites->imageWidth,sprites->states[state].c2.second/sprites->imageHeight);

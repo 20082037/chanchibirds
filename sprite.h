@@ -7,7 +7,7 @@
 class Sprite{
     public:
         int state;//By now, it can mean the health
-
+        bool alive;
         int tag;
 
         //Box2D

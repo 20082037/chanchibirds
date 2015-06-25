@@ -27,11 +27,11 @@ void System::initGame(){
                 }
                 dtBird += clock()-tiBird;
                 tiBird = clock();//No habra pasado mucho tiempo
-                if(dtBird>700000){
+                if(dtBird>300000){
                     Bird* baux;
                     GLfloat x=-400.f+birds.size()*10,y=-200.f,z=15.f;
                     //It then will iterate
-                    baux = new Bird(x,y,z,&aSprites[BIRD][Bird::BIRD_RED],&world);
+                    baux = new Bird(x,y,z,&aSprites[BIRD][Bird::BIRD_RED],&world,BIRD);
                     birds.push_back(baux);
                     canvas[z].push_back(baux);
                     dtBird = 0;
@@ -62,7 +62,7 @@ void System::initSprites(){
                 x+=250.f;
             }
         }
-        paux = new Platform(x,y,z,&iSprites[PLATFORM][Platform::PLATFORM_STONE],&world, WINDOW_WIDTH);
+        paux = new Platform(x,y,z,&iSprites[PLATFORM][Platform::PLATFORM_STONE],&world, WINDOW_WIDTH,PLATFORM);
         platforms.push_back(paux);
         canvas[z].push_back(paux);
     }
@@ -71,22 +71,22 @@ void System::initSprites(){
     Bird* baux;
     x=-400.f;y=-200.f;z=15.f;
     //It then will iterate
-    baux = new Bird(x,y,z,&aSprites[BIRD][Bird::BIRD_RED],&world);
+    baux = new Bird(x,y,z,&aSprites[BIRD][Bird::BIRD_RED],&world,BIRD);
     birds.push_back(baux);
     canvas[z].push_back(baux);
 
     //Chancho
     x=0.f;y=0.f;z=30.f;
-    pig = new Pig(x,y,z,&aSprites[PIG][Pig::PIG_HELMET],&world,WINDOW_WIDTH);
+    pig = new Pig(x,y,z,&aSprites[PIG][Pig::PIG_HELMET],&world,WINDOW_WIDTH,PIG);
     canvas[z].push_back(pig);
 
     //Piso
     x=0.f;y=-300.f;z=50.f;
-    ground = new Ground(x,y,z,&iSprites[GROUND][Ground::GROUND_NORMAL],&world,WINDOW_WIDTH);
+    ground = new Ground(x,y,z,&iSprites[GROUND][Ground::GROUND_NORMAL],&world,WINDOW_WIDTH,GROUND);
     canvas[z].push_back(ground);
 
     x=0.f;y=0.f;z=0.f;
-    background = new Background(x,y,z,&iSprites[BACKGROUND][Background::GAME_BACKGROUND],WINDOW_WIDTH);
+    background = new Background(x,y,z,&iSprites[BACKGROUND][Background::GAME_BACKGROUND],WINDOW_WIDTH,BACKGROUND);
     canvas[z].push_back(background);
 
 }
@@ -192,7 +192,16 @@ void System::renderGlobal(){
     }
     traverse(birds,bird){
 
-        (*bird)->draw();
+//        cout<<"UN PAJARO VIVO? : "<<(*bird)->alive<<endl;
+        if(!(*bird)->alive){
+            (*bird)->body->GetWorld()->DestroyBody((*bird)->body);
+            (*bird)->body->SetUserData(NULL);
+            (*bird)->body = NULL;
+            bird = birds.erase(bird);
+        }else{
+            (*bird)->draw();
+
+        }
     }
     pig->draw();
     ground->draw();

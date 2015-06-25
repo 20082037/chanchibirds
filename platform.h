@@ -28,7 +28,7 @@ class Platform: public InanimateSprite{
         b2FixtureDef fixture;
         b2MassData massDa;
 
-        Platform(GLfloat,GLfloat,GLfloat,InanimateSpriteSheet*,b2World*,int);
+        Platform(GLfloat,GLfloat,GLfloat,InanimateSpriteSheet*,b2World*,int,int);
         void draw();
 
 };

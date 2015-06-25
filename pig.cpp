@@ -1,6 +1,8 @@
 #include "pig.h"
 
-Pig::Pig(GLfloat xi,GLfloat yi,GLfloat zi,AnimateSpriteSheet* ssheet, b2World* world, int wWidth){//Provisional, se debería proveer direction y speed
+Pig::Pig(GLfloat xi,GLfloat yi,GLfloat zi,AnimateSpriteSheet* ssheet, b2World* world, int wWidth,int ta){//Provisional, se debería proveer direction y speed
+    tag = ta;
+    alive = true;
     z=zi;
     sprites = ssheet;
     state=PIG_HEALTHY;
@@ -18,6 +20,7 @@ Pig::Pig(GLfloat xi,GLfloat yi,GLfloat zi,AnimateSpriteSheet* ssheet, b2World* w
     defBody.type = b2_dynamicBody;
     defBody.position.Set(xi,yi);
     body = world -> CreateBody(&defBody);
+    body->SetUserData(this);
 
     shape.m_p.Set(0.f,0.f);
     shape.m_radius=height/2;
@@ -29,7 +32,7 @@ Pig::Pig(GLfloat xi,GLfloat yi,GLfloat zi,AnimateSpriteSheet* ssheet, b2World* w
     body->CreateFixture(&fixture);
 
     shape.ComputeMass(&massDa, fixture.density);
-
+    //body->SetUserData(this);
 }
 
 void Pig::animate(){
@@ -52,7 +55,6 @@ void Pig::draw(){
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     glBlendEquation(GL_FUNC_ADD);
-    cout<<"PIG"<<endl;
     glTranslatef(body->GetPosition().x,body->GetPosition().y,z);
 
     glBindTexture(GL_TEXTURE_2D,sprites->texID);

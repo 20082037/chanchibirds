@@ -39,6 +39,8 @@
 			<Add option="-lGLU" />
 			<Add library="../../Box2D_v2.3.0/Box2D/Build/Box2D/libBox2D.a" />
 		</Linker>
+		<Unit filename="ContentListener.cpp" />
+		<Unit filename="ContentListener.h" />
 		<Unit filename="aSpriteSheet.cpp" />
 		<Unit filename="aSpriteSheet.h" />
 		<Unit filename="animateSprite.h" />

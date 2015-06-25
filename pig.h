@@ -13,13 +13,12 @@ class Pig: public AnimateSprite{
 		};
 
 		enum PIG_HEALTH{
-		    PIG_HEALTHY,
-		    PIG_DAMAGED1,
 		    PIG_DAMAGED2,
+		    PIG_DAMAGED1,
+		    PIG_HEALTHY,
 		    NUM_PIG_HEALTH
 		};
 
-        //int currentAnim;
 
         b2CircleShape shape;
         b2FixtureDef fixture;
@@ -31,7 +30,7 @@ class Pig: public AnimateSprite{
         void down();
         void animate();
         void draw();
-        Pig(GLfloat xi,GLfloat yi,GLfloat zi,AnimateSpriteSheet*,b2World*,int);
+        Pig(GLfloat xi,GLfloat yi,GLfloat zi,AnimateSpriteSheet*,b2World*,int,int);
 };
 
 
