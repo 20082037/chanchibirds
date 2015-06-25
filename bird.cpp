@@ -47,6 +47,11 @@ void Bird::draw(){
         dt = 0;
     }
     glPushMatrix();
+    glEnable(GL_BLEND);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+    glBlendEquation(GL_FUNC_ADD);
+    cout<<"Bird"<<endl;
+
     glTranslatef(body->GetPosition().x,body->GetPosition().y,z);
     glBindTexture(GL_TEXTURE_2D,sprites->texID);
     glBegin(GL_QUADS);
@@ -59,5 +64,6 @@ void Bird::draw(){
         glTexCoord2f( currentAnim->c2.first / sprites->imageWidth, currentAnim->c2.second / sprites->imageHeight);
         glVertex3f(width/2,height/2,0);
     glEnd();
+    glDisable(GL_BLEND);
     glPopMatrix();
 }

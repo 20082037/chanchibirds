@@ -23,9 +23,11 @@ class Platform: public InanimateSprite{
         //bool direction;
         //float speed;
         float limy;
+
         b2PolygonShape shape;
         b2FixtureDef fixture;
         b2MassData massDa;
+
         Platform(GLfloat,GLfloat,GLfloat,InanimateSpriteSheet*,b2World*,int);
         void draw();
 

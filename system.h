@@ -14,6 +14,7 @@
 #include "pig.h"
 #include "platform.h"
 #include "ground.h"
+#include "background.h"
 //#include "slingshot.h"
 
 using namespace std;
@@ -24,6 +25,7 @@ enum TAG{
     PLATFORM,
     SLINGSHOT,
     GROUND,
+    BACKGROUND,
     NUM_TAGS
 };
 
@@ -54,6 +56,9 @@ class System{
 //        Slingshot* slingshot;
         Pig* pig;
         Ground* ground;
+        Background* background;
+
+
 
         clock_t dtBird;
         clock_t tiBird;

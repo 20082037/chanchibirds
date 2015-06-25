@@ -84,6 +84,11 @@ void System::initSprites(){
     x=0.f;y=-300.f;z=50.f;
     ground = new Ground(x,y,z,&iSprites[GROUND][Ground::GROUND_NORMAL],&world,WINDOW_WIDTH);
     canvas[z].push_back(ground);
+
+    x=0.f;y=0.f;z=0.f;
+    background = new Background(x,y,z,&iSprites[BACKGROUND][Background::GAME_BACKGROUND],WINDOW_WIDTH);
+    canvas[z].push_back(background);
+
 }
 
 bool System::setup(){
@@ -166,8 +171,8 @@ bool System::loadMedia(){
     success = iSprites[GROUND][Ground::GROUND_NORMAL].loadTextureFromFile("images/ground.jpg");
     success = iSprites[GROUND][Ground::GROUND_NORMAL].loadSpriteMap("SpriteCoordinates.txt",GROUND,Ground::GROUND_NORMAL);
 
-
-
+    success = iSprites[BACKGROUND][Background::GAME_BACKGROUND].loadTextureFromFile("images/gameBackground.png");
+    success = iSprites[BACKGROUND][Background::GAME_BACKGROUND].loadSpriteMap("SpriteCoordinates.txt",BACKGROUND, Background::GAME_BACKGROUND);
     return success;
 }
 
@@ -179,9 +184,22 @@ void System::renderGlobal(){
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
 
+/*
+    traverse(platforms,plat){
+        (*plat)->draw();
+    }
+    traverse(birds,bird){
+        (*bird)->draw();
+    }
+    pig->draw();
+    ground->draw();
+    background->draw();
+*/
+
     traverse(canvas,sPair){
         traverse(sPair->second,sprite){
             (*sprite)->draw();
         }
     }
+
 }

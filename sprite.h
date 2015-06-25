@@ -8,6 +8,8 @@ class Sprite{
     public:
         int state;//By now, it can mean the health
 
+        int tag;
+
         //Box2D
         b2BodyDef defBody;
         b2Body* body;
@@ -23,7 +25,6 @@ class Sprite{
         Sprite(){};
         virtual void draw()=0;
         //Every character will draw itself with its own fields, it's not likely they will need extra parameters
-
 };
 
 #endif // SPRITE_H_INCLUDED

@@ -42,6 +42,7 @@
 		<Unit filename="aSpriteSheet.cpp" />
 		<Unit filename="aSpriteSheet.h" />
 		<Unit filename="animateSprite.h" />
+		<Unit filename="background.cpp" />
 		<Unit filename="background.h" />
 		<Unit filename="bird.cpp" />
 		<Unit filename="bird.h" />

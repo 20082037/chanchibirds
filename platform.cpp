@@ -13,7 +13,6 @@ Platform::Platform(GLfloat xi,GLfloat yi,GLfloat zi,InanimateSpriteSheet* ssheet
     width = scale*wWidth;
 
     limy = -300.f - height/2;
-    cout<<"limy: "<<limy<<endl;
 
     defBody.position.Set(xi,yi);
     defBody.type = b2_kinematicBody;
@@ -36,8 +35,13 @@ Platform::Platform(GLfloat xi,GLfloat yi,GLfloat zi,InanimateSpriteSheet* ssheet
 }
 
 void Platform::draw(){
-
     glPushMatrix();
+    glEnable(GL_BLEND);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+    glBlendEquation(GL_FUNC_ADD);
+    cout<<"platform drawing"<<endl;
+
+
     if(body->GetPosition().y < limy){
         b2World* aux = body->GetWorld();
 
@@ -47,7 +51,6 @@ void Platform::draw(){
         body->SetMassData(&massDa);
 
     }
-    // glTranslatef(this->x,this->y,this->z);
     glTranslatef(body->GetPosition().x,body->GetPosition().y,z);
 
     glBindTexture(GL_TEXTURE_2D,sprites->texID);
@@ -61,5 +64,7 @@ void Platform::draw(){
         glTexCoord2f(sprites->states[state].c2.first/sprites->imageWidth,sprites->states[state].c2.second/sprites->imageHeight);
         glVertex3f(width/2,height/2,0);
     glEnd();
+
+    glDisable(GL_BLEND);
     glPopMatrix();
 }

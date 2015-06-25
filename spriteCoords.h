@@ -8,5 +8,4 @@ struct SpriteCoords{
     pair<GLfloat,GLfloat> c2;
 };
 
-
 #endif // SPRITECOORDS_H_INCLUDED
