@@ -184,22 +184,25 @@ void System::renderGlobal(){
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
 
-/*
+
+    //It matters a lot the rendering order
+    background->draw();
     traverse(platforms,plat){
         (*plat)->draw();
     }
     traverse(birds,bird){
+
         (*bird)->draw();
     }
     pig->draw();
     ground->draw();
-    background->draw();
-*/
 
+/*
     traverse(canvas,sPair){
         traverse(sPair->second,sprite){
             (*sprite)->draw();
         }
     }
+*/
 
 }

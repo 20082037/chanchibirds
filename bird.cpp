@@ -1,7 +1,6 @@
 #include "bird.h"
 
 Bird::Bird(GLfloat xi,GLfloat yi,GLfloat zi,AnimateSpriteSheet* ssheet, b2World* world){
-
     z= zi;
     sprites = ssheet;
     state=BIRD_HEALTHY;
