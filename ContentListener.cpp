@@ -14,6 +14,7 @@ void ContentListener::BeginContact(b2Contact* contact){
                 B->alive = false;
                 if(A->state < 3){
                     A->state++;
+                    A->currentAnim = A->sprites->states[A->state].begin();
                 }else{
                     A->alive = false;
                 }
@@ -21,6 +22,12 @@ void ContentListener::BeginContact(b2Contact* contact){
         }else if(B->tag == 0){
             if(A->tag == 1){
                 A->alive = false;
+                if(B->state < 3){
+                    B->state++;
+                    B->currentAnim = B->sprites->states[B->state].begin();
+                }else{
+                    B->alive=false;
+                }
             }
         }
     }else{
