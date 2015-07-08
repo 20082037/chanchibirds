@@ -3,14 +3,9 @@
 
 1432799903 source:/home/jdiazc/Documents/ChanchiBirdsFinal/chanchibrids/main.cpp
 
-1432914062 source:/home/juan/Documents/UCSP/GIT/ChanchiBirds/chanchibirds/main.cpp
-	<SDL2/SDL.h>
-	<Box2D/Box2D.h>
-	<GL/gl.h>
-	<GL/glu.h>
-	<FreeImage.h>
+1435245998 source:/home/juan/Documents/UCSP/GIT/ChanchiBirds/chanchibirds/main.cpp
 	<iostream>
-	<time.h>
+	"system.h"
 
 1382546500 33b499e1cf9bccb0ddc04df4c2052d4955c13
 	<SDL2/SDL.h>
@@ -705,4 +700,110 @@
 	"sprite.h"
 	"ContentListener.h"
 	<iostream>
+
+1435245998 source:/home/juan/Documents/UCSP/GIT/ChanchiBirds/chanchibirds/aSpriteSheet.cpp
+	"aSpriteSheet.h"
+
+1435245998 /home/juan/Documents/UCSP/GIT/ChanchiBirds/chanchibirds/aSpriteSheet.h
+	"spriteSheet.h"
+	"spriteCoords.h"
+	<map>
+	<list>
+	<vector>
+	<fstream>
+
+1435245998 /home/juan/Documents/UCSP/GIT/ChanchiBirds/chanchibirds/spriteSheet.h
+	<GL/gl.h>
+	<iostream>
+	<string.h>
+	<stdlib.h>
+	<math.h>
+	<FreeImage.h>
+
+1435245998 /home/juan/Documents/UCSP/GIT/ChanchiBirds/chanchibirds/spriteCoords.h
+	<GL/gl.h>
+
+1435245998 source:/home/juan/Documents/UCSP/GIT/ChanchiBirds/chanchibirds/background.cpp
+	"background.h"
+
+1435245998 /home/juan/Documents/UCSP/GIT/ChanchiBirds/chanchibirds/background.h
+	"inanimateSprite.h"
+
+1435245998 /home/juan/Documents/UCSP/GIT/ChanchiBirds/chanchibirds/inanimateSprite.h
+	"sprite.h"
+	"iSpriteSheet.h"
+
+1435245998 /home/juan/Documents/UCSP/GIT/ChanchiBirds/chanchibirds/sprite.h
+	<Box2D/Box2D.h>
+	<GL/gl.h>
+
+1435245998 /home/juan/Documents/UCSP/GIT/ChanchiBirds/chanchibirds/iSpriteSheet.h
+	"spriteSheet.h"
+	"spriteCoords.h"
+	<map>
+	<vector>
+	<fstream>
+
+1435245998 source:/home/juan/Documents/UCSP/GIT/ChanchiBirds/chanchibirds/bird.cpp
+	"bird.h"
+
+1435245998 /home/juan/Documents/UCSP/GIT/ChanchiBirds/chanchibirds/bird.h
+	"animateSprite.h"
+
+1435245998 /home/juan/Documents/UCSP/GIT/ChanchiBirds/chanchibirds/animateSprite.h
+	"sprite.h"
+	"aSpriteSheet.h"
+
+1435245998 source:/home/juan/Documents/UCSP/GIT/ChanchiBirds/chanchibirds/ContentListener.cpp
+	"sprite.h"
+	"ContentListener.h"
+	<iostream>
+
+1435245998 /home/juan/Documents/UCSP/GIT/ChanchiBirds/chanchibirds/ContentListener.h
+	<Box2D/Box2D.h>
+
+1435245998 source:/home/juan/Documents/UCSP/GIT/ChanchiBirds/chanchibirds/ground.cpp
+	"ground.h"
+
+1435245998 /home/juan/Documents/UCSP/GIT/ChanchiBirds/chanchibirds/ground.h
+	"inanimateSprite.h"
+
+1435245998 source:/home/juan/Documents/UCSP/GIT/ChanchiBirds/chanchibirds/iSpriteSheet.cpp
+	"iSpriteSheet.h"
+
+1436385846 /home/juan/Documents/UCSP/GIT/ChanchiBirds/chanchibirds/system.h
+	<iostream>
+	<map>
+	<list>
+	<SDL2/SDL.h>
+	<SDL2/SDL_opengl.h>
+	<GL/gl.h>
+	<Box2D/Box2D.h>
+	"bird.h"
+	"pig.h"
+	"platform.h"
+	"ground.h"
+	"background.h"
+	"ContentListener.h"
+
+1436385021 /home/juan/Documents/UCSP/GIT/ChanchiBirds/chanchibirds/pig.h
+	"animateSprite.h"
+
+1435245998 /home/juan/Documents/UCSP/GIT/ChanchiBirds/chanchibirds/platform.h
+	"inanimateSprite.h"
+
+1435245998 source:/home/juan/Documents/UCSP/GIT/ChanchiBirds/chanchibirds/pig.cpp
+	"pig.h"
+
+1435245998 source:/home/juan/Documents/UCSP/GIT/ChanchiBirds/chanchibirds/platform.cpp
+	"platform.h"
+
+1435245969 source:/home/juan/Documents/UCSP/GIT/ChanchiBirds/chanchibirds/sprite.cpp
+	"sprite.h"
+
+1435245969 source:/home/juan/Documents/UCSP/GIT/ChanchiBirds/chanchibirds/spriteSheet.cpp
+	"spriteSheet.h"
+
+1435245998 source:/home/juan/Documents/UCSP/GIT/ChanchiBirds/chanchibirds/system.cpp
+	"system.h"
 

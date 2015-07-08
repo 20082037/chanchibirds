@@ -16,7 +16,6 @@
 #include "ground.h"
 #include "background.h"
 #include "ContentListener.h"
-//#include "slingshot.h"
 
 using namespace std;
 

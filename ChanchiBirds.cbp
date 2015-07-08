@@ -30,14 +30,14 @@
 		</Build>
 		<Compiler>
 			<Add option="-Wall" />
-			<Add directory="../../Box2D_v2.3.0/Box2D" />
+			<Add directory="../../../../Programas en general/Box2D_v2.3.0/Box2D" />
 		</Compiler>
 		<Linker>
 			<Add option="-lfreeimage" />
 			<Add option="-lSDL2" />
 			<Add option="-lGL" />
 			<Add option="-lGLU" />
-			<Add library="../../Box2D_v2.3.0/Box2D/Build/Box2D/libBox2D.a" />
+			<Add library="../../../../Programas en general/Box2D_v2.3.0/Box2D/Build/Box2D/libBox2D.a" />
 		</Linker>
 		<Unit filename="ContentListener.cpp" />
 		<Unit filename="ContentListener.h" />

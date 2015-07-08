@@ -13,9 +13,9 @@ class Pig: public AnimateSprite{
 		};
 
 		enum PIG_HEALTH{
-		    PIG_DAMAGED2,
-		    PIG_DAMAGED1,
 		    PIG_HEALTHY,
+		    PIG_DAMAGED1,
+		    PIG_DAMAGED2,
 		    NUM_PIG_HEALTH
 		};
 
