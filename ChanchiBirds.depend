@@ -807,3 +807,275 @@
 1435245998 source:/home/juan/Documents/UCSP/GIT/ChanchiBirds/chanchibirds/system.cpp
 	"system.h"
 
+1437150662 source:/home/jafethdiaz/Documentos/ChanchiBirds/chanchibirds/aSpriteSheet.cpp
+	"aSpriteSheet.h"
+
+1437150662 /home/jafethdiaz/Documentos/ChanchiBirds/chanchibirds/aSpriteSheet.h
+	"spriteSheet.h"
+	"spriteCoords.h"
+	<map>
+	<list>
+	<vector>
+	<fstream>
+
+1437150662 /home/jafethdiaz/Documentos/ChanchiBirds/chanchibirds/spriteSheet.h
+	<GL/gl.h>
+	<iostream>
+	<string.h>
+	<stdlib.h>
+	<math.h>
+	<FreeImage.h>
+
+1437150662 /home/jafethdiaz/Documentos/ChanchiBirds/chanchibirds/spriteCoords.h
+	<GL/gl.h>
+
+1437150662 source:/home/jafethdiaz/Documentos/ChanchiBirds/chanchibirds/background.cpp
+	"background.h"
+
+1437150662 /home/jafethdiaz/Documentos/ChanchiBirds/chanchibirds/background.h
+	"inanimateSprite.h"
+
+1437150662 /home/jafethdiaz/Documentos/ChanchiBirds/chanchibirds/inanimateSprite.h
+	"sprite.h"
+	"iSpriteSheet.h"
+
+1437150662 /home/jafethdiaz/Documentos/ChanchiBirds/chanchibirds/sprite.h
+	<Box2D/Box2D.h>
+	<GL/gl.h>
+
+1332136811 /home/jafethdiaz/Documentos/Box2D_v2.3.0/Box2D/Box2D/Box2D.h
+	<Box2D/Common/b2Settings.h>
+	<Box2D/Common/b2Draw.h>
+	<Box2D/Common/b2Timer.h>
+	<Box2D/Collision/Shapes/b2CircleShape.h>
+	<Box2D/Collision/Shapes/b2EdgeShape.h>
+	<Box2D/Collision/Shapes/b2ChainShape.h>
+	<Box2D/Collision/Shapes/b2PolygonShape.h>
+	<Box2D/Collision/b2BroadPhase.h>
+	<Box2D/Collision/b2Distance.h>
+	<Box2D/Collision/b2DynamicTree.h>
+	<Box2D/Collision/b2TimeOfImpact.h>
+	<Box2D/Dynamics/b2Body.h>
+	<Box2D/Dynamics/b2Fixture.h>
+	<Box2D/Dynamics/b2WorldCallbacks.h>
+	<Box2D/Dynamics/b2TimeStep.h>
+	<Box2D/Dynamics/b2World.h>
+	<Box2D/Dynamics/Contacts/b2Contact.h>
+	<Box2D/Dynamics/Joints/b2DistanceJoint.h>
+	<Box2D/Dynamics/Joints/b2FrictionJoint.h>
+	<Box2D/Dynamics/Joints/b2GearJoint.h>
+	<Box2D/Dynamics/Joints/b2MotorJoint.h>
+	<Box2D/Dynamics/Joints/b2MouseJoint.h>
+	<Box2D/Dynamics/Joints/b2PrismaticJoint.h>
+	<Box2D/Dynamics/Joints/b2PulleyJoint.h>
+	<Box2D/Dynamics/Joints/b2RevoluteJoint.h>
+	<Box2D/Dynamics/Joints/b2RopeJoint.h>
+	<Box2D/Dynamics/Joints/b2WeldJoint.h>
+	<Box2D/Dynamics/Joints/b2WheelJoint.h>
+
+1382856099 /home/jafethdiaz/Documentos/Box2D_v2.3.0/Box2D/Box2D/Common/b2Settings.h
+	<stddef.h>
+	<assert.h>
+	<float.h>
+
+1322352523 /home/jafethdiaz/Documentos/Box2D_v2.3.0/Box2D/Box2D/Common/b2Draw.h
+	<Box2D/Common/b2Math.h>
+
+1382856060 /home/jafethdiaz/Documentos/Box2D_v2.3.0/Box2D/Box2D/Common/b2Math.h
+	<Box2D/Common/b2Settings.h>
+	<math.h>
+
+1375425743 /home/jafethdiaz/Documentos/Box2D_v2.3.0/Box2D/Box2D/Common/b2Timer.h
+	<Box2D/Common/b2Settings.h>
+
+1300987018 /home/jafethdiaz/Documentos/Box2D_v2.3.0/Box2D/Box2D/Collision/Shapes/b2CircleShape.h
+	<Box2D/Collision/Shapes/b2Shape.h>
+
+1313981392 /home/jafethdiaz/Documentos/Box2D_v2.3.0/Box2D/Box2D/Collision/Shapes/b2Shape.h
+	<Box2D/Common/b2BlockAllocator.h>
+	<Box2D/Common/b2Math.h>
+	<Box2D/Collision/b2Collision.h>
+
+1300987018 /home/jafethdiaz/Documentos/Box2D_v2.3.0/Box2D/Box2D/Common/b2BlockAllocator.h
+	<Box2D/Common/b2Settings.h>
+
+1382854526 /home/jafethdiaz/Documentos/Box2D_v2.3.0/Box2D/Box2D/Collision/b2Collision.h
+	<Box2D/Common/b2Math.h>
+	<limits.h>
+
+1314859986 /home/jafethdiaz/Documentos/Box2D_v2.3.0/Box2D/Box2D/Collision/Shapes/b2EdgeShape.h
+	<Box2D/Collision/Shapes/b2Shape.h>
+
+1382857618 /home/jafethdiaz/Documentos/Box2D_v2.3.0/Box2D/Box2D/Collision/Shapes/b2ChainShape.h
+	<Box2D/Collision/Shapes/b2Shape.h>
+
+1324249490 /home/jafethdiaz/Documentos/Box2D_v2.3.0/Box2D/Box2D/Collision/Shapes/b2PolygonShape.h
+	<Box2D/Collision/Shapes/b2Shape.h>
+
+1332054490 /home/jafethdiaz/Documentos/Box2D_v2.3.0/Box2D/Box2D/Collision/b2BroadPhase.h
+	<Box2D/Common/b2Settings.h>
+	<Box2D/Collision/b2Collision.h>
+	<Box2D/Collision/b2DynamicTree.h>
+	<algorithm>
+
+1332054496 /home/jafethdiaz/Documentos/Box2D_v2.3.0/Box2D/Box2D/Collision/b2DynamicTree.h
+	<Box2D/Collision/b2Collision.h>
+	<Box2D/Common/b2GrowableStack.h>
+
+1383025930 /home/jafethdiaz/Documentos/Box2D_v2.3.0/Box2D/Box2D/Common/b2GrowableStack.h
+	<Box2D/Common/b2Settings.h>
+	<memory.h>
+
+1300987018 /home/jafethdiaz/Documentos/Box2D_v2.3.0/Box2D/Box2D/Collision/b2Distance.h
+	<Box2D/Common/b2Math.h>
+
+1375425734 /home/jafethdiaz/Documentos/Box2D_v2.3.0/Box2D/Box2D/Collision/b2TimeOfImpact.h
+	<Box2D/Common/b2Math.h>
+	<Box2D/Collision/b2Distance.h>
+
+1382854090 /home/jafethdiaz/Documentos/Box2D_v2.3.0/Box2D/Box2D/Dynamics/b2Body.h
+	<Box2D/Common/b2Math.h>
+	<Box2D/Collision/Shapes/b2Shape.h>
+	<memory>
+
+1315072341 /home/jafethdiaz/Documentos/Box2D_v2.3.0/Box2D/Box2D/Dynamics/b2Fixture.h
+	<Box2D/Dynamics/b2Body.h>
+	<Box2D/Collision/b2Collision.h>
+	<Box2D/Collision/Shapes/b2Shape.h>
+
+1314073600 /home/jafethdiaz/Documentos/Box2D_v2.3.0/Box2D/Box2D/Dynamics/b2WorldCallbacks.h
+	<Box2D/Common/b2Settings.h>
+
+1315809130 /home/jafethdiaz/Documentos/Box2D_v2.3.0/Box2D/Box2D/Dynamics/b2TimeStep.h
+	<Box2D/Common/b2Math.h>
+
+1383020095 /home/jafethdiaz/Documentos/Box2D_v2.3.0/Box2D/Box2D/Dynamics/b2World.h
+	<Box2D/Common/b2Math.h>
+	<Box2D/Common/b2BlockAllocator.h>
+	<Box2D/Common/b2StackAllocator.h>
+	<Box2D/Dynamics/b2ContactManager.h>
+	<Box2D/Dynamics/b2WorldCallbacks.h>
+	<Box2D/Dynamics/b2TimeStep.h>
+
+1300987018 /home/jafethdiaz/Documentos/Box2D_v2.3.0/Box2D/Box2D/Common/b2StackAllocator.h
+	<Box2D/Common/b2Settings.h>
+
+1300987018 /home/jafethdiaz/Documentos/Box2D_v2.3.0/Box2D/Box2D/Dynamics/b2ContactManager.h
+	<Box2D/Collision/b2BroadPhase.h>
+
+1383025930 /home/jafethdiaz/Documentos/Box2D_v2.3.0/Box2D/Box2D/Dynamics/Contacts/b2Contact.h
+	<Box2D/Common/b2Math.h>
+	<Box2D/Collision/b2Collision.h>
+	<Box2D/Collision/Shapes/b2Shape.h>
+	<Box2D/Dynamics/b2Fixture.h>
+
+1315162982 /home/jafethdiaz/Documentos/Box2D_v2.3.0/Box2D/Box2D/Dynamics/Joints/b2DistanceJoint.h
+	<Box2D/Dynamics/Joints/b2Joint.h>
+
+1332136763 /home/jafethdiaz/Documentos/Box2D_v2.3.0/Box2D/Box2D/Dynamics/Joints/b2Joint.h
+	<Box2D/Common/b2Math.h>
+
+1315174277 /home/jafethdiaz/Documentos/Box2D_v2.3.0/Box2D/Box2D/Dynamics/Joints/b2FrictionJoint.h
+	<Box2D/Dynamics/Joints/b2Joint.h>
+
+1315174532 /home/jafethdiaz/Documentos/Box2D_v2.3.0/Box2D/Box2D/Dynamics/Joints/b2GearJoint.h
+	<Box2D/Dynamics/Joints/b2Joint.h>
+
+1382487182 /home/jafethdiaz/Documentos/Box2D_v2.3.0/Box2D/Box2D/Dynamics/Joints/b2MotorJoint.h
+	<Box2D/Dynamics/Joints/b2Joint.h>
+
+1332051882 /home/jafethdiaz/Documentos/Box2D_v2.3.0/Box2D/Box2D/Dynamics/Joints/b2MouseJoint.h
+	<Box2D/Dynamics/Joints/b2Joint.h>
+
+1315365926 /home/jafethdiaz/Documentos/Box2D_v2.3.0/Box2D/Box2D/Dynamics/Joints/b2PrismaticJoint.h
+	<Box2D/Dynamics/Joints/b2Joint.h>
+
+1382546444 /home/jafethdiaz/Documentos/Box2D_v2.3.0/Box2D/Box2D/Dynamics/Joints/b2PulleyJoint.h
+	<Box2D/Dynamics/Joints/b2Joint.h>
+
+1315172372 /home/jafethdiaz/Documentos/Box2D_v2.3.0/Box2D/Box2D/Dynamics/Joints/b2RevoluteJoint.h
+	<Box2D/Dynamics/Joints/b2Joint.h>
+
+1315194213 /home/jafethdiaz/Documentos/Box2D_v2.3.0/Box2D/Box2D/Dynamics/Joints/b2RopeJoint.h
+	<Box2D/Dynamics/Joints/b2Joint.h>
+
+1315170663 /home/jafethdiaz/Documentos/Box2D_v2.3.0/Box2D/Box2D/Dynamics/Joints/b2WeldJoint.h
+	<Box2D/Dynamics/Joints/b2Joint.h>
+
+1382546500 /home/jafethdiaz/Documentos/Box2D_v2.3.0/Box2D/Box2D/Dynamics/Joints/b2WheelJoint.h
+	<Box2D/Dynamics/Joints/b2Joint.h>
+
+1437150662 /home/jafethdiaz/Documentos/ChanchiBirds/chanchibirds/iSpriteSheet.h
+	"spriteSheet.h"
+	"spriteCoords.h"
+	<map>
+	<vector>
+	<fstream>
+
+1437150662 source:/home/jafethdiaz/Documentos/ChanchiBirds/chanchibirds/bird.cpp
+	"bird.h"
+
+1437150662 /home/jafethdiaz/Documentos/ChanchiBirds/chanchibirds/bird.h
+	"animateSprite.h"
+
+1437150662 /home/jafethdiaz/Documentos/ChanchiBirds/chanchibirds/animateSprite.h
+	"sprite.h"
+	"aSpriteSheet.h"
+
+1437150662 source:/home/jafethdiaz/Documentos/ChanchiBirds/chanchibirds/ContentListener.cpp
+	"sprite.h"
+	"ContentListener.h"
+	<iostream>
+
+1437150662 /home/jafethdiaz/Documentos/ChanchiBirds/chanchibirds/ContentListener.h
+	<Box2D/Box2D.h>
+
+1437150662 source:/home/jafethdiaz/Documentos/ChanchiBirds/chanchibirds/ground.cpp
+	"ground.h"
+
+1437150662 /home/jafethdiaz/Documentos/ChanchiBirds/chanchibirds/ground.h
+	"inanimateSprite.h"
+
+1437150662 source:/home/jafethdiaz/Documentos/ChanchiBirds/chanchibirds/iSpriteSheet.cpp
+	"iSpriteSheet.h"
+
+1437150662 source:/home/jafethdiaz/Documentos/ChanchiBirds/chanchibirds/main.cpp
+	<iostream>
+	"system.h"
+
+1437150662 /home/jafethdiaz/Documentos/ChanchiBirds/chanchibirds/system.h
+	<iostream>
+	<map>
+	<list>
+	<SDL2/SDL.h>
+	<SDL2/SDL_opengl.h>
+	<GL/gl.h>
+	<Box2D/Box2D.h>
+	"bird.h"
+	"pig.h"
+	"platform.h"
+	"ground.h"
+	"background.h"
+	"ContentListener.h"
+
+1437150662 /home/jafethdiaz/Documentos/ChanchiBirds/chanchibirds/pig.h
+	"animateSprite.h"
+
+1437150662 /home/jafethdiaz/Documentos/ChanchiBirds/chanchibirds/platform.h
+	"inanimateSprite.h"
+
+1437150662 source:/home/jafethdiaz/Documentos/ChanchiBirds/chanchibirds/pig.cpp
+	"pig.h"
+
+1437150662 source:/home/jafethdiaz/Documentos/ChanchiBirds/chanchibirds/platform.cpp
+	"platform.h"
+
+1437150662 source:/home/jafethdiaz/Documentos/ChanchiBirds/chanchibirds/sprite.cpp
+	"sprite.h"
+
+1437150662 source:/home/jafethdiaz/Documentos/ChanchiBirds/chanchibirds/spriteSheet.cpp
+	"spriteSheet.h"
+
+1437150662 source:/home/jafethdiaz/Documentos/ChanchiBirds/chanchibirds/system.cpp
+	"system.h"
+
