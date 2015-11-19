@@ -1,5 +1,7 @@
 #include "bird.h"
 
+//Este es un comentario
+
 Bird::Bird(GLfloat xi,GLfloat yi,GLfloat zi,AnimateSpriteSheet* ssheet, b2World* world,int ta){
     tag = ta;
     alive = true;
